@@ -30,4 +30,7 @@
 <!-- Upgrades -->
 <include file="upgrades.zcml" />
 
+<!-- Indexes -->
+<adapter factory=".types.organization.organization_type" name="organization_type" />
+
 </configure>

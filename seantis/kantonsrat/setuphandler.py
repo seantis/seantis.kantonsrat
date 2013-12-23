@@ -1,6 +1,8 @@
 from seantis.plonetools import setuphandlers
 
-indexes = []
+indexes = [
+    ('organization_type', 'FieldIndex')
+]
 
 
 def add_catalog_indexes(context, logger=None):

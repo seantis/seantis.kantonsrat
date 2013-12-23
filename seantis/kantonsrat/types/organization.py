@@ -1,6 +1,7 @@
 from zope import schema
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
+from plone.indexer import indexer
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.dexterity.content import Container
 from plone.directives import form
@@ -44,6 +45,11 @@ class IOrganization(form.Schema):
         title=_(u'Portrait'),
         required=False
     )
+
+
+@indexer(IOrganization)
+def organization_type(obj):
+    return obj.type
 
 
 class Organization(Container):
