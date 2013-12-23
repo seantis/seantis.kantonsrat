@@ -2,4 +2,11 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
+    <genericsetup:upgradeStep 
+        title="Remove faulty type name (seantis.kantonsrat.list becomes seantis.kantonsrat.member)."
+        source="1000" destination="1001"
+        profile="seantis.kantonsrat:default"
+        handler=".upgrades.remove_faulty_type_name"
+    />
+
 </configure>
