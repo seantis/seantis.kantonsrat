@@ -67,6 +67,12 @@
       <people:column selectable="true">
         <people:item>electoral_district</people:item>
       </people:column>
+      <people:column selectable="true" title="Party" i18n:attributes="title">
+        <people:item>parties</people:item>
+      </people:column>
+      <people:column selectable="true" title="Faction" i18n:attributes="title">
+        <people:item>factions</people:item>
+      </people:column>
     </people:columns>
 
     <people:details position="left">
