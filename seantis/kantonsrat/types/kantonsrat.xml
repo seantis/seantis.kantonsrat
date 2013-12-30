@@ -67,6 +67,8 @@
       <people:column selectable="true">
         <people:item>electoral_district</people:item>
       </people:column>
+      <!-- The tile is currently translated in seantis.people, since the supermodel
+      does not handle domains there. Changes therefore go to seantis/kantonsrat/locales/**/seantis.people.po -->
       <people:column selectable="true" title="Party" i18n:attributes="title">
         <people:item>parties</people:item>
       </people:column>
