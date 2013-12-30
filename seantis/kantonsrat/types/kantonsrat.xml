@@ -77,13 +77,17 @@
 
     <people:details position="left">
       <people:item>photo</people:item>
-      <people:item>firstname</people:item>
-      <people:item>lastname</people:item>
-      <people:item>electoral_district</people:item>
+    </people:details>
+    <people:details position="right">
       <people:item>email</people:item>
       <people:item>website</people:item>
       <people:item>address</people:item>
+      <people:item>electoral_district</people:item>
+      <people:item>party_memberships</people:item>
+      <people:item>faction_memberships</people:item>
+      <people:item>comittee_memberships</people:item>
     </people:details>
+    
   </schema>
 
 </model>

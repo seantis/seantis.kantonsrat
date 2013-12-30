@@ -8,12 +8,25 @@ from seantis.people.interfaces import ICompoundColumns
 from seantis.people.types.base import PersonBase
 from seantis.people.interfaces import IPerson
 
+from seantis.kantonsrat import _
+
 
 class IMember(form.Schema):
     form.model("kantonsrat.xml")
 
 
 class Member(PersonBase):
+
+    @property
+    def membership_fields(self):
+        parent_fields = super(Member, self).membership_fields
+        parent_fields.update({
+            'party_memberships': _(u'Party'),
+            'faction_memberships': _(u'Factions'),
+            'comittee_memberships': _(u'Comittees')
+        })
+
+        return parent_fields
 
     def get_organizations_filter(self, orgtype):
         catalog = api.portal.get_tool('portal_catalog')
@@ -31,6 +44,11 @@ class Member(PersonBase):
             org_filter=self.get_organizations_filter(orgtype)
         )
 
+    def memberships_by_type(self, orgtype):
+        return IPerson(self).memberships(
+            org_filter=self.get_organizations_filter(orgtype)
+        )
+
     @property
     def parties(self):
         return self.organizations_by_type('party')
@@ -38,6 +56,10 @@ class Member(PersonBase):
     @property
     def party_uuids(self):
         return self.organization_uuids_by_type('party')
+
+    @property
+    def party_memberships(self):
+        return self.memberships_by_type('party')
 
     @property
     def comittees(self):
@@ -48,12 +70,20 @@ class Member(PersonBase):
         return self.organization_uuids_by_type('comittee')
 
     @property
+    def comittee_memberships(self):
+        return self.memberships_by_type('comittee')
+
+    @property
     def factions(self):
         return self.organizations_by_type('faction')
 
     @property
     def faction_uuids(self):
         return self.organization_uuids_by_type('faction')
+
+    @property
+    def faction_memberships(self):
+        return self.memberships_by_type('faction')
 
 
 class CompoundColumns(grok.Adapter):
