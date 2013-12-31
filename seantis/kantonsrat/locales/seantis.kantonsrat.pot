@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-12-30 14:18+0000\n"
+"POT-Creation-Date: 2013-12-31 08:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgid "Address"
 msgstr ""
 
 #: ./types/organization.py:16
-msgid "Comittee"
+msgid "Committee"
 msgstr ""
 
 #: ./types/kantonsrat.py:26
-msgid "Comittees"
+msgid "Committees"
 msgstr ""
 
 #: ./browser/templates/organization.pt:10

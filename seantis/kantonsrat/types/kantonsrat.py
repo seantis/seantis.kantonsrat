@@ -23,7 +23,7 @@ class Member(PersonBase):
         parent_fields.update({
             'party_memberships': _(u'Party'),
             'faction_memberships': _(u'Factions'),
-            'comittee_memberships': _(u'Comittees')
+            'committee_memberships': _(u'Committees')
         })
 
         return parent_fields
@@ -62,16 +62,16 @@ class Member(PersonBase):
         return self.memberships_by_type('party')
 
     @property
-    def comittees(self):
-        return self.organizations_by_type('comittee')
+    def committees(self):
+        return self.organizations_by_type('committee')
 
     @property
-    def comittee_uuids(self):
-        return self.organization_uuids_by_type('comittee')
+    def committee_uuids(self):
+        return self.organization_uuids_by_type('committee')
 
     @property
-    def comittee_memberships(self):
-        return self.memberships_by_type('comittee')
+    def committee_memberships(self):
+        return self.memberships_by_type('committee')
 
     @property
     def factions(self):
@@ -95,6 +95,6 @@ class CompoundColumns(grok.Adapter):
     def get_compound_columns(self):
         return {
             'parties': 'party_uuids',
-            'comittees': 'comittee_uuids',
+            'committees': 'committee_uuids',
             'factions': 'faction_uuids'
         }

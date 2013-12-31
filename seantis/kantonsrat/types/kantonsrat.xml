@@ -87,7 +87,7 @@
       <people:item>electoral_district</people:item>
       <people:item>party_memberships</people:item>
       <people:item>faction_memberships</people:item>
-      <people:item>comittee_memberships</people:item>
+      <people:item>committee_memberships</people:item>
     </people:details>
     
   </schema>

@@ -29,7 +29,7 @@ class JsonListView(BaseView):
         for brain in self.context.people():
             yield 'person', brain
 
-        for org_type in ('comittee', 'party', 'faction'):
+        for org_type in ('committee', 'party', 'faction'):
             for brain in self.organizations_by_type(org_type):
                 yield org_type, brain
 

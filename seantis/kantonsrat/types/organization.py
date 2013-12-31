@@ -13,7 +13,7 @@ from seantis.kantonsrat import _
 
 organization_types = SimpleVocabulary(
     [
-        SimpleTerm(value='comittee', title=_(u'Comittee')),
+        SimpleTerm(value='committee', title=_(u'Committee')),
         SimpleTerm(value='faction', title=_(u'Faction')),
         SimpleTerm(value='party', title=_(u'Party'))
     ]
@@ -26,7 +26,7 @@ class IOrganization(form.Schema):
     type = schema.Choice(
         title=_(u'Type'),
         source=organization_types,
-        default='comittee'
+        default='committee'
     )
 
     searchable('title')
