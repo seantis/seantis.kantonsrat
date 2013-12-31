@@ -5,7 +5,7 @@ Changelog
 0.2 (unreleased)
 ~~~~~~~~~~~~~~~~
 
-- Nothing yet.
+- Adds parties, comittees and factions. Fixes #1
 
 0.1
 ~~~

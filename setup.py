@@ -50,7 +50,7 @@ setup(
         'plone.api',
         'five.grok',
         'plone.app.dexterity [grok, relations]',
-        'seantis.people>=0.14',
+        'seantis.people>=0.16',
         'seantis.plonetools>=0.9',
         'collective.dexteritytextindexer',
     ],
