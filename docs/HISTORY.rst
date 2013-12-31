@@ -2,7 +2,7 @@
 Changelog
 ---------
 
-0.2 (2013-12-31)
+0.3 (2013-12-31)
 ~~~~~~~~~~~~~~~~
 
 - Fixes really wrong spelling in German.
