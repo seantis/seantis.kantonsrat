@@ -2,10 +2,10 @@
 Changelog
 ---------
 
-0.2 (unreleased)
+0.2 (2013-12-31)
 ~~~~~~~~~~~~~~~~
 
-- Nothing yet.
+- Fixes really wrong spelling in German.
   [href]
 
 0.2 (2013-12-31)

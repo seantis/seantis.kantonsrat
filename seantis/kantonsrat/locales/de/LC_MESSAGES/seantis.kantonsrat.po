@@ -20,11 +20,11 @@ msgstr "Adresse"
 
 #: ./types/organization.py:16
 msgid "Comittee"
-msgstr "Komission"
+msgstr "Kommission"
 
 #: ./types/kantonsrat.py:26
 msgid "Comittees"
-msgstr "Komissionen"
+msgstr "Kommissionen"
 
 #: ./browser/templates/organization.pt:10
 #: ./types/organization.py:39
