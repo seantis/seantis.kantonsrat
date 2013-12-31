@@ -1,5 +1,5 @@
-from zope.interface import Interface
+from seantis.people.interfaces import ISeantisPeopleSpecific
 
 
-class ISeantisKantonsratSpecific(Interface):
+class ISeantisKantonsratSpecific(ISeantisPeopleSpecific):
     pass
