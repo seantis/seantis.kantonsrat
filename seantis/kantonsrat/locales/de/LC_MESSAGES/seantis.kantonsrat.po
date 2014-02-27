@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-12-31 08:50+0000\n"
+"POT-Creation-Date: 2014-02-27 14:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,8 +15,20 @@ msgstr ""
 "Domain: DOMAIN\n"
 
 #: ./types/kantonsrat.xml
+msgid "Academic Title"
+msgstr "Akademischer Titel"
+
+#: ./types/kantonsrat.xml
 msgid "Address"
 msgstr "Adresse"
+
+#: ./types/kantonsrat.xml
+msgid "Address Salutation"
+msgstr "Address-Anrede"
+
+#: ./types/kantonsrat.xml
+msgid "Birthday"
+msgstr "Geburtstag"
 
 #: ./types/organization.py:16
 msgid "Committee"
@@ -32,12 +44,20 @@ msgid "Description"
 msgstr "Beschreibung"
 
 #: ./types/kantonsrat.xml
+msgid "Document Dispatch Address"
+msgstr "Spedition KR-Vorlagen Adresse"
+
+#: ./types/kantonsrat.xml
 msgid "Electoral District"
 msgstr "Wahlkreis"
 
 #: ./types/kantonsrat.xml
 msgid "Email"
 msgstr "E-Mail"
+
+#: ./types/kantonsrat.xml
+msgid "Entry Date"
+msgstr "Eintritt"
 
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:17
@@ -49,8 +69,16 @@ msgid "Factions"
 msgstr "Fraktionen"
 
 #: ./types/kantonsrat.xml
+msgid "Fax"
+msgstr "Fax"
+
+#: ./types/kantonsrat.xml
 msgid "First Name"
 msgstr "Vorname"
+
+#: ./types/kantonsrat.xml
+msgid "Function"
+msgstr "Funktion"
 
 #: ./profiles/default/types/seantis.kantonsrat.member.xml
 msgid "Kantonsrat Member"
@@ -64,9 +92,17 @@ msgstr "Kantonsrats-Organisation"
 msgid "Last Name"
 msgstr "Nachname"
 
+#: ./types/kantonsrat.xml
+msgid "Letter Salutation"
+msgstr "Brief-Anrede"
+
 #: ./browser/templates/organization.pt:20
 msgid "Members"
 msgstr "Mitglieder"
+
+#: ./types/kantonsrat.xml
+msgid "Mobile"
+msgstr "Handy"
 
 #: ./types/kantonsrat.py:24
 #: ./types/kantonsrat.xml
@@ -75,13 +111,41 @@ msgid "Party"
 msgstr "Partei"
 
 #: ./types/kantonsrat.xml
+msgid "Phone"
+msgstr "Telefon"
+
+#: ./types/kantonsrat.xml
 msgid "Photo"
 msgstr "Foto"
+
+#: ./types/kantonsrat.xml
+msgid "Place of Citizenship"
+msgstr "Bürgerort"
 
 #: ./browser/templates/organization.pt:15
 #: ./types/organization.py:45
 msgid "Portrait"
 msgstr "Portrait"
+
+#: ./types/kantonsrat.xml
+msgid "Private"
+msgstr "Privat"
+
+#: ./types/kantonsrat.xml
+msgid "Private Address"
+msgstr "Privat-Adresse"
+
+#: ./types/kantonsrat.xml
+msgid "Profession"
+msgstr "Beruf"
+
+#: ./types/kantonsrat.xml
+msgid "Salutation"
+msgstr "Anrede"
+
+#: ./types/kantonsrat.xml
+msgid "Secondary Email"
+msgstr "Zweite E-Mail"
 
 #: ./types/organization.py:34
 msgid "Title"

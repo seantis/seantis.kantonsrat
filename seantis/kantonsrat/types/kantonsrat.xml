@@ -44,6 +44,71 @@
       <title i18n:translate="">Photo</title>
     </field>
 
+    <!-- private fields (note permission)-->
+    <fieldset name="private" label="Private" i18n:attributes="label">
+      <field name="function" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Function</title>
+      </field>
+      <field name="salutation" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Salutation</title>
+      </field>
+      <field name="academic_title" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Academic Title</title>
+      </field>
+      <field name="address_salutation" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Address Salutation</title>
+      </field>
+      <field name="letter_salutation" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Letter Salutation</title>
+      </field>
+      <field name="document_dispatch_address" type="zope.schema.Text" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Document Dispatch Address</title>
+      </field>
+      <field name="phone" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Phone</title>
+      </field>
+      <field name="mobile" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Mobile</title>
+      </field>
+      <field name="fax" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Fax</title>
+      </field>
+      <field name="secondary_email" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Secondary Email</title>
+      </field>
+      <field name="birthday" type="zope.schema.Date" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Birthday</title>
+      </field>
+      <field name="place_of_citizenship" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Place of Citizenship</title>
+      </field>
+      <field name="profession" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Profession</title>
+      </field>
+      <field name="entry_date" type="zope.schema.Date" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Entry Date</title>
+      </field>
+      <field name="private_address" type="zope.schema.Text" security:read-permission="cmf.ModifyPortalContent">
+        <description/>
+        <required>False</required>
+        <title i18n:translate="">Private Address</title>
+      </field>
+    </fieldset>
+
     <people:title>
       <people:item>lastname</people:item>
       <people:item>firstname</people:item>

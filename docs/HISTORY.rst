@@ -2,6 +2,12 @@
 Changelog
 ---------
 
+0.5 (unreleased)
+~~~~~~~~~~~~~~~~
+
+- Adds a number of private fields for members.
+  [href]
+
 0.4 (2013-12-31)
 ~~~~~~~~~~~~~~~~
 

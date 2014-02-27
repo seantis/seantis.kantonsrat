@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-12-31 08:50+0000\n"
+"POT-Creation-Date: 2014-02-27 14:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,19 @@ msgstr ""
 "Domain: seantis.kantonsrat\n"
 
 #: ./types/kantonsrat.xml
+msgid "Academic Title"
+msgstr ""
+
+#: ./types/kantonsrat.xml
 msgid "Address"
+msgstr ""
+
+#: ./types/kantonsrat.xml
+msgid "Address Salutation"
+msgstr ""
+
+#: ./types/kantonsrat.xml
+msgid "Birthday"
 msgstr ""
 
 #: ./types/organization.py:16
@@ -35,11 +47,19 @@ msgid "Description"
 msgstr ""
 
 #: ./types/kantonsrat.xml
+msgid "Document Dispatch Address"
+msgstr ""
+
+#: ./types/kantonsrat.xml
 msgid "Electoral District"
 msgstr ""
 
 #: ./types/kantonsrat.xml
 msgid "Email"
+msgstr ""
+
+#: ./types/kantonsrat.xml
+msgid "Entry Date"
 msgstr ""
 
 #: ./types/kantonsrat.xml
@@ -52,7 +72,15 @@ msgid "Factions"
 msgstr ""
 
 #: ./types/kantonsrat.xml
+msgid "Fax"
+msgstr ""
+
+#: ./types/kantonsrat.xml
 msgid "First Name"
+msgstr ""
+
+#: ./types/kantonsrat.xml
+msgid "Function"
 msgstr ""
 
 #: ./profiles/default/types/seantis.kantonsrat.member.xml
@@ -67,8 +95,16 @@ msgstr ""
 msgid "Last Name"
 msgstr ""
 
+#: ./types/kantonsrat.xml
+msgid "Letter Salutation"
+msgstr ""
+
 #: ./browser/templates/organization.pt:20
 msgid "Members"
+msgstr ""
+
+#: ./types/kantonsrat.xml
+msgid "Mobile"
 msgstr ""
 
 #: ./types/kantonsrat.py:24
@@ -78,12 +114,40 @@ msgid "Party"
 msgstr ""
 
 #: ./types/kantonsrat.xml
+msgid "Phone"
+msgstr ""
+
+#: ./types/kantonsrat.xml
 msgid "Photo"
+msgstr ""
+
+#: ./types/kantonsrat.xml
+msgid "Place of Citizenship"
 msgstr ""
 
 #: ./browser/templates/organization.pt:15
 #: ./types/organization.py:45
 msgid "Portrait"
+msgstr ""
+
+#: ./types/kantonsrat.xml
+msgid "Private"
+msgstr ""
+
+#: ./types/kantonsrat.xml
+msgid "Private Address"
+msgstr ""
+
+#: ./types/kantonsrat.xml
+msgid "Profession"
+msgstr ""
+
+#: ./types/kantonsrat.xml
+msgid "Salutation"
+msgstr ""
+
+#: ./types/kantonsrat.xml
+msgid "Secondary Email"
 msgstr ""
 
 #: ./types/organization.py:34
