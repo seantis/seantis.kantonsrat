@@ -1,13 +1,21 @@
 from five import grok
 
-from seantis.plonetools import tools
+from seantis.plonetools.browser import BaseView as SharedBaseView
+from seantis.plonetools.browser import BaseForm as SharedBaseForm
 from seantis.kantonsrat.interfaces import ISeantisKantonsratSpecific
 
 
-class BaseView(grok.View):
+class BaseView(SharedBaseView):
 
     grok.baseclass()
     grok.layer(ISeantisKantonsratSpecific)
 
-    def translate(self, text):
-        return tools.translator(self.request, 'seantis.people')(text)
+    domain = 'seantis.kantonsrat'
+
+
+class BaseForm(SharedBaseForm):
+
+    grok.baseclass()
+    grok.layer(ISeantisKantonsratSpecific)
+
+    domain = 'seantis.kantonsrat'
