@@ -5,6 +5,9 @@ Changelog
 0.5 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Adds notes display to organization memberships.
+  [href]
+
 - Adds saner dateranges for birthday/entry date.
   [href]
 

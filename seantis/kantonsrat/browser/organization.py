@@ -17,7 +17,7 @@ class OrganizationView(BaseView):
     template = grok.PageTemplateFile('templates/organization.pt')
 
     def members(self):
-        Member = namedtuple('Member', ['role', 'person', 'url'])
+        Member = namedtuple('Member', ['role', 'person', 'url', 'note'])
 
         folder_path = '/'.join(self.context.getPhysicalPath())
 
@@ -39,7 +39,8 @@ class OrganizationView(BaseView):
                 Member(
                     membership.title,
                     person_brain.Title,
-                    person_brain.getURL()
+                    person_brain.getURL(),
+                    membership.note
                 )
             )
 

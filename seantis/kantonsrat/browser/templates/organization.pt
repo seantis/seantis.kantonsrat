@@ -21,9 +21,12 @@
                 <ul class="dense">
                     <li tal:repeat="member view/members">
                         <a tal:attributes="href member/url" tal:content="member/person" />
-                        <tal:block condition="member/role">
+                        <tal:block condition="member/role | nothing">
                             <span class="seantis-role-separator">-</span>
                             <span class="seantis-role" tal:content="member/role"></span>
+                        </tal:block>
+                        <tal:block condition="member/note | nothing">
+                            <p tal:content="member/note"></p>
                         </tal:block>
                     </li>
                 </ul>
