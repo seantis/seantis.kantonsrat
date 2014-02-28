@@ -5,6 +5,9 @@ Changelog
 0.5 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Adds saner dateranges for birthday/entry date.
+  [href]
+
 - Adds a number of private fields for members.
   [href]
 

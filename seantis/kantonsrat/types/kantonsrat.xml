@@ -89,6 +89,9 @@
       <field name="birthday" type="zope.schema.Date" security:read-permission="cmf.ModifyPortalContent">
         <required>False</required>
         <title i18n:translate="">Birthday</title>
+        <form:widget type="plone.formwidget.datetime.z3cform.widget.DateWidget">
+          <years_range>[-100, 10]</years_range>
+        </form:widget>
       </field>
       <field name="place_of_citizenship" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
         <required>False</required>
@@ -101,6 +104,9 @@
       <field name="entry_date" type="zope.schema.Date" security:read-permission="cmf.ModifyPortalContent">
         <required>False</required>
         <title i18n:translate="">Entry Date</title>
+        <form:widget type="plone.formwidget.datetime.z3cform.widget.DateWidget">
+          <years_range>[-50, 5]</years_range>
+        </form:widget>
       </field>
       <field name="private_address" type="zope.schema.Text" security:read-permission="cmf.ModifyPortalContent">
         <description/>
