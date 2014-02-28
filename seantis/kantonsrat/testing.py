@@ -27,6 +27,9 @@ class TestLayer(PloneSandboxLayer):
         import seantis.plonetools
         self.loadZCML(package=seantis.plonetools)
 
+        import seantis.people
+        self.loadZCML(package=seantis.people)
+
         import seantis.kantonsrat
         self.loadZCML(package=seantis.kantonsrat)
 
