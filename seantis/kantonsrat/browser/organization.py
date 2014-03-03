@@ -3,6 +3,9 @@ from collections import namedtuple
 from plone import api
 from five import grok
 
+from zope.security import checkPermission
+
+from seantis.kantonsrat.interfaces import ISeantisKantonsratSpecific
 from seantis.kantonsrat.types import IOrganization
 from seantis.kantonsrat.browser.base import BaseView
 
@@ -14,10 +17,14 @@ class OrganizationView(BaseView):
     grok.context(IOrganization)
     grok.name('view')
 
+    grok.layer(ISeantisKantonsratSpecific)
+
     template = grok.PageTemplateFile('templates/organization.pt')
 
     def members(self):
-        Member = namedtuple('Member', ['role', 'person', 'url', 'note'])
+        Member = namedtuple(
+            'Member', ['role', 'person', 'url', 'note', 'membership_edit']
+        )
 
         folder_path = '/'.join(self.context.getPhysicalPath())
 
@@ -35,12 +42,18 @@ class OrganizationView(BaseView):
                 path={'query': membership.person.to_path}
             )[0]
 
+            if checkPermission('cmf.ModifyPortalContent', membership):
+                membership_edit = membership.absolute_url() + '/edit'
+            else:
+                membership_edit = None
+
             members.append(
                 Member(
                     membership.title,
                     person_brain.Title,
                     person_brain.getURL(),
-                    membership.note
+                    membership.note,
+                    membership_edit
                 )
             )
 

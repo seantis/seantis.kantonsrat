@@ -25,6 +25,9 @@
                             <span class="seantis-role-separator">-</span>
                             <span class="seantis-role" tal:content="member/role"></span>
                         </tal:block>
+                        <tal:block condition="member/membership_edit | nothing">
+                            <a tal:attributes="href member/membership_edit" i18n:translate="">Edit</a>
+                        </tal:block>
                         <tal:block condition="member/note | nothing">
                             <p tal:content="member/note"></p>
                         </tal:block>

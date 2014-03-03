@@ -5,6 +5,10 @@ Changelog
 0.5 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Adds the ability to directly edit the role and the note of a membership.
+  Fixes #4.
+  [href]
+
 - Adds notes display to organization memberships.
   [href]
 

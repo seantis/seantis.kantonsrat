@@ -5,6 +5,7 @@ from z3c.form import field
 from seantis.people.interfaces import IMembership
 
 from seantis.kantonsrat import _
+from seantis.kantonsrat.interfaces import ISeantisKantonsratSpecific
 from seantis.kantonsrat.browser.base import BaseForm
 
 
@@ -14,12 +15,21 @@ class LimitedMembershipEditForm(BaseForm):
     the referenced person.
 
     """
-    grok.name('edit-limited')
+    grok.name('edit')
 
     grok.context(IMembership)
     grok.require('cmf.ModifyPortalContent')
+    grok.layer(ISeantisKantonsratSpecific)
 
     ignoreContext = False
 
     label = _(u'Edit membership')
     fields = field.Fields(IMembership).select('title', 'note')
+
+    @property
+    def success_url(self):
+        return self.context.aq_inner.aq_parent.absolute_url()
+
+    @property
+    def cancel_url(self):
+        return self.context.aq_inner.aq_parent.absolute_url()
