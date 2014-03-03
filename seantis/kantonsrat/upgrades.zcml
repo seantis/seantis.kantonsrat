@@ -23,4 +23,11 @@
         handler=".upgrades.upgrade_type_info"
     />
 
+    <genericsetup:upgradeStep
+        title="Import new organization indexes."
+        source="1003" destination="1004"
+        profile="seantis.kantonsrat:default"
+        handler=".setuphandler.add_catalog_indexes"
+    />
+
 </configure>
