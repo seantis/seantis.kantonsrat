@@ -30,4 +30,11 @@
         handler=".setuphandler.add_catalog_indexes"
     />
 
+    <genericsetup:upgradeStep
+        title="Import new organization_listing view."
+        source="1004" destination="1005"
+        profile="seantis.kantonsrat:default"
+        handler=".upgrades.upgrade_type_info"
+    />
+
 </configure>

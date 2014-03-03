@@ -1,6 +1,8 @@
 from time import mktime
 from datetime import date
 
+import Missing
+
 from zope import schema
 from zope.interface import invariant, Invalid
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
@@ -123,10 +125,14 @@ def organization_end(obj):
 class Organization(Container):
 
     def exclude_from_nav(self):
-        if not self.active:
-            return True
+        return not is_organization_visible(self)
 
-        today = date.today()
-        start, end = (self.start or date.min), (self.start or date.min)
 
-        return not (start <= today and today <= end)
+def is_organization_visible(org):
+    if org.active or org.active is Missing.Value:
+        return True
+
+    today = date.today()
+    start, end = (org.start or date.min), (org.start or date.min)
+
+    return (start <= today and today <= end)

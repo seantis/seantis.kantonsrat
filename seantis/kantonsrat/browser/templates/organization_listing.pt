@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="seantis.kantonsrat">
+  <head><title></title></head>
+
+  <body>
+    <metal:content-core fill-slot="content-core">
+      <metal:block use-macro="context/folder_listing/macros/content-core">
+        <metal:entries fill-slot="entries">
+          
+          <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+          <div class="organization-listing">
+            <metal:block use-macro="context/folder_listing/macros/entries">
+              <metal:entry fill-slot="entry" tal:condition="python: view.list_item(item)">
+              
+                  <div class="organization-listing-entry">
+                    <h3><a tal:attributes="href item/getURL" tal:content="item_title_or_id"></a></h3>
+                    <p tal:content="item_description" tal:condition="item_description"></p>
+                  </div>
+
+              </metal:entry>
+            </metal:block>
+          </div>
+
+        </metal:entries>
+      </metal:block>
+
+      <metal:subtopics use-macro="context/atct_topic_view/macros/folderlisting_macro" />
+
+    </metal:content-core>
+
+
+  </body>
+</html>

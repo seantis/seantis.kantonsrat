@@ -5,7 +5,6 @@ from five import grok
 
 from zope.security import checkPermission
 
-from seantis.kantonsrat.interfaces import ISeantisKantonsratSpecific
 from seantis.kantonsrat.types import IOrganization
 from seantis.kantonsrat.browser.base import BaseView
 
@@ -16,8 +15,6 @@ class OrganizationView(BaseView):
     grok.require(permission)
     grok.context(IOrganization)
     grok.name('view')
-
-    grok.layer(ISeantisKantonsratSpecific)
 
     template = grok.PageTemplateFile('templates/organization.pt')
 

@@ -27,6 +27,15 @@
     title="seantis.kantonsrat indexes"
     handler="seantis.kantonsrat.setuphandler.import_indexes" />
 
+<!-- Dynamic Views -->
+<browser:menuItem i18n:attributes="title description"
+    for="Products.ATContentTypes.interface.IATFolder"
+    menu="plone_displayviews"
+    title="Organization listing"
+    action="@@organization_listing"
+    description="List Organizations only"
+/>
+
 <!-- Indexes -->
 <adapter factory=".types.organization.organization_type" name="organization_type" />
 <adapter factory=".types.organization.organization_active" name="organization_active" />

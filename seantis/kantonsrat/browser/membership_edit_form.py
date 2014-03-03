@@ -5,7 +5,6 @@ from z3c.form import field
 from seantis.people.interfaces import IMembership
 
 from seantis.kantonsrat import _
-from seantis.kantonsrat.interfaces import ISeantisKantonsratSpecific
 from seantis.kantonsrat.browser.base import BaseForm
 
 
@@ -19,7 +18,6 @@ class LimitedMembershipEditForm(BaseForm):
 
     grok.context(IMembership)
     grok.require('cmf.ModifyPortalContent')
-    grok.layer(ISeantisKantonsratSpecific)
 
     ignoreContext = False
 
