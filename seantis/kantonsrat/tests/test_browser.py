@@ -1,3 +1,9 @@
+from freezegun import freeze_time
+from datetime import date, timedelta
+
+from plone import api
+
+from seantis.plonetools import tools
 from seantis.kantonsrat import tests
 
 
@@ -65,3 +71,72 @@ class TestBrowser(tests.FunctionalTestCase):
         browser.open(memberlist_url)
         self.assertIn('Frank', browser.contents)
         self.assertIn('Underwood', browser.contents)
+
+    def test_organization_activation(self):
+        browser = self.new_admin_browser()
+        anonymous = self.new_browser()
+
+        browser.open(self.infolder('/++add++seantis.kantonsrat.organization'))
+
+        # by default, organizations are active
+        browser.getControl('Title').value = u'NSA'
+        browser.getControl('Description').value = u'Spying and stuff'
+        browser.getControl('Save').click()
+
+        browser.open(self.infolder(
+            '/nsa/content_status_modify?workflow_action=publish'
+        ))
+
+        browser.open(self.infolder('/organization_listing'))
+
+        # managers see the inactive organization
+        self.assertIn('<dt class="active">', browser.contents)
+        self.assertNotIn('<dt class="inactive">', browser.contents)
+
+        anonymous.open(self.infolder('/organization_listing'))
+        self.assertIn('<dt class="active">', anonymous.contents)
+        self.assertNotIn('<dt class="inactive">', anonymous.contents)
+
+        # deactivating an organization tags it in the list and removes
+        # it for anonymous users. It also won't show up in the navigation
+        browser.open(self.infolder('/nsa/edit'))
+        browser.getControl('Active').selected = False
+        browser.getControl('Save').click()
+
+        browser.open(self.infolder('/organization_listing'))
+
+        self.assertIn('<dt class="inactive">', browser.contents)
+        self.assertNotIn('<dt class="active">', browser.contents)
+
+        # anonymous does not see inactive organizations
+        anonymous.open(self.infolder('/organization_listing'))
+        self.assertNotIn('<dt class="active">', anonymous.contents)
+        self.assertNotIn('<dt class="inactive">', anonymous.contents)
+
+        # unfortunately, using a date to trigger the state is not automatic.
+        # a cronjob as to be used for this (which calls a view)
+        last_week = date.today() - timedelta(days=7)
+        with freeze_time(last_week):
+            browser.open(self.infolder('/nsa/edit'))
+            browser.getControl('Active').selected = True
+            browser.set_date('end', last_week)
+            browser.getControl('Save').click()
+
+        # the view is always up to date
+        browser.open(self.infolder('/organization_listing'))
+        self.assertIn('<dt class="inactive">', browser.contents)
+        self.assertNotIn('<dt class="active">', browser.contents)
+
+        # but the navigation isn't.. unfortunately I cannot get the
+        # portlets to work here, so we have to peek into the brain
+        # to see the actual state
+        browser.open(self.infolder('/nsa/uuid'))
+        uuid = browser.contents
+        brain = tools.get_brain_by_object(api.content.get(UID=uuid))
+        self.assertEqual(brain.exclude_from_nav, False)
+
+        # trigger the state and this will change
+        browser.open(self.infolder('/trigger-state'))
+
+        brain = tools.get_brain_by_object(api.content.get(UID=uuid))
+        self.assertEqual(brain.exclude_from_nav, True)

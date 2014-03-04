@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-04 08:54+0000\n"
+"POT-Creation-Date: 2014-03-04 10:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,6 +76,10 @@ msgstr ""
 
 #: ./types/kantonsrat.xml
 msgid "Email"
+msgstr ""
+
+#: ./types/organization.py:80
+msgid "End"
 msgstr ""
 
 #: ./types/kantonsrat.xml

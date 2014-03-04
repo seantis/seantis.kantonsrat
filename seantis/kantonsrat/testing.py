@@ -41,6 +41,7 @@ class TestLayer(PloneSandboxLayer):
 
     def setUpPloneSite(self, portal):
         quickInstallProduct(portal, 'seantis.kantonsrat')
+        quickInstallProduct(portal, 'plone.app.portlets')
         applyProfile(portal, 'seantis.kantonsrat:default')
 
     def tearDownZope(self, app):

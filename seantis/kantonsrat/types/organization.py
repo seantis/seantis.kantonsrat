@@ -77,7 +77,7 @@ class IOrganization(form.Schema):
 
     form.widget('end', years_range=(-10, 25))
     end = schema.Date(
-        title=_(u'Start'),
+        title=_(u'End'),
         description=_(
             u"Date after which the organization is invisible."
         ),
@@ -129,10 +129,12 @@ class Organization(Container):
 
 
 def is_organization_visible(org):
-    if org.active or org.active is Missing.Value:
-        return True
+    active = org.active in (Missing.Value, True)
+
+    if not active:
+        return False
 
     today = date.today()
-    start, end = (org.start or date.min), (org.start or date.min)
+    start, end = (org.start or date.min), (org.end or date.max)
 
     return (start <= today and today <= end)
