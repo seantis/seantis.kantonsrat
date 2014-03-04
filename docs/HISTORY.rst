@@ -5,6 +5,14 @@ Changelog
 0.5 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Adds the ability to activate/deactivate organisations using a flag or
+  a start/end date. Inactive organisations are not shown in the list and
+  in the navigation. They are still available through the url.
+
+  This needs a cronjob run every night calling
+  https://example.org/plone/trigger-state as administrator.
+  [href]
+
 - Adds the ability to directly edit the role and the note of a membership.
   Fixes #4.
   [href]
