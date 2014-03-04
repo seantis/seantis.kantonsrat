@@ -52,7 +52,7 @@ setup(
         'five.grok',
         'plone.app.dexterity [grok, relations]',
         'seantis.people>=0.17',
-        'seantis.plonetools>=0.10',
+        'seantis.plonetools>=0.11',
         'collective.dexteritytextindexer',
     ],
     extras_require=dict(
