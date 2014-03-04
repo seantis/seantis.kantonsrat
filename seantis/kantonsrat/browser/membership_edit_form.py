@@ -3,8 +3,6 @@ from five import grok
 from z3c.form import field
 
 from seantis.people.interfaces import IMembership
-
-from seantis.kantonsrat import _
 from seantis.kantonsrat.browser.base import BaseForm
 
 
@@ -21,8 +19,14 @@ class LimitedMembershipEditForm(BaseForm):
 
     ignoreContext = False
 
-    label = _(u'Edit membership')
     fields = field.Fields(IMembership).select('title', 'note')
+
+    @property
+    def label(self):
+        return u'{organization} - {person}'.format(
+            organization=self.context.aq_inner.aq_parent.Title(),
+            person=self.context.person.to_object.title,
+        )
 
     @property
     def success_url(self):
