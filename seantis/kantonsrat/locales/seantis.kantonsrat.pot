@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-02-27 14:33+0000\n"
+"POT-Creation-Date: 2014-03-04 08:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,10 @@ msgstr ""
 msgid "Academic Title"
 msgstr ""
 
+#: ./types/organization.py:56
+msgid "Active"
+msgstr ""
+
 #: ./types/kantonsrat.xml
 msgid "Address"
 msgstr ""
@@ -33,7 +37,7 @@ msgstr ""
 msgid "Birthday"
 msgstr ""
 
-#: ./types/organization.py:16
+#: ./types/organization.py:22
 msgid "Committee"
 msgstr ""
 
@@ -41,13 +45,29 @@ msgstr ""
 msgid "Committees"
 msgstr ""
 
+#: ./types/organization.py:81
+msgid "Date after which the organization is invisible."
+msgstr ""
+
+#: ./types/organization.py:72
+msgid "Date from which the organization is visible (if active)."
+msgstr ""
+
 #: ./browser/templates/organization.pt:10
-#: ./types/organization.py:39
+#: ./types/organization.py:45
 msgid "Description"
 msgstr ""
 
 #: ./types/kantonsrat.xml
 msgid "Document Dispatch Address"
+msgstr ""
+
+#: ./browser/templates/organization.pt:29
+msgid "Edit"
+msgstr ""
+
+#: ./browser/membership_edit_form.py:24
+msgid "Edit membership"
 msgstr ""
 
 #: ./types/kantonsrat.xml
@@ -63,7 +83,7 @@ msgid "Entry Date"
 msgstr ""
 
 #: ./types/kantonsrat.xml
-#: ./types/organization.py:17
+#: ./types/organization.py:23
 msgid "Faction"
 msgstr ""
 
@@ -81,6 +101,14 @@ msgstr ""
 
 #: ./types/kantonsrat.xml
 msgid "Function"
+msgstr ""
+
+#: ./types/organization.py:57
+msgid "Inactive organisations are not listed in the member's view and are not available in the list of organizations.<br/> They are, however, still available through their url.<br/> Active organisations are also shown depending on their start/end date, if those are provided.<br/>Inactive organisations are never shown, independent of any dates"
+msgstr ""
+
+#: ./browser/templates/organization_listing.pt:23
+msgid "Inactive:"
 msgstr ""
 
 #: ./profiles/default/types/seantis.kantonsrat.member.xml
@@ -109,7 +137,7 @@ msgstr ""
 
 #: ./types/kantonsrat.py:24
 #: ./types/kantonsrat.xml
-#: ./types/organization.py:18
+#: ./types/organization.py:24
 msgid "Party"
 msgstr ""
 
@@ -126,7 +154,7 @@ msgid "Place of Citizenship"
 msgstr ""
 
 #: ./browser/templates/organization.pt:15
-#: ./types/organization.py:45
+#: ./types/organization.py:51
 msgid "Portrait"
 msgstr ""
 
@@ -150,11 +178,19 @@ msgstr ""
 msgid "Secondary Email"
 msgstr ""
 
-#: ./types/organization.py:34
+#: ./types/organization.py:71
+msgid "Start"
+msgstr ""
+
+#: ./types/organization.py:96
+msgid "The start date is set after the end date."
+msgstr ""
+
+#: ./types/organization.py:40
 msgid "Title"
 msgstr ""
 
-#: ./types/organization.py:27
+#: ./types/organization.py:33
 msgid "Type"
 msgstr ""
 

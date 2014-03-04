@@ -7,7 +7,7 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    i18n_domain="seantis.kantonsrat"
+    i18n_domain="plone"
     >
 
 <!-- Dependencies -->
@@ -31,9 +31,9 @@
 <browser:menuItem i18n:attributes="title description"
     for="Products.ATContentTypes.interface.IATFolder"
     menu="plone_displayviews"
-    title="Organization listing"
+    title="Organizations"
     action="@@organization_listing"
-    description="List Organizations only"
+    description="List organizations only"
 />
 
 <!-- Indexes -->
