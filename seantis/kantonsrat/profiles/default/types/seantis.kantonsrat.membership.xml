@@ -4,19 +4,17 @@
         i18n:domain="seantis.kantonsrat">
 
   <!-- Basic metadata -->
-  <property name="title" i18n:translate="">Kantonsrat Organization</property>
+  <property name="title" i18n:translate="">Membership</property>
   <property name="icon_expr">string:${portal_url}/file_icon.png</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">True</property>
-  <property name="allowed_content_types">
-    <element value="seantis.kantonsrat.membership" /> 
-  </property>
+  <property name="allowed_content_types"></property>
 
   <!-- schema interface -->
-  <property name="schema">seantis.kantonsrat.types.IOrganization</property>
+  <property name="schema">seantis.kantonsrat.types.IMembership</property>
 
   <!-- class used for content items -->
-  <property name="klass">seantis.kantonsrat.types.Organization</property>
+  <property name="klass">seantis.kantonsrat.types.Membership</property>
 
   <!-- add permission -->
   <property name="add_permission">cmf.AddPortalContent</property>

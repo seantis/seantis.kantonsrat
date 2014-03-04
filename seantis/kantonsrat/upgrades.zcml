@@ -37,4 +37,11 @@
         handler=".upgrades.upgrade_type_info"
     />
 
+    <genericsetup:upgradeStep
+        title="Import new kantonsrat membership."
+        source="1005" destination="1006"
+        profile="seantis.kantonsrat:default"
+        handler=".upgrades.upgrade_type_info"
+    />
+
 </configure>

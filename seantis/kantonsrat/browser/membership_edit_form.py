@@ -1,7 +1,7 @@
 from five import grok
 
 from seantis.plonetools.browser import BaseGroup
-from seantis.people.interfaces import IMembership
+from seantis.kantonsrat.types import IMembership
 from seantis.kantonsrat import _
 from seantis.kantonsrat.browser.base import BaseForm
 
@@ -18,7 +18,7 @@ class AdvancedGroup(BaseGroup):
     label = _(u'Advanced')
 
     group_fields = [
-        [IMembership, ['person']]
+        [IMembership, ['person', 'replacement_for']]
     ]
 
     def update_fields(self):
