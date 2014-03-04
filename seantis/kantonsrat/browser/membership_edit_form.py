@@ -1,9 +1,33 @@
 from five import grok
 
-from z3c.form import field
-
+from seantis.plonetools.browser import BaseGroup
 from seantis.people.interfaces import IMembership
+from seantis.kantonsrat import _
 from seantis.kantonsrat.browser.base import BaseForm
+
+
+class GeneralGroup(BaseGroup):
+    label = _(u'General')
+
+    group_fields = [
+        [IMembership, ['title', 'note']]
+    ]
+
+
+class AdvancedGroup(BaseGroup):
+    label = _(u'Advanced')
+
+    group_fields = [
+        [IMembership, ['person']]
+    ]
+
+    def update_fields(self):
+        self.fields['person'].field.description = _(
+            u"Don't change this value if a new members replaces this member. "
+            u"Instead, change this members role and add a new member with the "
+            u"new role. Otherwise the history of this organization won't be "
+            u"correct anymore. "
+        )
 
 
 class LimitedMembershipEditForm(BaseForm):
@@ -17,9 +41,10 @@ class LimitedMembershipEditForm(BaseForm):
     grok.context(IMembership)
     grok.require('cmf.ModifyPortalContent')
 
-    ignoreContext = False
+    groups = (GeneralGroup, AdvancedGroup)
 
-    fields = field.Fields(IMembership).select('title', 'note')
+    enable_form_tabbing = True
+    ignoreContext = False
 
     @property
     def label(self):

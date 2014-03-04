@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-04 10:47+0000\n"
+"POT-Creation-Date: 2014-03-04 13:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,10 @@ msgstr "Adresse"
 #: ./types/kantonsrat.xml
 msgid "Address Salutation"
 msgstr "Address-Anrede"
+
+#: ./browser/membership_edit_form.py:18
+msgid "Advanced"
+msgstr "Erweitert"
 
 #: ./types/kantonsrat.xml
 msgid "Birthday"
@@ -59,13 +63,13 @@ msgstr "Beschreibung"
 msgid "Document Dispatch Address"
 msgstr "Spedition KR-Vorlagen Adresse"
 
+#: ./browser/membership_edit_form.py:25
+msgid "Don't change this value if a new members replaces this member. Instead, change this members role and add a new member with the new role. Otherwise the history of this organization won't be correct anymore. "
+msgstr "Bitte ändern Sie diesen Verweis nicht wenn ein Mitglied ein anderes Mitglied ersetzt. Stattdessen ändern Sie bitte die Rolle dieses Mitglieds und erstellen Sie eine neue Mitgliedschaft mit der neuen Rolle. Andernfalls können die Änderungen innerhalb dieser Organisation nicht nachvollzogen werden."
+
 #: ./browser/templates/organization.pt:29
 msgid "Edit"
 msgstr "Bearbeiten"
-
-#: ./browser/membership_edit_form.py:24
-msgid "Edit membership"
-msgstr "Mitgliedschaft bearbeiten"
 
 #: ./types/kantonsrat.xml
 msgid "Electoral District"
@@ -103,6 +107,10 @@ msgstr "Vorname"
 #: ./types/kantonsrat.xml
 msgid "Function"
 msgstr "Funktion"
+
+#: ./browser/membership_edit_form.py:10
+msgid "General"
+msgstr "Allgemein"
 
 #: ./types/organization.py:57
 msgid "Inactive organisations are not listed in the member's view and are not available in the list of organizations.<br/> They are, however, still available through their url.<br/> Active organisations are also shown depending on their start/end date, if those are provided.<br/>Inactive organisations are never shown, independent of any dates"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-04 10:47+0000\n"
+"POT-Creation-Date: 2014-03-04 13:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,6 +31,10 @@ msgstr ""
 
 #: ./types/kantonsrat.xml
 msgid "Address Salutation"
+msgstr ""
+
+#: ./browser/membership_edit_form.py:18
+msgid "Advanced"
 msgstr ""
 
 #: ./types/kantonsrat.xml
@@ -62,12 +66,12 @@ msgstr ""
 msgid "Document Dispatch Address"
 msgstr ""
 
-#: ./browser/templates/organization.pt:29
-msgid "Edit"
+#: ./browser/membership_edit_form.py:25
+msgid "Don't change this value if a new members replaces this member. Instead, change this members role and add a new member with the new role. Otherwise the history of this organization won't be correct anymore. "
 msgstr ""
 
-#: ./browser/membership_edit_form.py:24
-msgid "Edit membership"
+#: ./browser/templates/organization.pt:29
+msgid "Edit"
 msgstr ""
 
 #: ./types/kantonsrat.xml
@@ -105,6 +109,10 @@ msgstr ""
 
 #: ./types/kantonsrat.xml
 msgid "Function"
+msgstr ""
+
+#: ./browser/membership_edit_form.py:10
+msgid "General"
 msgstr ""
 
 #: ./types/organization.py:57
