@@ -15,3 +15,8 @@ def upgrade_type_info(context):
     upgrade_portal_type(
         'seantis.kantonsrat.member', 'seantis.kantonsrat', 'default'
     )
+
+
+def upgrade_membership_title(context):
+    from seantis.people.upgrades import upgrade_membership_title as upgrade
+    upgrade(context)
