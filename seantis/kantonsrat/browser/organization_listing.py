@@ -1,3 +1,5 @@
+from plone import api
+
 from five import grok
 from zope.security import checkPermission
 
@@ -16,9 +18,41 @@ class Listing(BaseView):
 
     template = grok.PageTemplateFile('templates/organization_listing.pt')
 
-    def list_item(self, item):
-        # show all for managers
-        if checkPermission('cmf.ModifyPortalContent', self.context):
+    def organizations(self):
+        catalog = api.portal.get_tool('portal_catalog')
+        path = '/'.join(self.context.getPhysicalPath())
+
+        organizations = catalog.searchResults({
+            'path': {'query': path, 'depth': 1},
+            'portal_type': 'seantis.kantonsrat.organization'
+        })
+
+        def case_sensitive_sort_without_state(item):
+            return item.Title
+
+        # moves the inactive organizations at the end of the list
+        def case_sensitive_sort_with_state(item):
+            if self.is_active(item):
+                return item.Title
+
+            return ''.join(('zzz', item.Title))
+
+        # only managers need the stateful sorting, other users get the faster
+        # sort instead. It would be better to use a sort index here, but this
+        # may not be final and it should be fast enough anyway.
+        if self.is_manager():
+            return sorted(organizations, key=case_sensitive_sort_with_state)
+        else:
+            return sorted(organizations, key=case_sensitive_sort_without_state)
+
+    def is_manager(self):
+        return checkPermission('cmf.ModifyPortalContent', self.context)
+
+    def is_visible(self, organization):
+        if self.is_manager():
             return True
 
-        return is_organization_visible(item)
+        return self.is_active(organization)
+
+    def is_active(self, organization):
+        return is_organization_visible(organization)
