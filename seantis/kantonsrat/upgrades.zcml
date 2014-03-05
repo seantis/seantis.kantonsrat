@@ -38,8 +38,15 @@
     />
 
     <genericsetup:upgradeStep
-        title="Import new kantonsrat membership."
+        title="Migrate new membership titles."
         source="1005" destination="1006"
+        profile="seantis.kantonsrat:default"
+        handler=".upgrades.upgrade_membership_title"
+    />
+
+    <genericsetup:upgradeStep
+        title="Import new kantonsrat membership."
+        source="1006" destination="1007"
         profile="seantis.kantonsrat:default"
         handler=".upgrades.upgrade_type_info"
     />

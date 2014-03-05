@@ -10,7 +10,7 @@ class GeneralGroup(BaseGroup):
     label = _(u'General')
 
     group_fields = [
-        [IMembership, ['title', 'note']]
+        [IMembership, ['role', 'note']]
     ]
 
 
