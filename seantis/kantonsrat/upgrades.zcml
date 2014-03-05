@@ -24,24 +24,24 @@
     />
 
     <genericsetup:upgradeStep
-        title="Import new organization indexes."
+        title="Migrate new membership titles."
         source="1003" destination="1004"
+        profile="seantis.kantonsrat:default"
+        handler=".upgrades.upgrade_membership_title"
+    />
+
+    <genericsetup:upgradeStep
+        title="Import new organization indexes."
+        source="1004" destination="1005"
         profile="seantis.kantonsrat:default"
         handler=".setuphandler.add_catalog_indexes"
     />
 
     <genericsetup:upgradeStep
         title="Import new organization_listing view."
-        source="1004" destination="1005"
-        profile="seantis.kantonsrat:default"
-        handler=".upgrades.upgrade_type_info"
-    />
-
-    <genericsetup:upgradeStep
-        title="Migrate new membership titles."
         source="1005" destination="1006"
         profile="seantis.kantonsrat:default"
-        handler=".upgrades.upgrade_membership_title"
+        handler=".upgrades.upgrade_type_info"
     />
 
     <genericsetup:upgradeStep
@@ -49,6 +49,13 @@
         source="1006" destination="1007"
         profile="seantis.kantonsrat:default"
         handler=".upgrades.upgrade_type_info"
+    />
+
+    <genericsetup:upgradeStep
+        title="Move to new membership type."
+        source="1007" destination="1008"
+        profile="seantis.kantonsrat:default"
+        handler=".upgrades.move_to_new_membership_type"
     />
 
 </configure>

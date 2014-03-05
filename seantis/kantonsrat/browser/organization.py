@@ -28,7 +28,7 @@ class OrganizationView(BaseView):
         catalog = api.portal.get_tool('portal_catalog')
         memberships = catalog(
             path={'query': folder_path, 'depth': 1},
-            portal_type='seantis.people.membership',
+            portal_type='seantis.kantonsrat.membership',
             sort_on='getObjPositionInParent',
         )
 
@@ -46,7 +46,7 @@ class OrganizationView(BaseView):
 
             members.append(
                 Member(
-                    membership.title,
+                    membership.role,
                     person_brain.Title,
                     person_brain.getURL(),
                     membership.note,

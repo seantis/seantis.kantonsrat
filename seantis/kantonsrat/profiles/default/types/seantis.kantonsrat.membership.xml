@@ -4,7 +4,7 @@
         i18n:domain="seantis.kantonsrat">
 
   <!-- Basic metadata -->
-  <property name="title" i18n:translate="">Membership</property>
+  <property name="title" i18n:translate="">Kantonsrat Membership</property>
   <property name="icon_expr">string:${portal_url}/file_icon.png</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">True</property>
@@ -21,7 +21,7 @@
 
   <!-- enabled behaviors -->
   <property name="behaviors">
-    <element value="plone.app.content.interfaces.INameFromTitle" />
+    <element value="seantis.plonetools.behaviors.customtitle.ICustomTitle" />
   </property>
 
 </object>
