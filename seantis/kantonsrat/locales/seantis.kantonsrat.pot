@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-04 13:32+0000\n"
+"POT-Creation-Date: 2014-03-06 14:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,6 +127,10 @@ msgstr ""
 msgid "Kantonsrat Member"
 msgstr ""
 
+#: ./profiles/default/types/seantis.kantonsrat.membership.xml
+msgid "Kantonsrat Membership"
+msgstr ""
+
 #: ./profiles/default/types/seantis.kantonsrat.organization.xml
 msgid "Kantonsrat Organization"
 msgstr ""
@@ -182,6 +186,14 @@ msgstr ""
 msgid "Profession"
 msgstr ""
 
+#: ./types/membership.py:43
+msgid "Replacement for"
+msgstr ""
+
+#: ./browser/organization.py:61
+msgid "Replacement for ${name}"
+msgstr ""
+
 #: ./types/kantonsrat.xml
 msgid "Salutation"
 msgstr ""
@@ -192,6 +204,10 @@ msgstr ""
 
 #: ./types/organization.py:71
 msgid "Start"
+msgstr ""
+
+#: ./types/membership.py:44
+msgid "The membership which this membership replaces"
 msgstr ""
 
 #: ./types/organization.py:96

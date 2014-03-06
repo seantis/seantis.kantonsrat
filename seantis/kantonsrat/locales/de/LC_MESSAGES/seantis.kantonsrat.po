@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-04 13:32+0000\n"
+"POT-Creation-Date: 2014-03-06 14:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,6 +124,10 @@ msgstr "Inaktiv:"
 msgid "Kantonsrat Member"
 msgstr "Kantonsrats-Mitglied"
 
+#: ./profiles/default/types/seantis.kantonsrat.membership.xml
+msgid "Kantonsrat Membership"
+msgstr "Kantonsrats-Mitgliedschaft"
+
 #: ./profiles/default/types/seantis.kantonsrat.organization.xml
 msgid "Kantonsrat Organization"
 msgstr "Kantonsrats-Organisation"
@@ -179,6 +183,14 @@ msgstr "Privat-Adresse"
 msgid "Profession"
 msgstr "Beruf"
 
+#: ./types/membership.py:43
+msgid "Replacement for"
+msgstr "Ersatz für"
+
+#: ./browser/organization.py:61
+msgid "Replacement for ${name}"
+msgstr "Ersatz für ${name}"
+
 #: ./types/kantonsrat.xml
 msgid "Salutation"
 msgstr "Anrede"
@@ -190,6 +202,10 @@ msgstr "Zweite E-Mail"
 #: ./types/organization.py:71
 msgid "Start"
 msgstr "Start"
+
+#: ./types/membership.py:44
+msgid "The membership which this membership replaces"
+msgstr "Das Mitglied das ersetzt wird."
 
 #: ./types/organization.py:96
 msgid "The start date is set after the end date."
