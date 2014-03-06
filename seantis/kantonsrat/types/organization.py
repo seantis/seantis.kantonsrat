@@ -7,6 +7,8 @@ from zope import schema
 from zope.interface import invariant, Invalid
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
+from plone import api
+from plone.uuid.interfaces import IUUID
 from plone.indexer import indexer
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.dexterity.content import Container
@@ -14,6 +16,7 @@ from plone.directives import form
 
 from collective.dexteritytextindexer import searchable
 
+from seantis.plonetools import tools
 from seantis.kantonsrat import _
 
 
@@ -124,8 +127,65 @@ def organization_end(obj):
 
 class Organization(Container):
 
+    available_states = ('active', 'inactive', 'all')
+
     def exclude_from_nav(self):
         return not is_organization_visible(self)
+
+    def memberships(self, state='active'):
+        catalog = api.portal.get_tool('portal_catalog')
+        folder_path = '/'.join(self.getPhysicalPath())
+
+        memberships = catalog(
+            path={'query': folder_path, 'depth': 1},
+            portal_type='seantis.kantonsrat.membership',
+            sort_on='getObjPositionInParent',
+        )
+
+        return self.filter_memberships_by_state(memberships, state)
+
+    def filter_memberships_by_state(self, memberships, state, keydate=None):
+        assert state in self.available_states
+
+        if state == 'all':
+            return memberships
+
+        keydate = keydate or date.today()
+
+        # Active memberships are the ones with a valid start/end date.
+        # They also must not be have a replacement linked to them.
+        # Future memberships are ignored.
+
+        def without_future_memberships(memberships):
+
+            for membership in memberships:
+                start = (membership.start or date.min)
+                end = (membership.end or date.max)
+
+                if start <= keydate and keydate <= end:
+                    yield membership
+
+        # xxx use metadata or something instead of relying on getObject
+        # xxx this is a proof of concept for now - it would be nice
+        # xxx to store a uuid reference instead (or switch to uuid source)
+        considered = list(
+            c.getObject() for c in without_future_memberships(memberships)
+        )
+
+        replaced = set(
+            IUUID(r.replacement_for.to_object)
+            for r in considered if r.replacement_for
+        )
+
+        # xxx seriously, this is currently done so poorly
+        if state == 'active':
+            return map(tools.get_brain_by_object, (
+                m for m in considered if IUUID(m) not in replaced
+            ))
+        else:
+            return map(tools.get_brain_by_object, (
+                m for m in considered if IUUID(m) in replaced
+            ))
 
 
 def is_organization_visible(org):

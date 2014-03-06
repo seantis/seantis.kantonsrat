@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="seantis.people"
+      tal:omit-tag="">
+
+    <tal:comment replace="nothing">
+    Members block in an organization. Requires 'memberships' - a list of
+    seantis.kantonsrat.membership brains.
+    </tal:comment>
+
+    <metal:define define-macro="kantonsrat-organization-members"
+       tal:define="macro python: context.unrestrictedTraverse('@@seantis-kantonsrat-macros')">
+        <ul class="dense">
+          <li tal:repeat="member python: macro.as_simplified_structure(memberships)">
+              <a tal:attributes="href member/url" tal:content="member/person" />
+              <tal:block condition="member/role | nothing">
+                  <span class="seantis-role-separator">-</span>
+                  <span class="seantis-role" tal:content="member/role"></span>
+              </tal:block>
+              <tal:block condition="member/membership_edit | nothing">
+                  <a tal:attributes="href member/membership_edit" i18n:translate="">Edit</a>
+              </tal:block>
+              <tal:block condition="member/replacement_for">
+                  <p tal:content="member/replacement_for"></p>
+              </tal:block>
+              <tal:block condition="member/note | nothing">
+                  <p tal:content="member/note"></p>
+              </tal:block>
+          </li>
+      </ul>
+    </metal:define>
+</html>

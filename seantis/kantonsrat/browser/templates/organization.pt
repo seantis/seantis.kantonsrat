@@ -16,26 +16,14 @@
                 <div class="kantonsrat-portrait" tal:content="structure context/portrait" />
             </tal:block>
 
-            <tal:block condition="view/members">
+            <tal:block define="memberships view/active_members" condition="memberships">
                 <h2 i18n:translate="">Members</h2>
-                <ul class="dense">
-                    <li tal:repeat="member view/members">
-                        <a tal:attributes="href member/url" tal:content="member/person" />
-                        <tal:block condition="member/role | nothing">
-                            <span class="seantis-role-separator">-</span>
-                            <span class="seantis-role" tal:content="member/role"></span>
-                        </tal:block>
-                        <tal:block condition="member/membership_edit | nothing">
-                            <a tal:attributes="href member/membership_edit" i18n:translate="">Edit</a>
-                        </tal:block>
-                        <tal:block condition="member/replacement_for">
-                            <p tal:content="member/replacement_for"></p>
-                        </tal:block>
-                        <tal:block condition="member/note | nothing">
-                            <p tal:content="member/note"></p>
-                        </tal:block>
-                    </li>
-                </ul>
+                <metal:use use-macro="context/@@seantis-kantonsrat-macros/kantonsrat-organization-members" />
+            </tal:block>
+           
+           <tal:block define="memberships view/inactive_members" condition="memberships">
+                <h2 i18n:translate="">Previous Members</h2>
+                <metal:use use-macro="context/@@seantis-kantonsrat-macros/kantonsrat-organization-members" />
             </tal:block>
         </metal:block>
     </metal:block>

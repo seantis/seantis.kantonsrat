@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-06 14:39+0000\n"
+"POT-Creation-Date: 2014-03-06 15:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "Academic Title"
 msgstr "Akademischer Titel"
 
-#: ./types/organization.py:56
+#: ./types/organization.py:59
 msgid "Active"
 msgstr "Aktiv"
 
@@ -38,7 +38,7 @@ msgstr "Erweitert"
 msgid "Birthday"
 msgstr "Geburtstag"
 
-#: ./types/organization.py:22
+#: ./types/organization.py:25
 msgid "Committee"
 msgstr "Kommission"
 
@@ -46,16 +46,16 @@ msgstr "Kommission"
 msgid "Committees"
 msgstr "Kommissionen"
 
-#: ./types/organization.py:81
+#: ./types/organization.py:84
 msgid "Date after which the organization is invisible."
 msgstr "Nach diesem Datum ist die Organisation unsichtbar."
 
-#: ./types/organization.py:72
+#: ./types/organization.py:75
 msgid "Date from which the organization is visible (if active)."
 msgstr "Nach diesem Datum ist die Organisation sichtbar (sofern sie aktiv ist)."
 
 #: ./browser/templates/organization.pt:10
-#: ./types/organization.py:45
+#: ./types/organization.py:48
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -67,10 +67,6 @@ msgstr "Spedition KR-Vorlagen Adresse"
 msgid "Don't change this value if a new members replaces this member. Instead, change this members role and add a new member with the new role. Otherwise the history of this organization won't be correct anymore. "
 msgstr "Bitte ändern Sie diesen Verweis nicht wenn ein Mitglied ein anderes Mitglied ersetzt. Stattdessen ändern Sie bitte die Rolle dieses Mitglieds und erstellen Sie eine neue Mitgliedschaft mit der neuen Rolle. Andernfalls können die Änderungen innerhalb dieser Organisation nicht nachvollzogen werden."
 
-#: ./browser/templates/organization.pt:29
-msgid "Edit"
-msgstr "Bearbeiten"
-
 #: ./types/kantonsrat.xml
 msgid "Electoral District"
 msgstr "Wahlkreis"
@@ -79,7 +75,7 @@ msgstr "Wahlkreis"
 msgid "Email"
 msgstr "E-Mail"
 
-#: ./types/organization.py:80
+#: ./types/organization.py:83
 msgid "End"
 msgstr "Ende"
 
@@ -88,7 +84,7 @@ msgid "Entry Date"
 msgstr "Eintritt"
 
 #: ./types/kantonsrat.xml
-#: ./types/organization.py:23
+#: ./types/organization.py:26
 msgid "Faction"
 msgstr "Fraktion"
 
@@ -112,7 +108,11 @@ msgstr "Funktion"
 msgid "General"
 msgstr "Allgemein"
 
-#: ./types/organization.py:57
+#: ./browser/templates/organization.pt:25
+msgid "Previous Members"
+msgstr "Frühere Mitglieder"
+
+#: ./types/organization.py:60
 msgid "Inactive organisations are not listed in the member's view and are not available in the list of organizations.<br/> They are, however, still available through their url.<br/> Active organisations are also shown depending on their start/end date, if those are provided.<br/>Inactive organisations are never shown, independent of any dates"
 msgstr "Inaktive Organisationen werden auf den Mitgliedern, in der Navigation und in der Übersicht nicht dargestellt.<br/>Sie sind aber immer noch durch ihre URL erreichar.<br/>Aktive Organisationen sind ausserdem abhängig von ihrem Start/End Datum.<br/>Inaktive Organisationen sind unabhängig von ihrem Start/End Datum."
 
@@ -150,7 +150,7 @@ msgstr "Handy"
 
 #: ./types/kantonsrat.py:24
 #: ./types/kantonsrat.xml
-#: ./types/organization.py:24
+#: ./types/organization.py:27
 msgid "Party"
 msgstr "Partei"
 
@@ -167,7 +167,7 @@ msgid "Place of Citizenship"
 msgstr "Bürgerort"
 
 #: ./browser/templates/organization.pt:15
-#: ./types/organization.py:51
+#: ./types/organization.py:54
 msgid "Portrait"
 msgstr "Portrait"
 
@@ -187,7 +187,7 @@ msgstr "Beruf"
 msgid "Replacement for"
 msgstr "Ersatz für"
 
-#: ./browser/organization.py:61
+#: ./browser/macros.py:54
 msgid "Replacement for ${name}"
 msgstr "Ersatz für ${name}"
 
@@ -199,7 +199,7 @@ msgstr "Anrede"
 msgid "Secondary Email"
 msgstr "Zweite E-Mail"
 
-#: ./types/organization.py:71
+#: ./types/organization.py:74
 msgid "Start"
 msgstr "Start"
 
@@ -207,15 +207,15 @@ msgstr "Start"
 msgid "The membership which this membership replaces"
 msgstr "Das Mitglied das ersetzt wird."
 
-#: ./types/organization.py:96
+#: ./types/organization.py:99
 msgid "The start date is set after the end date."
 msgstr "Das Start Datum darf nicht nach dem End Datum gesetzt sein."
 
-#: ./types/organization.py:40
+#: ./types/organization.py:43
 msgid "Title"
 msgstr "Titel"
 
-#: ./types/organization.py:33
+#: ./types/organization.py:36
 msgid "Type"
 msgstr "Typ"
 

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-06 14:39+0000\n"
+"POT-Creation-Date: 2014-03-06 15:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Academic Title"
 msgstr ""
 
-#: ./types/organization.py:56
+#: ./types/organization.py:59
 msgid "Active"
 msgstr ""
 
@@ -41,7 +41,7 @@ msgstr ""
 msgid "Birthday"
 msgstr ""
 
-#: ./types/organization.py:22
+#: ./types/organization.py:25
 msgid "Committee"
 msgstr ""
 
@@ -49,16 +49,16 @@ msgstr ""
 msgid "Committees"
 msgstr ""
 
-#: ./types/organization.py:81
+#: ./types/organization.py:84
 msgid "Date after which the organization is invisible."
 msgstr ""
 
-#: ./types/organization.py:72
+#: ./types/organization.py:75
 msgid "Date from which the organization is visible (if active)."
 msgstr ""
 
 #: ./browser/templates/organization.pt:10
-#: ./types/organization.py:45
+#: ./types/organization.py:48
 msgid "Description"
 msgstr ""
 
@@ -70,10 +70,6 @@ msgstr ""
 msgid "Don't change this value if a new members replaces this member. Instead, change this members role and add a new member with the new role. Otherwise the history of this organization won't be correct anymore. "
 msgstr ""
 
-#: ./browser/templates/organization.pt:29
-msgid "Edit"
-msgstr ""
-
 #: ./types/kantonsrat.xml
 msgid "Electoral District"
 msgstr ""
@@ -82,7 +78,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: ./types/organization.py:80
+#: ./types/organization.py:83
 msgid "End"
 msgstr ""
 
@@ -91,7 +87,7 @@ msgid "Entry Date"
 msgstr ""
 
 #: ./types/kantonsrat.xml
-#: ./types/organization.py:23
+#: ./types/organization.py:26
 msgid "Faction"
 msgstr ""
 
@@ -115,7 +111,11 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: ./types/organization.py:57
+#: ./browser/templates/organization.pt:25
+msgid "Inactive Members"
+msgstr ""
+
+#: ./types/organization.py:60
 msgid "Inactive organisations are not listed in the member's view and are not available in the list of organizations.<br/> They are, however, still available through their url.<br/> Active organisations are also shown depending on their start/end date, if those are provided.<br/>Inactive organisations are never shown, independent of any dates"
 msgstr ""
 
@@ -153,7 +153,7 @@ msgstr ""
 
 #: ./types/kantonsrat.py:24
 #: ./types/kantonsrat.xml
-#: ./types/organization.py:24
+#: ./types/organization.py:27
 msgid "Party"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgid "Place of Citizenship"
 msgstr ""
 
 #: ./browser/templates/organization.pt:15
-#: ./types/organization.py:51
+#: ./types/organization.py:54
 msgid "Portrait"
 msgstr ""
 
@@ -190,7 +190,7 @@ msgstr ""
 msgid "Replacement for"
 msgstr ""
 
-#: ./browser/organization.py:61
+#: ./browser/macros.py:54
 msgid "Replacement for ${name}"
 msgstr ""
 
@@ -202,7 +202,7 @@ msgstr ""
 msgid "Secondary Email"
 msgstr ""
 
-#: ./types/organization.py:71
+#: ./types/organization.py:74
 msgid "Start"
 msgstr ""
 
@@ -210,15 +210,15 @@ msgstr ""
 msgid "The membership which this membership replaces"
 msgstr ""
 
-#: ./types/organization.py:96
+#: ./types/organization.py:99
 msgid "The start date is set after the end date."
 msgstr ""
 
-#: ./types/organization.py:40
+#: ./types/organization.py:43
 msgid "Title"
 msgstr ""
 
-#: ./types/organization.py:33
+#: ./types/organization.py:36
 msgid "Type"
 msgstr ""
 
