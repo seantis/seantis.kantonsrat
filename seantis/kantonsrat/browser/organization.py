@@ -5,6 +5,7 @@ from five import grok
 
 from zope.security import checkPermission
 
+from seantis.kantonsrat import _
 from seantis.kantonsrat.types import IOrganization
 from seantis.kantonsrat.browser.base import BaseView
 
@@ -18,9 +19,25 @@ class OrganizationView(BaseView):
 
     template = grok.PageTemplateFile('templates/organization.pt')
 
+    def get_brain_from_relation(self, relation):
+        if not relation:
+            return None
+
+        catalog = api.portal.get_tool('portal_catalog')
+        results = catalog(path={'query': relation.to_path})
+
+        return results and results[0] or None
+
     def members(self):
         Member = namedtuple(
-            'Member', ['role', 'person', 'url', 'note', 'membership_edit']
+            'Member', [
+                'role',
+                'person',
+                'url',
+                'note',
+                'replacement_for',
+                'membership_edit'
+            ]
         )
 
         folder_path = '/'.join(self.context.getPhysicalPath())
@@ -35,9 +52,17 @@ class OrganizationView(BaseView):
         members = []
         for brain in memberships:
             membership = brain.getObject()
-            person_brain = catalog(
-                path={'query': membership.person.to_path}
-            )[0]
+            person_brain = self.get_brain_from_relation(membership.person)
+
+            replacement_for_brain = self.get_brain_from_relation(
+                membership.replacement_for
+            )
+
+            replacement_for = replacement_for_brain and _(
+                u'Replacement for ${name}', mapping={
+                    'name': replacement_for_brain.Title.decode('utf-8')
+                }
+            ) or u''
 
             if checkPermission('cmf.ModifyPortalContent', membership):
                 membership_edit = membership.absolute_url() + '/edit'
@@ -50,6 +75,7 @@ class OrganizationView(BaseView):
                     person_brain.Title,
                     person_brain.getURL(),
                     membership.note,
+                    replacement_for,
                     membership_edit
                 )
             )
