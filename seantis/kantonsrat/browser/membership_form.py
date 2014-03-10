@@ -1,5 +1,7 @@
 from five import grok
 
+from plone.directives.dexterity import AddForm
+
 from seantis.plonetools.browser import BaseGroup
 from seantis.kantonsrat.types import IMembership
 from seantis.kantonsrat import _
@@ -30,7 +32,41 @@ class AdvancedGroup(BaseGroup):
         )
 
 
-class LimitedMembershipEditForm(BaseForm):
+class MembershipBaseForm(BaseForm):
+
+    grok.baseclass()
+
+    @property
+    def organization(self):
+        raise NotImplementedError
+
+    def before_save(self, data):
+        if not data.get('replacement_for'):
+            return
+
+        replacement_org = data['replacement_for']
+        replacement_org = replacement_org.aq_inner.aq_parent.getPhysicalPath()
+
+        current_org = self.organization.getPhysicalPath()
+
+        if replacement_org != current_org:
+            self.raise_action_error(
+                _(u'The replaced membership belongs to another organization')
+            )
+
+
+class LimitedMembershipAddForm(AddForm, MembershipBaseForm):
+    grok.name('seantis.kantonsrat.membership')
+
+    grok.context(IMembership)
+    grok.require('cmf.AddPortalContent')
+
+    @property
+    def organization(self):
+        return self.context
+
+
+class LimitedMembershipEditForm(MembershipBaseForm):
     """ Provides an edit form for memberships in seantis.kantonsrat. Said
     form does not offer all fields. It namely removes the ability to change
     the referenced person.
@@ -45,6 +81,10 @@ class LimitedMembershipEditForm(BaseForm):
 
     enable_form_tabbing = True
     ignoreContext = False
+
+    @property
+    def organization(self):
+        return self.context.aq_inner.aq_parent
 
     @property
     def label(self):
