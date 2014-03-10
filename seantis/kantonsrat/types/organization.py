@@ -8,7 +8,6 @@ from zope.interface import invariant, Invalid
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
 from plone import api
-from plone.uuid.interfaces import IUUID
 from plone.indexer import indexer
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.dexterity.content import Container
@@ -16,7 +15,6 @@ from plone.directives import form
 
 from collective.dexteritytextindexer import searchable
 
-from seantis.plonetools import tools
 from seantis.kantonsrat import _
 
 
@@ -165,27 +163,21 @@ class Organization(Container):
                 if start <= keydate and keydate <= end:
                     yield membership
 
-        # xxx use metadata or something instead of relying on getObject
-        # xxx this is a proof of concept for now - it would be nice
-        # xxx to store a uuid reference instead (or switch to uuid source)
-        considered = list(
-            c.getObject() for c in without_future_memberships(memberships)
+        considered = [m for m in without_future_memberships(memberships)]
+
+        replaced_memberships = set(
+            c.replacement_for_uuid for c in considered
+            if c.replacement_for_uuid
         )
 
-        replaced = set(
-            IUUID(r.replacement_for.to_object)
-            for r in considered if r.replacement_for
-        )
-
-        # xxx seriously, this is currently done so poorly
         if state == 'active':
-            return map(tools.get_brain_by_object, (
-                m for m in considered if IUUID(m) not in replaced
-            ))
+            return [
+                m for m in considered if m.UID not in replaced_memberships
+            ]
         else:
-            return map(tools.get_brain_by_object, (
-                m for m in considered if IUUID(m) in replaced
-            ))
+            return [
+                m for m in considered if m.UID in replaced_memberships
+            ]
 
 
 def is_organization_visible(org):

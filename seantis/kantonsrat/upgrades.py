@@ -53,3 +53,13 @@ def move_to_new_membership_type(context):
 
         parent.reindexObject()
         new_membership.reindexObject()
+
+
+def add_new_membership_metadata(context):
+    catalog = api.portal.get_tool('portal_catalog')
+    memberships = [m.getObject() for m in catalog.unrestrictedSearchResults(
+        portal_type='seantis.kantonsrat.membership'
+    )]
+
+    for membership in memberships:
+        membership.reindexObject()

@@ -4,15 +4,22 @@ from zope.schema.interfaces import IContextSourceBinder
 from z3c.relationfield.schema import RelationChoice
 
 from plone.formwidget.contenttree import ObjPathSourceBinder
+from plone.uuid.interfaces import IUUID
 
 from seantis.people.interfaces import IMembership as IPeopleMembership
-from seantis.people.content import Membership
+from seantis.people.content import Membership as PeopleMembership
 from seantis.kantonsrat.types import IOrganization
 from seantis.kantonsrat import _
 
 
-class Membership(Membership):
-    pass
+class Membership(PeopleMembership):
+
+    @property
+    def replacement_for_uuid(self):
+        if self.replacement_for:
+            return IUUID(self.replacement_for.to_object)
+        else:
+            return None
 
 
 @grok.provider(IContextSourceBinder)

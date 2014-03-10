@@ -58,4 +58,11 @@
         handler=".upgrades.move_to_new_membership_type"
     />
 
+    <genericsetup:upgradeStep
+        title="Add new membership metadata."
+        source="1008" destination="1009"
+        profile="seantis.kantonsrat:default"
+        handler=".upgrades.add_new_membership_metadata"
+    />
+
 </configure>

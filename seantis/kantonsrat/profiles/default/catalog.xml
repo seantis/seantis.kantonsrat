@@ -3,4 +3,5 @@
     <column value="active"/>
     <column value="start"/>
     <column value="end"/>
+    <column value="replacement_for_uuid"/>
 </object>
