@@ -11,10 +11,10 @@
   <property name="allowed_content_types"></property>
 
   <!-- schema interface -->
-  <property name="schema">seantis.kantonsrat.types.IMembership</property>
+  <property name="schema">seantis.kantonsrat.types.membership.IMembership</property>
 
   <!-- class used for content items -->
-  <property name="klass">seantis.kantonsrat.types.Membership</property>
+  <property name="klass">seantis.kantonsrat.types.membership.Membership</property>
 
   <!-- add permission -->
   <property name="add_permission">cmf.AddPortalContent</property>

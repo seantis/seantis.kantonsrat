@@ -3,7 +3,7 @@ from five import grok
 from plone.directives.dexterity import AddForm
 
 from seantis.plonetools.browser import BaseGroup
-from seantis.kantonsrat.types import IMembership
+from seantis.kantonsrat.types.membership import IMembership
 from seantis.kantonsrat import _
 from seantis.kantonsrat.browser.base import BaseForm
 

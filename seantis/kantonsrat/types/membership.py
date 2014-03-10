@@ -17,7 +17,14 @@ class Membership(PeopleMembership):
     @property
     def replacement_for_uuid(self):
         if self.replacement_for:
-            return IUUID(self.replacement_for.to_object)
+            try:
+                if isinstance(self.replacement_for, Membership):
+                    return IUUID(self.replacement_for)
+                else:
+                    return IUUID(self.replacement_for.to_object)
+            except AttributeError:
+                # Zope swallows AttributeErrors like there's no tomorrow
+                assert False, "replacement_for uuid could not be determined"
         else:
             return None
 
