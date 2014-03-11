@@ -87,9 +87,8 @@ class TestBrowser(tests.FunctionalTestCase):
             '/nsa/content_status_modify?workflow_action=publish'
         ))
 
+        # at this point both manager and anonymous see the same
         browser.open(self.infolder('/organization_listing'))
-
-        # managers see the inactive organization
         self.assertIn('<dt class="active">', browser.contents)
         self.assertNotIn('<dt class="inactive">', browser.contents)
 
@@ -100,15 +99,15 @@ class TestBrowser(tests.FunctionalTestCase):
         # deactivating an organization tags it in the list and removes
         # it for anonymous users. It also won't show up in the navigation
         browser.open(self.infolder('/nsa/edit'))
-        browser.getControl('Active').selected = False
+        browser.set_date('start', date.today() + timedelta(days=1))
         browser.getControl('Save').click()
 
+        # managers now see the inactive organizations
         browser.open(self.infolder('/organization_listing'))
-
         self.assertIn('<dt class="inactive">', browser.contents)
         self.assertNotIn('<dt class="active">', browser.contents)
 
-        # anonymous does not see inactive organizations
+        # while anonymous users do not
         anonymous.open(self.infolder('/organization_listing'))
         self.assertNotIn('<dt class="active">', anonymous.contents)
         self.assertNotIn('<dt class="inactive">', anonymous.contents)
@@ -116,9 +115,10 @@ class TestBrowser(tests.FunctionalTestCase):
         # unfortunately, using a date to trigger the state is not automatic.
         # a cronjob as to be used for this (which calls a view)
         last_week = date.today() - timedelta(days=7)
+        last_year = date.today() - timedelta(days=365)
         with freeze_time(last_week):
             browser.open(self.infolder('/nsa/edit'))
-            browser.getControl('Active').selected = True
+            browser.set_date('start', last_year)
             browser.set_date('end', last_week)
             browser.getControl('Save').click()
 

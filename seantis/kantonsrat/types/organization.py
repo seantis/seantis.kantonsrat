@@ -1,8 +1,6 @@
 from time import mktime
 from datetime import date
 
-import Missing
-
 from zope import schema
 from zope.interface import invariant, Invalid
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
@@ -53,25 +51,11 @@ class IOrganization(form.Schema):
         required=False
     )
 
-    active = schema.Bool(
-        title=_(u'Active'),
-        description=_(
-            u"Inactive organisations are not listed in the member's view and "
-            u"are not available in the list of organizations.<br/> They are, "
-            u"however, still available through their url.<br/> "
-            u"Active organisations are also shown depending on their "
-            u"start/end date, if those are provided.<br/>"
-            u"Inactive organisations are never shown, independent of any dates"
-        ),
-        required=True,
-        default=True
-    )
-
     form.widget('start', years_range=(-10, 25))
     start = schema.Date(
         title=_(u'Start'),
         description=_(
-            u"Date from which the organization is visible (if active)."
+            u"Date from which the organization is visible."
         ),
         required=False
     )
@@ -100,11 +84,6 @@ class IOrganization(form.Schema):
 @indexer(IOrganization)
 def organization_type(obj):
     return obj.type
-
-
-@indexer(IOrganization)
-def organization_active(obj):
-    return obj.active
 
 
 @indexer(IOrganization)
@@ -181,11 +160,6 @@ class Organization(Container):
 
 
 def is_organization_visible(org):
-    active = org.active in (Missing.Value, True)
-
-    if not active:
-        return False
-
     today = date.today()
     start, end = (org.start or date.min), (org.end or date.max)
 

@@ -38,7 +38,6 @@
 
 <!-- Indexes -->
 <adapter factory=".types.organization.organization_type" name="organization_type" />
-<adapter factory=".types.organization.organization_active" name="organization_active" />
 <adapter factory=".types.organization.organization_start" name="organization_start" />
 <adapter factory=".types.organization.organization_end" name="organization_end" />
 

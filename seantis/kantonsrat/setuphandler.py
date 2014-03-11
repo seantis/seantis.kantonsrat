@@ -2,7 +2,6 @@ from seantis.plonetools import setuphandlers
 
 indexes = [
     ('organization_type', 'FieldIndex'),
-    ('organization_active', 'FieldIndex'),
     ('organization_start', 'FieldIndex'),
     ('organization_end', 'FieldIndex')
 ]

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-10 13:51+0000\n"
+"POT-Creation-Date: 2014-03-11 10:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,6 @@ msgstr ""
 #: ./types/kantonsrat.xml
 msgid "Academic Title"
 msgstr "Akademischer Titel"
-
-#: ./types/organization.py:57
-msgid "Active"
-msgstr "Aktiv"
 
 #: ./types/kantonsrat.xml
 msgid "Address"
@@ -38,7 +34,7 @@ msgstr "Erweitert"
 msgid "Birthday"
 msgstr "Geburtstag"
 
-#: ./types/organization.py:23
+#: ./types/organization.py:21
 msgid "Committee"
 msgstr "Kommission"
 
@@ -46,16 +42,16 @@ msgstr "Kommission"
 msgid "Committees"
 msgstr "Kommissionen"
 
-#: ./types/organization.py:82
+#: ./types/organization.py:66
 msgid "Date after which the organization is invisible."
 msgstr "Nach diesem Datum ist die Organisation unsichtbar."
 
-#: ./types/organization.py:73
-msgid "Date from which the organization is visible (if active)."
-msgstr "Nach diesem Datum ist die Organisation sichtbar (sofern sie aktiv ist)."
+#: ./types/organization.py:57
+msgid "Date from which the organization is visible."
+msgstr "Vor diesem Datum ist die Organisation unsichtbar."
 
 #: ./browser/templates/organization.pt:10
-#: ./types/organization.py:46
+#: ./types/organization.py:44
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -75,7 +71,7 @@ msgstr "Wahlkreis"
 msgid "Email"
 msgstr "E-Mail"
 
-#: ./types/organization.py:81
+#: ./types/organization.py:65
 msgid "End"
 msgstr "Ende"
 
@@ -84,7 +80,7 @@ msgid "Entry Date"
 msgstr "Eintritt"
 
 #: ./types/kantonsrat.xml
-#: ./types/organization.py:24
+#: ./types/organization.py:22
 msgid "Faction"
 msgstr "Fraktion"
 
@@ -107,10 +103,6 @@ msgstr "Funktion"
 #: ./browser/membership_form.py:12
 msgid "General"
 msgstr "Allgemein"
-
-#: ./types/organization.py:58
-msgid "Inactive organisations are not listed in the member's view and are not available in the list of organizations.<br/> They are, however, still available through their url.<br/> Active organisations are also shown depending on their start/end date, if those are provided.<br/>Inactive organisations are never shown, independent of any dates"
-msgstr "Inaktive Organisationen werden auf den Mitgliedern, in der Navigation und in der Übersicht nicht dargestellt.<br/>Sie sind aber immer noch durch ihre URL erreichar.<br/>Aktive Organisationen sind ausserdem abhängig von ihrem Start/End Datum.<br/>Inaktive Organisationen sind unabhängig von ihrem Start/End Datum."
 
 #: ./browser/templates/organization_listing.pt:23
 msgid "Inactive:"
@@ -146,7 +138,7 @@ msgstr "Handy"
 
 #: ./types/kantonsrat.py:24
 #: ./types/kantonsrat.xml
-#: ./types/organization.py:25
+#: ./types/organization.py:23
 msgid "Party"
 msgstr "Partei"
 
@@ -163,7 +155,7 @@ msgid "Place of Citizenship"
 msgstr "Bürgerort"
 
 #: ./browser/templates/organization.pt:15
-#: ./types/organization.py:52
+#: ./types/organization.py:50
 msgid "Portrait"
 msgstr "Portrait"
 
@@ -183,7 +175,7 @@ msgstr "Privat-Adresse"
 msgid "Profession"
 msgstr "Beruf"
 
-#: ./types/membership.py:50
+#: ./types/membership.py:57
 msgid "Replacement for"
 msgstr "Ersatz für"
 
@@ -199,11 +191,11 @@ msgstr "Anrede"
 msgid "Secondary Email"
 msgstr "Zweite E-Mail"
 
-#: ./types/organization.py:72
+#: ./types/organization.py:56
 msgid "Start"
 msgstr "Start"
 
-#: ./types/membership.py:51
+#: ./types/membership.py:58
 msgid "The membership which this membership replaces"
 msgstr "Das Mitglied das ersetzt wird."
 
@@ -211,15 +203,15 @@ msgstr "Das Mitglied das ersetzt wird."
 msgid "The replaced membership belongs to another organization"
 msgstr "Die Mitgliedschaft die ersetzt werden soll stammt aus einer anderen Organisation"
 
-#: ./types/organization.py:97
+#: ./types/organization.py:81
 msgid "The start date is set after the end date."
 msgstr "Das Start Datum darf nicht nach dem End Datum gesetzt sein."
 
-#: ./types/organization.py:41
+#: ./types/organization.py:39
 msgid "Title"
 msgstr "Titel"
 
-#: ./types/organization.py:34
+#: ./types/organization.py:32
 msgid "Type"
 msgstr "Typ"
 

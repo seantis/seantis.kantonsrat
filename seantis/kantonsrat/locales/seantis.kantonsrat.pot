@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-10 13:51+0000\n"
+"POT-Creation-Date: 2014-03-11 10:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,6 @@ msgstr ""
 
 #: ./types/kantonsrat.xml
 msgid "Academic Title"
-msgstr ""
-
-#: ./types/organization.py:57
-msgid "Active"
 msgstr ""
 
 #: ./types/kantonsrat.xml
@@ -41,7 +37,7 @@ msgstr ""
 msgid "Birthday"
 msgstr ""
 
-#: ./types/organization.py:23
+#: ./types/organization.py:21
 msgid "Committee"
 msgstr ""
 
@@ -49,16 +45,16 @@ msgstr ""
 msgid "Committees"
 msgstr ""
 
-#: ./types/organization.py:82
+#: ./types/organization.py:66
 msgid "Date after which the organization is invisible."
 msgstr ""
 
-#: ./types/organization.py:73
-msgid "Date from which the organization is visible (if active)."
+#: ./types/organization.py:57
+msgid "Date from which the organization is visible."
 msgstr ""
 
 #: ./browser/templates/organization.pt:10
-#: ./types/organization.py:46
+#: ./types/organization.py:44
 msgid "Description"
 msgstr ""
 
@@ -78,7 +74,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: ./types/organization.py:81
+#: ./types/organization.py:65
 msgid "End"
 msgstr ""
 
@@ -87,7 +83,7 @@ msgid "Entry Date"
 msgstr ""
 
 #: ./types/kantonsrat.xml
-#: ./types/organization.py:24
+#: ./types/organization.py:22
 msgid "Faction"
 msgstr ""
 
@@ -109,10 +105,6 @@ msgstr ""
 
 #: ./browser/membership_form.py:12
 msgid "General"
-msgstr ""
-
-#: ./types/organization.py:58
-msgid "Inactive organisations are not listed in the member's view and are not available in the list of organizations.<br/> They are, however, still available through their url.<br/> Active organisations are also shown depending on their start/end date, if those are provided.<br/>Inactive organisations are never shown, independent of any dates"
 msgstr ""
 
 #: ./browser/templates/organization_listing.pt:23
@@ -149,7 +141,7 @@ msgstr ""
 
 #: ./types/kantonsrat.py:24
 #: ./types/kantonsrat.xml
-#: ./types/organization.py:25
+#: ./types/organization.py:23
 msgid "Party"
 msgstr ""
 
@@ -166,7 +158,7 @@ msgid "Place of Citizenship"
 msgstr ""
 
 #: ./browser/templates/organization.pt:15
-#: ./types/organization.py:52
+#: ./types/organization.py:50
 msgid "Portrait"
 msgstr ""
 
@@ -186,7 +178,7 @@ msgstr ""
 msgid "Profession"
 msgstr ""
 
-#: ./types/membership.py:50
+#: ./types/membership.py:57
 msgid "Replacement for"
 msgstr ""
 
@@ -202,11 +194,11 @@ msgstr ""
 msgid "Secondary Email"
 msgstr ""
 
-#: ./types/organization.py:72
+#: ./types/organization.py:56
 msgid "Start"
 msgstr ""
 
-#: ./types/membership.py:51
+#: ./types/membership.py:58
 msgid "The membership which this membership replaces"
 msgstr ""
 
@@ -214,15 +206,15 @@ msgstr ""
 msgid "The replaced membership belongs to another organization"
 msgstr ""
 
-#: ./types/organization.py:97
+#: ./types/organization.py:81
 msgid "The start date is set after the end date."
 msgstr ""
 
-#: ./types/organization.py:41
+#: ./types/organization.py:39
 msgid "Title"
 msgstr ""
 
-#: ./types/organization.py:34
+#: ./types/organization.py:32
 msgid "Type"
 msgstr ""
 
