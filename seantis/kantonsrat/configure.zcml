@@ -44,4 +44,10 @@
 <!-- Upgrades -->
 <include file="upgrades.zcml" />
 
+<!-- Utilities -->
+<utility
+    provides="seantis.kantonsrat.interfaces.IMotionsProvider"
+    factory=".motion_providers.GeschaeftsverzeichnisMotionsProvider"
+/>
+
 </configure>

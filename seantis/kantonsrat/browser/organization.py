@@ -1,5 +1,9 @@
 from five import grok
 
+from plone.uuid.interfaces import IUUID
+from zope.component import queryUtility
+
+from seantis.kantonsrat.interfaces import IMotionsProvider
 from seantis.kantonsrat.types import IOrganization
 from seantis.kantonsrat.browser.base import BaseView
 
@@ -18,3 +22,10 @@ class OrganizationView(BaseView):
 
     def inactive_members(self):
         return self.context.memberships('inactive')
+
+    def submitted_motions(self):
+        motions_provider = queryUtility(IMotionsProvider)
+        if motions_provider:
+            return motions_provider.motions_by_entity(IUUID(self.context))
+        else:
+            return []

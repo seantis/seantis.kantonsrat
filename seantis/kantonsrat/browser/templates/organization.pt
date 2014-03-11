@@ -16,6 +16,15 @@
                 <div class="kantonsrat-portrait" tal:content="structure context/portrait" />
             </tal:block>
 
+            <tal:block define="motions view/submitted_motions" condition="motions">
+                <h2 i18n:translate="">Motions</h2>
+                <ul class="dense">
+                  <li tal:repeat="motion motions">
+                    <a tal:attributes="href motion/url" tal:content="motion/title"></a>
+                  </li>
+                </ul>
+            </tal:block>
+
             <tal:block define="memberships view/active_members" condition="memberships">
                 <h2 i18n:translate="">Members</h2>
                 <metal:use use-macro="context/@@seantis-kantonsrat-macros/kantonsrat-organization-members" />
