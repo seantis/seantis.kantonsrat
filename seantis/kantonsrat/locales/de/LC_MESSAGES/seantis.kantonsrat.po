@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-11 10:16+0000\n"
+"POT-Creation-Date: 2014-03-11 13:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,13 +128,17 @@ msgstr "Nachname"
 msgid "Letter Salutation"
 msgstr "Brief-Anrede"
 
-#: ./browser/templates/organization.pt:20
+#: ./browser/templates/organization.pt:29
 msgid "Members"
 msgstr "Mitglieder"
 
 #: ./types/kantonsrat.xml
 msgid "Mobile"
 msgstr "Handy"
+
+#: ./browser/templates/organization.pt:20
+msgid "Motions"
+msgstr "Geschäfte"
 
 #: ./types/kantonsrat.py:24
 #: ./types/kantonsrat.xml
@@ -159,7 +163,7 @@ msgstr "Bürgerort"
 msgid "Portrait"
 msgstr "Portrait"
 
-#: ./browser/templates/organization.pt:25
+#: ./browser/templates/organization.pt:34
 msgid "Previous Members"
 msgstr "Frühere Mitglieder"
 

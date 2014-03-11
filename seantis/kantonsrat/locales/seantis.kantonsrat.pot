@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-11 10:16+0000\n"
+"POT-Creation-Date: 2014-03-11 13:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,12 +131,16 @@ msgstr ""
 msgid "Letter Salutation"
 msgstr ""
 
-#: ./browser/templates/organization.pt:20
+#: ./browser/templates/organization.pt:29
 msgid "Members"
 msgstr ""
 
 #: ./types/kantonsrat.xml
 msgid "Mobile"
+msgstr ""
+
+#: ./browser/templates/organization.pt:20
+msgid "Motions"
 msgstr ""
 
 #: ./types/kantonsrat.py:24
@@ -162,7 +166,7 @@ msgstr ""
 msgid "Portrait"
 msgstr ""
 
-#: ./browser/templates/organization.pt:25
+#: ./browser/templates/organization.pt:34
 msgid "Previous Members"
 msgstr ""
 
