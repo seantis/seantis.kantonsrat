@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-11 13:48+0000\n"
+"POT-Creation-Date: 2014-03-11 14:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr "Geburtstag"
 msgid "Committee"
 msgstr "Kommission"
 
-#: ./types/kantonsrat.py:26
+#: ./types/kantonsrat.py:34
 msgid "Committees"
 msgstr "Kommissionen"
 
@@ -84,7 +84,7 @@ msgstr "Eintritt"
 msgid "Faction"
 msgstr "Fraktion"
 
-#: ./types/kantonsrat.py:25
+#: ./types/kantonsrat.py:33
 msgid "Factions"
 msgstr "Fraktionen"
 
@@ -140,7 +140,7 @@ msgstr "Handy"
 msgid "Motions"
 msgstr "Geschäfte"
 
-#: ./types/kantonsrat.py:24
+#: ./types/kantonsrat.py:32
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:23
 msgid "Party"
@@ -198,6 +198,10 @@ msgstr "Zweite E-Mail"
 #: ./types/organization.py:56
 msgid "Start"
 msgstr "Start"
+
+#: ./types/kantonsrat.py:25
+msgid "Submitted Motions"
+msgstr "Eingereichte Geschäfte"
 
 #: ./types/membership.py:58
 msgid "The membership which this membership replaces"

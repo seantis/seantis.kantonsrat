@@ -1,14 +1,18 @@
 from five import grok
 from zope.interface import Interface
+from zope.component import queryUtility
 
 from plone import api
 from plone.directives import form
+from plone.uuid.interfaces import IUUID
 
 from seantis.people.interfaces import ICompoundColumns
 from seantis.people.types.base import PersonBase
 from seantis.people.interfaces import IPerson
+from seantis.people.utils import LinkList
 
 from seantis.kantonsrat import _
+from seantis.kantonsrat.interfaces import IMotionsProvider
 
 
 class IMember(form.Schema):
@@ -16,6 +20,10 @@ class IMember(form.Schema):
 
 
 class Member(PersonBase):
+
+    custom_titles = {
+        'motions': _(u'Submitted Motions')
+    }
 
     @property
     def membership_fields(self):
@@ -84,6 +92,16 @@ class Member(PersonBase):
     @property
     def faction_memberships(self):
         return self.memberships_by_type('faction')
+
+    @property
+    def motions(self):
+        motions_provider = queryUtility(IMotionsProvider)
+
+        if motions_provider:
+            motions = motions_provider.motions_by_entity(IUUID(self))
+            return LinkList((m.title, m.url) for m in motions)
+        else:
+            return []
 
 
 class CompoundColumns(grok.Adapter):

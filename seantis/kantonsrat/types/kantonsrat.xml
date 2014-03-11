@@ -159,6 +159,7 @@
       <people:item>party_memberships</people:item>
       <people:item>faction_memberships</people:item>
       <people:item>committee_memberships</people:item>
+      <people:item>motions</people:item>
     </people:details>
     
   </schema>
