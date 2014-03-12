@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-11 14:30+0000\n"
+"POT-Creation-Date: 2014-03-12 09:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,6 +131,10 @@ msgstr ""
 msgid "Letter Salutation"
 msgstr ""
 
+#: ./settings.py:28
+msgid "Lifetime of Geschäftsverzeichnis cache"
+msgstr ""
+
 #: ./browser/templates/organization.pt:29
 msgid "Members"
 msgstr ""
@@ -194,6 +198,11 @@ msgstr ""
 msgid "Salutation"
 msgstr ""
 
+#: ./profiles/default/controlpanel.xml
+#: ./settings.py:50
+msgid "Seantis Kantonsrat Settings"
+msgstr ""
+
 #: ./types/kantonsrat.xml
 msgid "Secondary Email"
 msgstr ""
@@ -210,6 +219,10 @@ msgstr ""
 msgid "The membership which this membership replaces"
 msgstr ""
 
+#: ./settings.py:29
+msgid "The number of seconds a request to the Geschäftsverzeichnis should be kept in the local cache. "
+msgstr ""
+
 #: ./browser/membership_form.py:54
 msgid "The replaced membership belongs to another organization"
 msgstr ""
@@ -224,6 +237,14 @@ msgstr ""
 
 #: ./types/organization.py:32
 msgid "Type"
+msgstr ""
+
+#: ./settings.py:18
+msgid "URL to the Geschäftsverzeichnis"
+msgstr ""
+
+#: ./settings.py:19
+msgid "Used to show data from the Geschäftsverzeichnis on the member and organisation pages. Leave empty if there's no such connection."
 msgstr ""
 
 #: ./types/kantonsrat.xml

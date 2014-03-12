@@ -1,0 +1,6 @@
+<registry>
+    <records interface="seantis.kantonsrat.settings.ISeantisKantonsratSettings">
+        <value key="geschaeftsverzeichnis"></value>
+        <value key="lifetime">3600</value>
+    </records>
+</registry>

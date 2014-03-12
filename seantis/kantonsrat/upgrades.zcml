@@ -65,4 +65,11 @@
         handler=".upgrades.add_new_membership_metadata"
     />
 
+    <genericsetup:upgradeStep
+        title="Add controlpanel."
+        source="1009" destination="1010"
+        profile="seantis.kantonsrat:default"
+        handler=".upgrades.install_custom_controlpanel"
+    />
+
 </configure>

@@ -1,3 +1,6 @@
+import logging
+log = logging.getLogger('seantis.kantonsrat')
+
 from five import grok
 from zope.interface import Interface
 from zope.component import queryUtility
@@ -95,13 +98,16 @@ class Member(PersonBase):
 
     @property
     def motions(self):
-        motions_provider = queryUtility(IMotionsProvider)
+        try:
+            motions_provider = queryUtility(IMotionsProvider)
 
-        if motions_provider:
-            motions = motions_provider.motions_by_entity(IUUID(self))
-            return LinkList((m.title, m.url) for m in motions)
-        else:
-            return []
+            if motions_provider:
+                motions = motions_provider.motions_by_entity(IUUID(self))
+                return LinkList((m.title, m.url) for m in motions)
+        except:
+            log.exception('could not retrieve motions')
+
+        return []
 
 
 class CompoundColumns(grok.Adapter):

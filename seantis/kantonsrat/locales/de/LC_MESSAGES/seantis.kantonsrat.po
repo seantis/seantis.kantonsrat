@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-11 14:30+0000\n"
+"POT-Creation-Date: 2014-03-12 09:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,6 +128,10 @@ msgstr "Nachname"
 msgid "Letter Salutation"
 msgstr "Brief-Anrede"
 
+#: ./settings.py:28
+msgid "Lifetime of Geschäftsverzeichnis cache"
+msgstr "Lebensdauer von Geschäftsverzeichnis-Anfragen"
+
 #: ./browser/templates/organization.pt:29
 msgid "Members"
 msgstr "Mitglieder"
@@ -191,6 +195,11 @@ msgstr "Ersatz für ${name}"
 msgid "Salutation"
 msgstr "Anrede"
 
+#: ./profiles/default/controlpanel.xml
+#: ./settings.py:50
+msgid "Seantis Kantonsrat Settings"
+msgstr "Seantis Kantonsrat Einstellungen"
+
 #: ./types/kantonsrat.xml
 msgid "Secondary Email"
 msgstr "Zweite E-Mail"
@@ -207,6 +216,10 @@ msgstr "Eingereichte Geschäfte"
 msgid "The membership which this membership replaces"
 msgstr "Das Mitglied das ersetzt wird."
 
+#: ./settings.py:29
+msgid "The number of seconds a request to the Geschäftsverzeichnis should be kept in the local cache. "
+msgstr "Die Dauer in Sekunden während der Geschäftsverzeichnis Anfragen lokal zwischengespeichert werden."
+
 #: ./browser/membership_form.py:54
 msgid "The replaced membership belongs to another organization"
 msgstr "Die Mitgliedschaft die ersetzt werden soll stammt aus einer anderen Organisation"
@@ -222,6 +235,14 @@ msgstr "Titel"
 #: ./types/organization.py:32
 msgid "Type"
 msgstr "Typ"
+
+#: ./settings.py:18
+msgid "URL to the Geschäftsverzeichnis"
+msgstr "URL zum Geschäftsverzeichnis"
+
+#: ./settings.py:19
+msgid "Used to show data from the Geschäftsverzeichnis on the member and organisation pages. Leave empty if there's no such connection."
+msgstr "Wird benutzt um die Geschäfte im Geschäftsverzeichnis bei den Kantonsräten und Organisationen anzuzeigen. Ist das Feld leer werden diese Geschäfte nicht angezeigt."
 
 #: ./types/kantonsrat.xml
 msgid "Website"

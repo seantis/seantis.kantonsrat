@@ -36,6 +36,14 @@
     description="List organizations only"
 />
 
+<!-- Controlpanel View -->
+<browser:page
+    for="plone.app.layout.navigation.interfaces.INavigationRoot"
+    name="kantonsrat-controlpanel"
+    class="seantis.kantonsrat.settings.SeantisKantonsratControlPanelView"
+    permission="cmf.ManagePortal"
+/>
+
 <!-- Indexes -->
 <adapter factory=".types.organization.organization_type" name="organization_type" />
 <adapter factory=".types.organization.organization_start" name="organization_start" />

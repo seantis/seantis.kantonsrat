@@ -63,3 +63,12 @@ def add_new_membership_metadata(context):
 
     for membership in memberships:
         membership.reindexObject()
+
+
+def install_custom_controlpanel(context):
+    run_import_step_from_profile(
+        'plone.app.registry', 'seantis.kantonsrat', 'default'
+    )
+    run_import_step_from_profile(
+        'controlpanel', 'seantis.kantonsrat', 'default'
+    )

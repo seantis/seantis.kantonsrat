@@ -4,12 +4,15 @@ log = logging.getLogger('seantis.kantonsrat')
 import json
 import urllib2
 
+from uuid import uuid4 as new_uuid
+
 from datetime import datetime
 from itertools import chain
 
 from zope.interface import implements
 from plone.memoize import ram
 
+from seantis.kantonsrat import settings
 from seantis.kantonsrat.interfaces import IMotion, IMotionsProvider
 
 
@@ -26,14 +29,51 @@ class GeschaeftsverzeichnisMotionsProvider(object):
 
     implements(IMotionsProvider)
 
-    # xxx make configurable through controlpanel
-    url = u'https://geschaefte.4teamwork.ch/api/geschaefte.json'
-    timeout = 5.0  # seconds
-    cache_lifetime = 3600.0  # seconds
-
-    def __init__(self):
-        self._cache_version = 0
+    def __init__(self, url=None, cache_lifetime=None):
+        self._url = url
+        self._cache_lifetime = cache_lifetime
         self._last_fetch = None
+        self._cache_version = None
+
+    @property
+    def url(self):
+        if self._url is None:
+            return self.get_url_from_settings()
+        else:
+            return self._url
+
+    @property
+    def cache_lifetime(self):
+        if self._cache_lifetime is None:
+            return settings.get('lifetime')
+        else:
+            return self._cache_lifetime
+
+    @property
+    def cache_version(self):
+        last_fetch = (self._last_fetch or datetime.utcnow())
+        cache_age = (datetime.utcnow() - last_fetch).total_seconds()
+
+        if self._cache_version is None:
+            self._cache_version = new_uuid().hex
+
+        if cache_age > self.cache_lifetime:
+            self._cache_version = new_uuid().hex
+
+        return self._cache_version + self.url + str(self.cache_lifetime)
+
+    def get_url_from_settings(self):
+        base = (settings.get('geschaeftsverzeichnis') or '').strip()
+
+        if not base:
+            return ''
+
+        if base.endswith('/api/geschaefte.json'):
+            return base
+        else:
+            if not base.endswith('/'):
+                base += '/'
+            return base + 'api/geschaefte.json'
 
     def motions_by_entity(self, entity_uuid):
         motions = list(
@@ -66,20 +106,13 @@ class GeschaeftsverzeichnisMotionsProvider(object):
 
         return external_motions_by_uuid
 
-    @property
-    def cache_version(self):
-        last_fetch = (self._last_fetch or datetime.utcnow())
-        cache_age = (datetime.utcnow() - last_fetch).total_seconds()
+    def open_url(self, timeout=5.0):
+        if not self.url:
+            return ''
 
-        if cache_age > self.cache_lifetime:
-            self._cache_version += 1
-
-        return self._cache_version
-
-    def open_url(self):
         try:
             log.info('fetching motions from {}'.format(self.url))
-            data = urllib2.urlopen(self.url, timeout=self.timeout).read()
+            data = urllib2.urlopen(self.url, timeout=timeout).read()
         except:
             log.exception('could not fetch motions from {}'.format(self.url))
             data = ''
