@@ -1,4 +1,5 @@
 from collections import namedtuple
+from datetime import datetime
 
 from five import grok
 from zope.interface import Interface
@@ -31,6 +32,28 @@ class View(BaseView):
 
         return results and results[0] or None
 
+    def get_human_timespan(self, start, end):
+        if not (start or end):
+            return None
+
+        start = start and datetime(start.year, start.month, start.day) or None
+        end = end and datetime(end.year, end.month, end.day) or None
+
+        if start and end:
+            return _(u'from ${start} until ${end}', mapping={
+                'start': api.portal.get_localized_time(start),
+                'end': api.portal.get_localized_time(end),
+            })
+
+        if start:
+            return _(u'from ${start}', mapping={
+                'start': api.portal.get_localized_time(start)
+            })
+        else:
+            return _(u'until ${end}', mapping={
+                'end': api.portal.get_localized_time(end)
+            })
+
     def as_simplified_structure(self, memberships):
         Member = namedtuple(
             'Member', [
@@ -39,7 +62,8 @@ class View(BaseView):
                 'url',
                 'note',
                 'replacement_for',
-                'membership_edit'
+                'membership_edit',
+                'timespan'
             ]
         )
 
@@ -68,5 +92,6 @@ class View(BaseView):
                 person_brain.getURL(),
                 membership.note,
                 replacement_for,
-                membership_edit
+                membership_edit,
+                self.get_human_timespan(brain.start, brain.end)
             )

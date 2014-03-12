@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-12 09:34+0000\n"
+"POT-Creation-Date: 2014-03-12 14:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr "Geburtstag"
 msgid "Committee"
 msgstr "Kommission"
 
-#: ./types/kantonsrat.py:34
+#: ./types/kantonsrat.py:37
 msgid "Committees"
 msgstr "Kommissionen"
 
@@ -84,7 +84,7 @@ msgstr "Eintritt"
 msgid "Faction"
 msgstr "Fraktion"
 
-#: ./types/kantonsrat.py:33
+#: ./types/kantonsrat.py:36
 msgid "Factions"
 msgstr "Fraktionen"
 
@@ -144,7 +144,7 @@ msgstr "Handy"
 msgid "Motions"
 msgstr "Geschäfte"
 
-#: ./types/kantonsrat.py:32
+#: ./types/kantonsrat.py:35
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:23
 msgid "Party"
@@ -187,7 +187,7 @@ msgstr "Beruf"
 msgid "Replacement for"
 msgstr "Ersatz für"
 
-#: ./browser/macros.py:54
+#: ./browser/macros.py:78
 msgid "Replacement for ${name}"
 msgstr "Ersatz für ${name}"
 
@@ -208,7 +208,7 @@ msgstr "Zweite E-Mail"
 msgid "Start"
 msgstr "Start"
 
-#: ./types/kantonsrat.py:25
+#: ./types/kantonsrat.py:28
 msgid "Submitted Motions"
 msgstr "Eingereichte Geschäfte"
 
@@ -247,4 +247,16 @@ msgstr "Wird benutzt um die Geschäfte im Geschäftsverzeichnis bei den Kantonsr
 #: ./types/kantonsrat.xml
 msgid "Website"
 msgstr "Webseite"
+
+#: ./browser/macros.py:49
+msgid "from ${start}"
+msgstr "vom ${start}"
+
+#: ./browser/macros.py:43
+msgid "from ${start} until ${end}"
+msgstr "vom ${start} bis ${end}"
+
+#: ./browser/macros.py:53
+msgid "until ${end}"
+msgstr "bis ${end}"
 

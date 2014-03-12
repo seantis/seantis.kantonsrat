@@ -1,5 +1,5 @@
 from five import grok
-
+from z3c.form import field
 from plone.directives.dexterity import AddForm
 
 from seantis.plonetools.browser import BaseGroup
@@ -12,7 +12,7 @@ class GeneralGroup(BaseGroup):
     label = _(u'General')
 
     group_fields = [
-        [IMembership, ['role', 'note']]
+        [IMembership, ['role', 'start', 'end', 'note']]
     ]
 
 
@@ -60,6 +60,10 @@ class LimitedMembershipAddForm(AddForm, MembershipBaseForm):
 
     grok.context(IMembership)
     grok.require('cmf.AddPortalContent')
+
+    fields = field.Fields(IMembership).select(
+        'person', 'role', 'start', 'end', 'note', 'replacement_for'
+    )
 
     @property
     def organization(self):

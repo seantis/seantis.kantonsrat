@@ -133,30 +133,32 @@ class Organization(Container):
         # They also must not be have a replacement linked to them.
         # Future memberships are ignored.
 
-        def without_future_memberships(memberships):
-
-            for membership in memberships:
-                start = (membership.start or date.min)
-                end = (membership.end or date.max)
-
-                if start <= keydate and keydate <= end:
-                    yield membership
-
-        considered = [m for m in without_future_memberships(memberships)]
-
-        replaced_memberships = set(
-            c.replacement_for_uuid for c in considered
-            if c.replacement_for_uuid
+        all_memberships = set(
+            m.UID for m in memberships
         )
 
+        replaced_memberships = set(
+            m.replacement_for_uuid for m in memberships
+            if m.replacement_for_uuid
+        )
+
+        past_memberships = set(
+            m.UID for m in memberships if (m.end or date.max) < keydate
+        )
+
+        future_memberships = set(
+            m.UID for m in memberships if (m.start or date.min) > keydate
+        )
+
+        active_memberships = all_memberships \
+            - replaced_memberships \
+            - past_memberships \
+            - future_memberships
+
         if state == 'active':
-            return [
-                m for m in considered if m.UID not in replaced_memberships
-            ]
+            return [a for a in memberships if a.UID in active_memberships]
         else:
-            return [
-                m for m in considered if m.UID in replaced_memberships
-            ]
+            return [i for i in memberships if i.UID not in active_memberships]
 
 
 def is_organization_visible(org):

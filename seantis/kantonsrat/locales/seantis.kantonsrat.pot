@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-12 09:34+0000\n"
+"POT-Creation-Date: 2014-03-12 14:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgstr ""
 msgid "Committee"
 msgstr ""
 
-#: ./types/kantonsrat.py:34
+#: ./types/kantonsrat.py:37
 msgid "Committees"
 msgstr ""
 
@@ -87,7 +87,7 @@ msgstr ""
 msgid "Faction"
 msgstr ""
 
-#: ./types/kantonsrat.py:33
+#: ./types/kantonsrat.py:36
 msgid "Factions"
 msgstr ""
 
@@ -147,7 +147,7 @@ msgstr ""
 msgid "Motions"
 msgstr ""
 
-#: ./types/kantonsrat.py:32
+#: ./types/kantonsrat.py:35
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:23
 msgid "Party"
@@ -190,7 +190,7 @@ msgstr ""
 msgid "Replacement for"
 msgstr ""
 
-#: ./browser/macros.py:54
+#: ./browser/macros.py:78
 msgid "Replacement for ${name}"
 msgstr ""
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Start"
 msgstr ""
 
-#: ./types/kantonsrat.py:25
+#: ./types/kantonsrat.py:28
 msgid "Submitted Motions"
 msgstr ""
 
@@ -249,5 +249,17 @@ msgstr ""
 
 #: ./types/kantonsrat.xml
 msgid "Website"
+msgstr ""
+
+#: ./browser/macros.py:49
+msgid "from ${start}"
+msgstr ""
+
+#: ./browser/macros.py:43
+msgid "from ${start} until ${end}"
+msgstr ""
+
+#: ./browser/macros.py:53
+msgid "until ${end}"
 msgstr ""
 
