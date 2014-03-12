@@ -5,6 +5,10 @@ Changelog
 0.5 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Adds the ability to show external motions defined in
+  https://github.com/4teamwork/geschaeftsverzeichnis.
+  [href]
+
 - Adds the ability to select a replacement for existing memberships.
   [href]
 
