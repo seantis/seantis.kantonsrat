@@ -20,3 +20,17 @@ class TriggerState(BaseView):
 
         for organization in organizations:
             organization.getObject().reindexObject()
+
+        memberships = catalog.searchResults({
+            'portal_type': 'seantis.kantonsrat.membership'
+        })
+
+        for membership in memberships:
+            membership.getObject().reindexObject()
+
+        members = catalog.searchResults({
+            'portal_type': 'seantis.kantonsrat.member'
+        })
+
+        for member in members:
+            membership.getObject().reindexObject()
