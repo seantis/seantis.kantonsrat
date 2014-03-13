@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-12 14:48+0000\n"
+"POT-Creation-Date: 2014-03-13 08:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,6 +64,10 @@ msgstr ""
 
 #: ./browser/membership_form.py:27
 msgid "Don't change this value if a new members replaces this member. Instead, change this members role and add a new member with the new role. Otherwise the history of this organization won't be correct anymore. "
+msgstr ""
+
+#: ./browser/templates/macros.pt:23
+msgid "Edit"
 msgstr ""
 
 #: ./types/kantonsrat.xml
