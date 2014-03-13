@@ -1,6 +1,7 @@
 import logging
 log = logging.getLogger('seantis.kantonsrat')
 
+from datetime import date
 from five import grok
 from zope.interface import Interface
 from zope.component import queryUtility
@@ -39,26 +40,61 @@ class Member(PersonBase):
 
         return parent_fields
 
-    def get_organizations_filter(self, orgtype):
+    def get_organizations_filter(self, orgtype, active_only=True):
         catalog = api.portal.get_tool('portal_catalog')
         organizations = set(b.UID for b in catalog(organization_type=orgtype))
 
-        return lambda uuid: uuid in organizations
+        org_filter = lambda uuid, memberships: (
+            uuid in organizations and self.select_active_memberships(
+                memberships
+            )
+        )
 
-    def organization_uuids_by_type(self, orgtype):
+        return org_filter
+
+    def organization_uuids_by_type(self, orgtype, active_only=True):
         return IPerson(self).organization_uuids(
-            org_filter=self.get_organizations_filter(orgtype)
+            org_filter=self.get_organizations_filter(orgtype, active_only)
         )
 
-    def organizations_by_type(self, orgtype):
+    def organizations_by_type(self, orgtype, active_only=True):
         return IPerson(self).organizations(
+            org_filter=self.get_organizations_filter(orgtype, active_only)
+        )
+
+    def memberships_by_type(self, orgtype, active_only=True):
+        result = IPerson(self).memberships(
             org_filter=self.get_organizations_filter(orgtype)
         )
 
-    def memberships_by_type(self, orgtype):
-        return IPerson(self).memberships(
-            org_filter=self.get_organizations_filter(orgtype)
+        if active_only:
+            return self.select_active_organizations(result)
+        else:
+            return result
+
+    def select_active_organizations(self, organizations):
+        result = {}
+        for organization, memberships in organizations.items():
+            memberships = self.select_active_memberships(memberships)
+
+            if not memberships:
+                continue
+
+            result[organization] = memberships
+
+        return result
+
+    def select_active_memberships(self, memberships):
+        today = date.today()
+        active = filter(
+            lambda m: (
+                (m.start or date.min) <= today and today <= (m.end or date.max)
+            ), memberships
         )
+
+        return sorted(active, key=lambda m: (
+            m.start or date.min, m.end or date.max
+        ))
 
     @property
     def parties(self):

@@ -104,7 +104,7 @@ def organization_end(obj):
 
 class Organization(Container):
 
-    available_states = ('active', 'inactive', 'all')
+    available_states = ('active', 'inactive', 'future', 'all')
 
     def exclude_from_nav(self):
         return not is_organization_visible(self)
@@ -155,10 +155,16 @@ class Organization(Container):
             - past_memberships \
             - future_memberships
 
+        inactive_memberships = all_memberships \
+            - active_memberships \
+            - future_memberships
+
         if state == 'active':
             return [a for a in memberships if a.UID in active_memberships]
+        elif state == 'inactive':
+            return [i for i in memberships if i.UID in inactive_memberships]
         else:
-            return [i for i in memberships if i.UID not in active_memberships]
+            return [i for i in memberships if i.UID in future_memberships]
 
 
 def is_organization_visible(org):

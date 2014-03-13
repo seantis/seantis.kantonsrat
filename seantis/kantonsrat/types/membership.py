@@ -1,5 +1,7 @@
 from five import grok
 
+from zope import schema
+from zope.interface import invariant, Invalid
 from zope.schema.interfaces import IContextSourceBinder
 from z3c.relationfield.schema import RelationChoice
 
@@ -53,9 +55,30 @@ def available_memberships(context):
 
 class IMembership(IPeopleMembership):
 
+    start = schema.Date(
+        title=_(u"Start of membership"),
+        required=False
+    )
+
+    end = schema.Date(
+        title=_(u"End of membership"),
+        required=False
+    )
+
     replacement_for = RelationChoice(
         title=_(u"Replacement for"),
         description=_(u"The membership which this membership replaces"),
         source=available_memberships,
         required=False
     )
+
+    @invariant
+    def has_valid_daterange(Membership):
+        if Membership.start is None:
+            return
+
+        if Membership.end is None:
+            return
+
+        if Membership.start > Membership.end:
+            raise Invalid(_(u"The membership can't end before it starts"))

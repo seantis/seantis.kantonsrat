@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-13 08:51+0000\n"
+"POT-Creation-Date: 2014-03-13 10:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr "Geburtstag"
 msgid "Committee"
 msgstr "Kommission"
 
-#: ./types/kantonsrat.py:37
+#: ./types/kantonsrat.py:38
 msgid "Committees"
 msgstr "Kommissionen"
 
@@ -79,6 +79,10 @@ msgstr "E-Mail"
 msgid "End"
 msgstr "Ende"
 
+#: ./types/membership.py:64
+msgid "End of membership"
+msgstr "Ende der Mitgliedschaft"
+
 #: ./types/kantonsrat.xml
 msgid "Entry Date"
 msgstr "Eintritt"
@@ -88,7 +92,7 @@ msgstr "Eintritt"
 msgid "Faction"
 msgstr "Fraktion"
 
-#: ./types/kantonsrat.py:36
+#: ./types/kantonsrat.py:37
 msgid "Factions"
 msgstr "Fraktionen"
 
@@ -103,6 +107,10 @@ msgstr "Vorname"
 #: ./types/kantonsrat.xml
 msgid "Function"
 msgstr "Funktion"
+
+#: ./browser/templates/organization.pt:34
+msgid "Future Memberships"
+msgstr "Zukünftige Mitgliedschaften"
 
 #: ./browser/membership_form.py:12
 msgid "General"
@@ -137,8 +145,8 @@ msgid "Lifetime of Geschäftsverzeichnis cache"
 msgstr "Lebensdauer von Geschäftsverzeichnis-Anfragen"
 
 #: ./browser/templates/organization.pt:29
-msgid "Members"
-msgstr "Mitglieder"
+msgid "Memberships"
+msgstr "Mitgliedschaften"
 
 #: ./types/kantonsrat.xml
 msgid "Mobile"
@@ -148,11 +156,15 @@ msgstr "Handy"
 msgid "Motions"
 msgstr "Geschäfte"
 
-#: ./types/kantonsrat.py:35
+#: ./types/kantonsrat.py:36
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:23
 msgid "Party"
 msgstr "Partei"
+
+#: ./browser/templates/organization.pt:39
+msgid "Past Memberships"
+msgstr "Vergangene Mitgliedschaften"
 
 #: ./types/kantonsrat.xml
 msgid "Phone"
@@ -171,10 +183,6 @@ msgstr "Bürgerort"
 msgid "Portrait"
 msgstr "Portrait"
 
-#: ./browser/templates/organization.pt:34
-msgid "Previous Members"
-msgstr "Frühere Mitglieder"
-
 #: ./types/kantonsrat.xml
 msgid "Private"
 msgstr "Privat"
@@ -187,11 +195,11 @@ msgstr "Privat-Adresse"
 msgid "Profession"
 msgstr "Beruf"
 
-#: ./types/membership.py:57
+#: ./types/membership.py:69
 msgid "Replacement for"
 msgstr "Ersatz für"
 
-#: ./browser/macros.py:78
+#: ./browser/macros.py:92
 msgid "Replacement for ${name}"
 msgstr "Ersatz für ${name}"
 
@@ -212,11 +220,19 @@ msgstr "Zweite E-Mail"
 msgid "Start"
 msgstr "Start"
 
-#: ./types/kantonsrat.py:28
+#: ./types/membership.py:59
+msgid "Start of membership"
+msgstr "Start der Mitgliedschaft"
+
+#: ./types/kantonsrat.py:29
 msgid "Submitted Motions"
 msgstr "Eingereichte Geschäfte"
 
-#: ./types/membership.py:58
+#: ./types/membership.py:84
+msgid "The membership can't end before it starts"
+msgstr "Die Mitgliedschaft kann nicht enden bevor sie beginnt"
+
+#: ./types/membership.py:70
 msgid "The membership which this membership replaces"
 msgstr "Das Mitglied das ersetzt wird."
 
@@ -252,15 +268,23 @@ msgstr "Wird benutzt um die Geschäfte im Geschäftsverzeichnis bei den Kantonsr
 msgid "Website"
 msgstr "Webseite"
 
-#: ./browser/macros.py:49
+#: ./browser/macros.py:58
 msgid "from ${start}"
-msgstr "vom ${start}"
+msgstr "ab ${start}"
 
-#: ./browser/macros.py:43
+#: ./browser/macros.py:46
 msgid "from ${start} until ${end}"
-msgstr "vom ${start} bis ${end}"
+msgstr "ab ${start} bis ${end}"
 
-#: ./browser/macros.py:53
+#: ./browser/macros.py:62
+msgid "since ${start}"
+msgstr "seit ${start}"
+
+#: ./browser/macros.py:51
+msgid "since ${start} until ${end}"
+msgstr "seit ${start} bis ${end}"
+
+#: ./browser/macros.py:67
 msgid "until ${end}"
 msgstr "bis ${end}"
 

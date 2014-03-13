@@ -23,6 +23,9 @@ class OrganizationView(BaseView):
     def inactive_members(self):
         return self.context.memberships('inactive')
 
+    def future_members(self):
+        return self.context.memberships('future')
+
     def submitted_motions(self):
         motions_provider = queryUtility(IMotionsProvider)
         if motions_provider:

@@ -1,5 +1,5 @@
 from collections import namedtuple
-from datetime import datetime
+from datetime import datetime, date
 
 from five import grok
 from zope.interface import Interface
@@ -36,19 +36,33 @@ class View(BaseView):
         if not (start or end):
             return None
 
+        today = datetime(*date.today().timetuple()[:3])
+
         start = start and datetime(start.year, start.month, start.day) or None
         end = end and datetime(end.year, end.month, end.day) or None
 
         if start and end:
-            return _(u'from ${start} until ${end}', mapping={
-                'start': api.portal.get_localized_time(start),
-                'end': api.portal.get_localized_time(end),
-            })
+            if today < start:
+                return _(u'from ${start} until ${end}', mapping={
+                    'start': api.portal.get_localized_time(start),
+                    'end': api.portal.get_localized_time(end),
+                })
+            else:
+                return _(u'since ${start} until ${end}', mapping={
+                    'start': api.portal.get_localized_time(start),
+                    'end': api.portal.get_localized_time(end),
+                })
 
         if start:
-            return _(u'from ${start}', mapping={
-                'start': api.portal.get_localized_time(start)
-            })
+            if today < start:
+                return _(u'from ${start}', mapping={
+                    'start': api.portal.get_localized_time(start)
+                })
+            else:
+                return _(u'since ${start}', mapping={
+                    'start': api.portal.get_localized_time(start)
+                })
+
         else:
             return _(u'until ${end}', mapping={
                 'end': api.portal.get_localized_time(end)

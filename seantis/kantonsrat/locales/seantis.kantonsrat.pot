@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-13 08:51+0000\n"
+"POT-Creation-Date: 2014-03-13 10:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgstr ""
 msgid "Committee"
 msgstr ""
 
-#: ./types/kantonsrat.py:37
+#: ./types/kantonsrat.py:38
 msgid "Committees"
 msgstr ""
 
@@ -82,6 +82,10 @@ msgstr ""
 msgid "End"
 msgstr ""
 
+#: ./types/membership.py:64
+msgid "End of membership"
+msgstr ""
+
 #: ./types/kantonsrat.xml
 msgid "Entry Date"
 msgstr ""
@@ -91,7 +95,7 @@ msgstr ""
 msgid "Faction"
 msgstr ""
 
-#: ./types/kantonsrat.py:36
+#: ./types/kantonsrat.py:37
 msgid "Factions"
 msgstr ""
 
@@ -105,6 +109,10 @@ msgstr ""
 
 #: ./types/kantonsrat.xml
 msgid "Function"
+msgstr ""
+
+#: ./browser/templates/organization.pt:34
+msgid "Future Memberships"
 msgstr ""
 
 #: ./browser/membership_form.py:12
@@ -140,7 +148,7 @@ msgid "Lifetime of Geschäftsverzeichnis cache"
 msgstr ""
 
 #: ./browser/templates/organization.pt:29
-msgid "Members"
+msgid "Memberships"
 msgstr ""
 
 #: ./types/kantonsrat.xml
@@ -151,10 +159,14 @@ msgstr ""
 msgid "Motions"
 msgstr ""
 
-#: ./types/kantonsrat.py:35
+#: ./types/kantonsrat.py:36
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:23
 msgid "Party"
+msgstr ""
+
+#: ./browser/templates/organization.pt:39
+msgid "Past Memberships"
 msgstr ""
 
 #: ./types/kantonsrat.xml
@@ -174,10 +186,6 @@ msgstr ""
 msgid "Portrait"
 msgstr ""
 
-#: ./browser/templates/organization.pt:34
-msgid "Previous Members"
-msgstr ""
-
 #: ./types/kantonsrat.xml
 msgid "Private"
 msgstr ""
@@ -190,11 +198,11 @@ msgstr ""
 msgid "Profession"
 msgstr ""
 
-#: ./types/membership.py:57
+#: ./types/membership.py:69
 msgid "Replacement for"
 msgstr ""
 
-#: ./browser/macros.py:78
+#: ./browser/macros.py:92
 msgid "Replacement for ${name}"
 msgstr ""
 
@@ -215,11 +223,19 @@ msgstr ""
 msgid "Start"
 msgstr ""
 
-#: ./types/kantonsrat.py:28
+#: ./types/membership.py:59
+msgid "Start of membership"
+msgstr ""
+
+#: ./types/kantonsrat.py:29
 msgid "Submitted Motions"
 msgstr ""
 
-#: ./types/membership.py:58
+#: ./types/membership.py:84
+msgid "The membership can't end before it starts"
+msgstr ""
+
+#: ./types/membership.py:70
 msgid "The membership which this membership replaces"
 msgstr ""
 
@@ -255,15 +271,23 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: ./browser/macros.py:49
+#: ./browser/macros.py:58
 msgid "from ${start}"
 msgstr ""
 
-#: ./browser/macros.py:43
+#: ./browser/macros.py:46
 msgid "from ${start} until ${end}"
 msgstr ""
 
-#: ./browser/macros.py:53
+#: ./browser/macros.py:62
+msgid "since ${start}"
+msgstr ""
+
+#: ./browser/macros.py:51
+msgid "since ${start} until ${end}"
+msgstr ""
+
+#: ./browser/macros.py:67
 msgid "until ${end}"
 msgstr ""
 
