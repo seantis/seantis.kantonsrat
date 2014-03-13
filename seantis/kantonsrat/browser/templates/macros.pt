@@ -11,27 +11,63 @@
     </tal:comment>
 
     <metal:define define-macro="kantonsrat-organization-members"
-       tal:define="macro python: context.unrestrictedTraverse('@@seantis-kantonsrat-macros')">
-        <ul class="dense">
-          <li tal:repeat="member python: macro.as_simplified_structure(memberships)">
-              <a tal:attributes="href member/url" tal:content="member/person" />
-              <tal:block condition="member/role | nothing">
-                  <span class="seantis-role-separator">-</span>
-                  <span class="seantis-role" tal:content="member/role"></span>
-              </tal:block>
-              <tal:block condition="member/membership_edit | nothing">
-                  <a tal:attributes="href member/membership_edit" i18n:translate="">Edit</a>
-              </tal:block>
-              <tal:block condition="member/timespan | nothing">
-                  <p tal:content="member/timespan"></p>
-              </tal:block>
-              <tal:block condition="member/replacement_for">
-                  <p tal:content="member/replacement_for"></p>
-              </tal:block>
-              <tal:block condition="member/note | nothing">
-                  <p tal:content="member/note"></p>
-              </tal:block>
-          </li>
-      </ul>
+      tal:define="
+        macro python: context.unrestrictedTraverse('@@seantis-kantonsrat-macros');
+        members python: macro.as_simplified_structure(memberships);
+    ">
+
+        <div class="kantonsrat-memberships" >
+
+            <ul class="dense">
+                <li tal:repeat="member members">
+                    <div class="kantonsrat-url">
+                        <a tal:attributes="href member/url" tal:content="member/person" />
+                    </div>
+                    <div class="kantonsrat-role" tal:condition="member/role">
+                        <tal:block content="member/role" />
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="kantonsrat-timespan" tal:condition="member/timespan">
+                        <tal:block content="member/timespan" />
+                    </div>
+                    <div class="kantonsrat-replacement_for" tal:condition="member/replacement_for">
+                        <tal:block content="member/replacement_for" />
+                    </div>
+                    <div class="kantonsrat-note" tal:condition="member/note">
+                        <tal:block content="member/note" />
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="kantonsrat-state" tal:condition="member/state">
+                        <tal:block content="member/state" />
+                    </div>
+                    <div class="kantonsrat-actions" 
+                        tal:condition="member/edit|member/publish|member/retract">
+
+                        <a tal:condition="member/edit" tal:attributes="href member/edit" 
+                            i18n:translate="">
+                            Edit
+                        </a>
+
+                        <a tal:condition="member/publish" tal:attributes="href member/publish" 
+                            i18n:translate="">
+                            Publish
+                        </a>
+
+                        <a tal:condition="member/retract" tal:attributes="href member/retract" 
+                            i18n:translate="">
+                            Retract
+                        </a>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </li>
+            </ul>
+
+        </div>      
+
     </metal:define>
 </html>

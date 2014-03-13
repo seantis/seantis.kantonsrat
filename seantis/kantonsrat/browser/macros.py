@@ -75,11 +75,19 @@ class View(BaseView):
                 'person',
                 'url',
                 'note',
+                'timespan',
                 'replacement_for',
-                'membership_edit',
-                'timespan'
+                'state',
+                'edit',
+                'publish',
+                'retract'
             ]
         )
+
+        states = {
+            'private': _(u'Private'),
+            'published': _(u'Published'),
+        }
 
         for brain in memberships:
             membership = brain.getObject()
@@ -96,16 +104,28 @@ class View(BaseView):
             ) or u''
 
             if checkPermission('cmf.ModifyPortalContent', membership):
-                membership_edit = membership.absolute_url() + '/edit'
+                edit = membership.absolute_url() + '/edit'
+                state = states.get(brain.review_state, brain.review_state)
+                publish = brain.review_state == 'private' and ''.join((
+                    brain.getURL(),
+                    '/content_status_modify?workflow_action=publish'
+                ))
+                retract = brain.review_state == 'published' and ''.join((
+                    brain.getURL(),
+                    '/content_status_modify?workflow_action=retract'
+                ))
             else:
-                membership_edit = None
+                edit, state, publish, retract = None, None, None, None
 
             yield Member(
                 membership.role,
                 person_brain.Title,
                 person_brain.getURL(),
                 membership.note,
+                self.get_human_timespan(brain.start, brain.end),
                 replacement_for,
-                membership_edit,
-                self.get_human_timespan(brain.start, brain.end)
+                state,
+                edit,
+                publish,
+                retract
             )

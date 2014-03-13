@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-13 10:09+0000\n"
+"POT-Creation-Date: 2014-03-13 15:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Don't change this value if a new members replaces this member. Instead, change this members role and add a new member with the new role. Otherwise the history of this organization won't be correct anymore. "
 msgstr ""
 
-#: ./browser/templates/macros.pt:23
+#: ./browser/templates/macros.pt:50
 msgid "Edit"
 msgstr ""
 
@@ -186,6 +186,7 @@ msgstr ""
 msgid "Portrait"
 msgstr ""
 
+#: ./browser/macros.py:88
 #: ./types/kantonsrat.xml
 msgid "Private"
 msgstr ""
@@ -198,12 +199,24 @@ msgstr ""
 msgid "Profession"
 msgstr ""
 
+#: ./browser/templates/macros.pt:55
+msgid "Publish"
+msgstr ""
+
+#: ./browser/macros.py:89
+msgid "Published"
+msgstr ""
+
 #: ./types/membership.py:69
 msgid "Replacement for"
 msgstr ""
 
-#: ./browser/macros.py:92
+#: ./browser/macros.py:100
 msgid "Replacement for ${name}"
+msgstr ""
+
+#: ./browser/templates/macros.pt:60
+msgid "Retract"
 msgstr ""
 
 #: ./types/kantonsrat.xml
