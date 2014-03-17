@@ -19,7 +19,7 @@
         <div class="kantonsrat-memberships">
 
             <ul class="dense">
-                <li tal:repeat="member members">
+                <li tal:repeat="member members" tal:attributes="id member/id">
                     <div class="kantonsrat-url">
                         <a tal:attributes="href member/url" tal:content="member/person" />
                     </div>

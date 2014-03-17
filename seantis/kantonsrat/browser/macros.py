@@ -71,6 +71,7 @@ class View(BaseView):
     def as_simplified_structure(self, memberships):
         Member = namedtuple(
             'Member', [
+                'id',
                 'role',
                 'person',
                 'url',
@@ -118,6 +119,7 @@ class View(BaseView):
                 edit, state, publish, retract = None, None, None, None
 
             yield Member(
+                membership.id,
                 membership.role,
                 person_brain.Title,
                 person_brain.getURL(),

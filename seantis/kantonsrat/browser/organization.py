@@ -1,5 +1,6 @@
 from five import grok
 
+from plone.folder.interfaces import IExplicitOrdering
 from plone.uuid.interfaces import IUUID
 from zope.component import queryUtility
 
@@ -10,8 +11,7 @@ from seantis.kantonsrat.browser.base import BaseView
 
 class OrganizationView(BaseView):
 
-    permission = 'zope2.View'
-    grok.require(permission)
+    grok.require('zope2.View')
     grok.context(IOrganization)
     grok.name('view')
 
@@ -32,3 +32,24 @@ class OrganizationView(BaseView):
             return motions_provider.motions_by_entity(IUUID(self.context))
         else:
             return []
+
+
+class OrganizationMembershipReorderView(BaseView):
+
+    grok.require('cmf.ModifyPortalContent')
+    grok.context(IOrganization)
+    grok.name('reorder-memberships')
+
+    def update(self):
+        self.reorder_memberships()
+
+    def reorder_memberships(self):
+        order = self.request.get('order')
+
+        if not order:
+            return
+
+        IExplicitOrdering(self.context).moveObjectsToTop(order.split(','))
+
+    def render(self):
+        return u''

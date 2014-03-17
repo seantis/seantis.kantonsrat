@@ -1,4 +1,7 @@
+from zope.component import getUtility
 from plone import api
+from plone.registry.interfaces import IRegistry
+from collective.js.jqueryui.interfaces import IJQueryUIPlugins
 
 from seantis.people.upgrades import (
     run_import_step_from_profile,
@@ -78,3 +81,28 @@ def update_javascript(context):
     run_import_step_from_profile(
         'jsregistry', 'seantis.kantonsrat', 'default'
     )
+
+
+def install_jquery_ui(context):
+    setup = api.portal.get_tool('portal_setup')
+    registry = getUtility(IRegistry)
+
+    try:
+        proxy = registry.forInterface(IJQueryUIPlugins)
+        already_installed = True
+    except KeyError:
+        already_installed = False
+
+    setup.runAllImportStepsFromProfile(
+        'profile-collective.js.jqueryui:default'
+    )
+
+    # There's currently a conflict between plone's autocomplete and jQuery UIs
+    # autocomplete. For now it can be worked arouned by disabling jQuery UIs
+    # autocomplete, until the bug is fixed:
+    # https://github.com/plone/plone.formwidget.autocomplete/issues/5
+    #
+    # We only do this if we're the ones installing jQuery UI at this point.
+    if not already_installed:
+        proxy = registry.forInterface(IJQueryUIPlugins)
+        setattr(proxy, 'ui_autocomplete', False)

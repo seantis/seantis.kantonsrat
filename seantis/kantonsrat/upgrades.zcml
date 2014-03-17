@@ -79,4 +79,11 @@
         handler=".upgrades.update_javascript"
     />
 
+    <genericsetup:upgradeStep
+        title="Install jQueryUI dependency."
+        source="1011" destination="1012"
+        profile="seantis.kantonsrat:default"
+        handler=".upgrades.install_jquery_ui"
+    />
+
 </configure>

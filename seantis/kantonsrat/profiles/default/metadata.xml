@@ -1,6 +1,7 @@
 <metadata>
-    <version>1011</version>
+    <version>1012</version>
     <dependencies>
         <dependency>profile-seantis.people:default</dependency>
+        <dependency>profile-collective.js.jqueryui:default</dependency>
     </dependencies>
 </metadata>
