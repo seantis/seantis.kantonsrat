@@ -26,7 +26,12 @@ load_libraries(['_', 'jQuery'], function(_, $) {
 
     var reload_memberships = function() {
         var url = document.URL +  ' #kantonsrat-memberships-block';
-        $('#kantonsrat-memberships-block').load(url, setup_events);
+        $('#kantonsrat-memberships-block').load(url, function() {
+            setup_events();
+
+            // firefox will sometimes fail to do this
+            $('#ajax-spinner').hide();
+        });
     };
 
     var setup_events = function() {
