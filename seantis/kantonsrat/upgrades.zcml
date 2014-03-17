@@ -72,4 +72,11 @@
         handler=".upgrades.install_custom_controlpanel"
     />
 
+    <genericsetup:upgradeStep
+        title="Add javascript."
+        source="1010" destination="1011"
+        profile="seantis.kantonsrat:default"
+        handler=".upgrades.update_javascript"
+    />
+
 </configure>

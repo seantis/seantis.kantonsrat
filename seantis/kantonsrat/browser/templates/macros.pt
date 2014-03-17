@@ -16,7 +16,7 @@
         members python: macro.as_simplified_structure(memberships);
     ">
 
-        <div class="kantonsrat-memberships" >
+        <div class="kantonsrat-memberships">
 
             <ul class="dense">
                 <li tal:repeat="member members">
@@ -41,7 +41,7 @@
 
                     <div class="clearfix"></div>
 
-                    <div class="kantonsrat-state" tal:condition="member/state">
+                    <div class="kantonsrat-state inline-tag" tal:condition="member/state">
                         <tal:block content="member/state" />
                     </div>
                     <div class="kantonsrat-actions" 

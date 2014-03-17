@@ -72,3 +72,9 @@ def install_custom_controlpanel(context):
     run_import_step_from_profile(
         'controlpanel', 'seantis.kantonsrat', 'default'
     )
+
+
+def update_javascript(context):
+    run_import_step_from_profile(
+        'jsregistry', 'seantis.kantonsrat', 'default'
+    )
