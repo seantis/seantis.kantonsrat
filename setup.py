@@ -55,7 +55,8 @@ setup(
         'seantis.plonetools>=0.11',
         'collective.dexteritytextindexer',
         'collective.js.jqueryui',
-        'reportlab'
+        'reportlab==2.7',
+        'pdfdocument'
     ],
     extras_require=dict(
         tests=tests_require

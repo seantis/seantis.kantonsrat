@@ -25,7 +25,7 @@ class Report(BaseView):
 
         return self.get_response(
             filename=self.translate(report['title']),
-            filehandle=report['class']().get()
+            filehandle=report['class']().build(self.context, self.request)
         )
 
     def get_response(self, filename, filehandle):

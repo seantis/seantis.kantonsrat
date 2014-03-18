@@ -9,7 +9,7 @@ from .organizations import OrganizationsReport
 def get_available_reports():
     return OrderedDict(
         organizations_with_members={
-            'title': _(u'Organizations and Members'),
+            'title': _(u'Organizations with Members'),
             'description': _(
                 u'Shows all organizations and their current members'
             ),
