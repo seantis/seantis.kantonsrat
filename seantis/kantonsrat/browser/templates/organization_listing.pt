@@ -13,7 +13,15 @@
       <metal:block use-macro="context/folder_listing/macros/content-core">
         <metal:entries fill-slot="entries" tal:define="batch view/organizations">
           
-          
+          <div class="kantonsrat-reports" tal:condition="view/is_manager">
+            <h2 i18n:translate="">Reports</h2>
+            <ul class="dense">
+              <li tal:repeat="report view/reports">
+                <a tal:attributes="href report/url" tal:content="report/title"></a>
+              </li>
+            </ul>
+            <h2 i18n:translate="">Organizations</h2>
+          </div>      
 
           <dl class="organization-listing">
             <metal:block use-macro="context/folder_listing/macros/entries">

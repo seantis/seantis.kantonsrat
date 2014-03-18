@@ -1,3 +1,4 @@
+from collections import namedtuple
 from plone import api
 
 from five import grok
@@ -5,6 +6,7 @@ from zope.security import checkPermission
 
 from Products.ATContentTypes.interface import IATFolder
 
+from seantis.kantonsrat.reports import get_available_reports
 from seantis.kantonsrat.types.organization import is_organization_visible
 from seantis.kantonsrat.browser.base import BaseView
 
@@ -56,3 +58,18 @@ class Listing(BaseView):
 
     def is_active(self, organization):
         return is_organization_visible(organization)
+
+    def reports(self):
+        Report = namedtuple("Report", ['url', 'title'])
+        baseurl = self.context.absolute_url()
+
+        reports = []
+        for id, report in get_available_reports().items():
+            reports.append(
+                Report(
+                    '{}/kantonsrat-report?id={}'.format(baseurl, id),
+                    report['title']
+                )
+            )
+
+        return reports
