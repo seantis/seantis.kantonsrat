@@ -5,6 +5,10 @@ Changelog
 0.5 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Adds the ability to define past, present and future memberships in 
+  organizations.
+  [href]
+
 - Adds the ability to show external motions defined in
   https://github.com/4teamwork/geschaeftsverzeichnis.
   [href]
@@ -12,9 +16,9 @@ Changelog
 - Adds the ability to select a replacement for existing memberships.
   [href]
 
-- Adds the ability to activate/deactivate organisations using a flag or
-  a start/end date. Inactive organisations are not shown in the list and
-  in the navigation. They are still available through the url.
+- Adds the ability to activate/deactivate organisations using a start/end date.
+  Inactive organisations are not shown in the list and in the navigation. 
+  They are still available through the url.
 
   This needs a cronjob run every night calling
   https://example.org/plone/trigger-state as administrator.

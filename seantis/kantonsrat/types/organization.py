@@ -104,7 +104,7 @@ def organization_end(obj):
 
 class Organization(Container):
 
-    available_states = ('active', 'inactive', 'future', 'all')
+    available_states = ('past', 'present', 'future', 'all')
 
     def exclude_from_nav(self):
         return not is_organization_visible(self)
@@ -133,38 +133,26 @@ class Organization(Container):
         # They also must not be have a replacement linked to them.
         # Future memberships are ignored.
 
-        all_memberships = set(
+        everyone = set(
             m.UID for m in memberships
         )
 
-        replaced_memberships = set(
-            m.replacement_for_uuid for m in memberships
-            if m.replacement_for_uuid
-        )
-
-        past_memberships = set(
+        past = set(
             m.UID for m in memberships if (m.end or date.max) < keydate
         )
 
-        future_memberships = set(
+        future = set(
             m.UID for m in memberships if (m.start or date.min) > keydate
         )
 
-        active_memberships = all_memberships \
-            - replaced_memberships \
-            - past_memberships \
-            - future_memberships
+        present = everyone - past - future
 
-        inactive_memberships = all_memberships \
-            - active_memberships \
-            - future_memberships
-
-        if state == 'active':
-            return [a for a in memberships if a.UID in active_memberships]
-        elif state == 'inactive':
-            return [i for i in memberships if i.UID in inactive_memberships]
+        if state == 'past':
+            return [a for a in memberships if a.UID in past]
+        elif state == 'present':
+            return [i for i in memberships if i.UID in present]
         else:
-            return [i for i in memberships if i.UID in future_memberships]
+            return [i for i in memberships if i.UID in future]
 
 
 def is_organization_visible(org):

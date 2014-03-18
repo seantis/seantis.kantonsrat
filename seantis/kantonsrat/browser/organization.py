@@ -17,11 +17,11 @@ class OrganizationView(BaseView):
 
     template = grok.PageTemplateFile('templates/organization.pt')
 
-    def active_members(self):
-        return self.context.memberships('active')
+    def present_members(self):
+        return self.context.memberships('present')
 
-    def inactive_members(self):
-        return self.context.memberships('inactive')
+    def past_members(self):
+        return self.context.memberships('past')
 
     def future_members(self):
         return self.context.memberships('future')

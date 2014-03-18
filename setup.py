@@ -54,6 +54,7 @@ setup(
         'seantis.people>=0.17',
         'seantis.plonetools>=0.11',
         'collective.dexteritytextindexer',
+        'collective.js.jqueryui'
     ],
     extras_require=dict(
         tests=tests_require

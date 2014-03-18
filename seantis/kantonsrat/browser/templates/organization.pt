@@ -26,7 +26,7 @@
             </tal:block>
 
             <div id="kantonsrat-memberships-block">
-                <tal:block define="memberships view/active_members" condition="memberships">
+                <tal:block define="memberships view/present_members" condition="memberships">
                     <h2 i18n:translate="">Memberships</h2>
                     <metal:use use-macro="context/@@seantis-kantonsrat-macros/kantonsrat-organization-members" />
                 </tal:block>
@@ -36,7 +36,7 @@
                     <metal:use use-macro="context/@@seantis-kantonsrat-macros/kantonsrat-organization-members" />
                 </tal:block>
                
-                <tal:block define="memberships view/inactive_members" condition="memberships">
+                <tal:block define="memberships view/past_members" condition="memberships">
                     <h2 i18n:translate="">Past Memberships</h2>
                     <metal:use use-macro="context/@@seantis-kantonsrat-macros/kantonsrat-organization-members" />
                 </tal:block>
