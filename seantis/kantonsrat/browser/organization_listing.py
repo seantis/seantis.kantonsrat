@@ -60,7 +60,7 @@ class Listing(BaseView):
         return is_organization_visible(organization)
 
     def reports(self):
-        Report = namedtuple("Report", ['url', 'title'])
+        Report = namedtuple("Report", ['url', 'title', 'description'])
         baseurl = self.context.absolute_url()
 
         reports = []
@@ -68,7 +68,8 @@ class Listing(BaseView):
             reports.append(
                 Report(
                     '{}/kantonsrat-report?id={}'.format(baseurl, id),
-                    report['title']
+                    report['title'],
+                    report['description']
                 )
             )
 

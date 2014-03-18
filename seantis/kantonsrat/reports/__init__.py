@@ -10,6 +10,9 @@ def get_available_reports():
     return OrderedDict(
         organizations_with_members={
             'title': _(u'Organizations and Members'),
+            'description': _(
+                u'Shows all organizations and their current members'
+            ),
             'class': OrganizationsReport
         }
     )
