@@ -47,6 +47,7 @@ load_libraries(['_', 'jQuery', 'URI'], function(_, $, URI) {
 
         $(selector).sortable({
             placeholder: "ui-state-highlight",
+            forcePlaceholderSize: true,
             axis: "y",
             update: function( event, ui ) {
                 var uri = URI(window.location.href);
