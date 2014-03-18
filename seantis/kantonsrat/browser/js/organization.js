@@ -19,6 +19,7 @@ load_libraries(['_', 'jQuery', 'URI'], function(_, $, URI) {
                         e.preventDefault();
                         reload_memberships();
                     } else {
+                        // make sure the contenttree popup works inside the overlay
                         target.find('.searchButton').click(function() {
                             $('.overlay').hide();
                             $('#exposeMask').hide();
