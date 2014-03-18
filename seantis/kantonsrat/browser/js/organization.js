@@ -14,9 +14,22 @@ load_libraries(['_', 'jQuery', 'URI'], function(_, $, URI) {
             },
             config: {
                 onBeforeLoad : function (e) {
-                    if (! $(e.target).find('form').length) {
+                    var target = $(e.target);
+                    if (! target.find('form').length) {
                         e.preventDefault();
                         reload_memberships();
+                    } else {
+                        target.find('.searchButton').click(function() {
+                            $('.overlay').hide();
+                            $('#exposeMask').hide();
+
+                            $('.contenttreeWindow').find(
+                                '.contenttreeWindowActions input'
+                            ).click(function() {
+                                $('.overlay').show();
+                                $('#exposeMask').show();
+                            });
+                        });
                     }
                 }
             }
