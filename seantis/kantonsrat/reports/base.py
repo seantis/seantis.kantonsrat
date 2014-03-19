@@ -30,10 +30,9 @@ class PDF(PDFDocument):
         self.doc = Template(*args, **kwargs)
         self.doc.PDFDocument = self
         self.story = []
-        self.show_boundaries = True
 
         self.font_name = kwargs.get('font_name', 'Helvetica')
-        self.font_size = kwargs.get('font_size', 9)
+        self.font_size = kwargs.get('font_size', 10)
 
         self.margin_left = 3.5*cm
         self.margin_top = 5.2*cm
@@ -42,12 +41,19 @@ class PDF(PDFDocument):
 
     def table_of_contents(self):
         self.toc = TableOfContents()
+        self.toc.levelStyles[0].leftIndent = 0
+        self.toc.levelStyles[0].fontName = self.font_name
         self.story.append(self.toc)
 
-    def h1(self, text, style=None):
+    def h1(self, text, style=None, toc_level=0):
         super(PDF, self).h1(text, style)
-        if hasattr(self, 'toc'):
-            self.story[-1].toc_level = 0
+        if toc_level is not None and hasattr(self, 'toc'):
+            self.story[-1].toc_level = toc_level
+
+    def h2(self, text, style=None, toc_level=1):
+        super(PDF, self).h2(text, style)
+        if toc_level is not None and hasattr(self, 'toc'):
+            self.story[-1].toc_level = toc_level
 
     def init_report(self, page_fn=dummy_stationery, page_fn_later=None):
         frame_kwargs = {

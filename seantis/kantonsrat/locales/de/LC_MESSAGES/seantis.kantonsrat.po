@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-19 09:56+0000\n"
+"POT-Creation-Date: 2014-03-19 15:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,10 +42,6 @@ msgstr "Kommission"
 msgid "Committees"
 msgstr "Kommissionen"
 
-#: ./reports/organizations.py:45
-msgid "Content"
-msgstr "Inhalt"
-
 #: ./types/organization.py:66
 msgid "Date after which the organization is invisible."
 msgstr "Nach diesem Datum ist die Organisation unsichtbar."
@@ -71,7 +67,7 @@ msgstr "Bitte ändern Sie diesen Verweis nicht wenn ein Mitglied ein anderes Mit
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: ./reports/organizations.py:72
+#: ./reports/organizations.py:137
 msgid "Election on ${date}"
 msgstr "Wahl am ${date}"
 
@@ -148,7 +144,7 @@ msgstr "Nachname"
 msgid "Letter Salutation"
 msgstr "Brief-Anrede"
 
-#: ./settings.py:28
+#: ./settings.py:27
 msgid "Lifetime of Geschäftsverzeichnis cache"
 msgstr "Lebensdauer von Geschäftsverzeichnis-Anfragen"
 
@@ -199,6 +195,10 @@ msgstr "Bürgerort"
 msgid "Portrait"
 msgstr "Portrait"
 
+#: ./reports/organizations.py:108
+msgid "Print date: ${date}"
+msgstr "Druckdatum: ${date}"
+
 #: ./browser/macros.py:89
 #: ./types/kantonsrat.xml
 msgid "Private"
@@ -225,11 +225,11 @@ msgid "Replacement for"
 msgstr "Ersatz für"
 
 #: ./browser/macros.py:101
-#: ./reports/organizations.py:157
+#: ./reports/organizations.py:222
 msgid "Replacement for ${name}"
 msgstr "Ersatz für ${name}"
 
-#: ./reports/organizations.py:144
+#: ./reports/organizations.py:213
 msgid "Replacement for ${name}, elected on ${date}"
 msgstr "Ersatz für ${name}, gewählt am ${date}"
 
@@ -241,12 +241,20 @@ msgstr "Berichte"
 msgid "Retract"
 msgstr "Zurückziehen"
 
+#: ./settings.py:38
+msgid "SVG Logo (in XMl) which should be used by the Report."
+msgstr "SVG Logo (in XML) welches für Berichte verwendet wird."
+
+#: ./settings.py:37
+msgid "SVG Logo for Report"
+msgstr "SVG Logo für Berichte"
+
 #: ./types/kantonsrat.xml
 msgid "Salutation"
 msgstr "Anrede"
 
 #: ./profiles/default/controlpanel.xml
-#: ./settings.py:50
+#: ./settings.py:58
 msgid "Seantis Kantonsrat Settings"
 msgstr "Seantis Kantonsrat Einstellungen"
 
@@ -278,7 +286,7 @@ msgstr "Die Mitgliedschaft kann nicht enden bevor sie beginnt"
 msgid "The membership which this membership replaces"
 msgstr "Das Mitglied das ersetzt wird."
 
-#: ./settings.py:29
+#: ./settings.py:28
 msgid "The number of seconds a request to the Geschäftsverzeichnis should be kept in the local cache. "
 msgstr "Die Dauer in Sekunden während der Geschäftsverzeichnis Anfragen lokal zwischengespeichert werden."
 
@@ -298,11 +306,11 @@ msgstr "Titel"
 msgid "Type"
 msgstr "Typ"
 
-#: ./settings.py:18
+#: ./settings.py:17
 msgid "URL to the Geschäftsverzeichnis"
 msgstr "URL zum Geschäftsverzeichnis"
 
-#: ./settings.py:19
+#: ./settings.py:18
 msgid "Used to show data from the Geschäftsverzeichnis on the member and organisation pages. Leave empty if there's no such connection."
 msgstr "Wird benutzt um die Geschäfte im Geschäftsverzeichnis bei den Kantonsräten und Organisationen anzuzeigen. Ist das Feld leer werden diese Geschäfte nicht angezeigt."
 

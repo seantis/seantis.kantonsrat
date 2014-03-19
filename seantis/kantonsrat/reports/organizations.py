@@ -25,10 +25,10 @@ class MembershipInfo(object):
         parts = list()
         if self.name:
             parts.append(self.name)
-        if self.role:
-            parts.append(self.role)
         if self.address_parts:
             parts.extend(self.address_parts)
+        if self.role:
+            parts.append(self.role)
 
         return ', '.join(parts)
 
@@ -55,7 +55,7 @@ class OrganizationsReport(Report):
                 self.pdf.draw_svg(
                     canvas,
                     temp.name,
-                    xpos=self.pdf.margin_left,
+                    xpos=1.7*cm,
                     ypos=self.pdf.page_height - 1.7*cm,
                     xsize=4.6*cm,
                     ysize=0.96*cm
@@ -68,13 +68,11 @@ class OrganizationsReport(Report):
 
         footer_info = '<br />'.join((self.title, self.print_date))
         p = MarkupParagraph(footer_info, self.pdf.style.normal)
-        p._showBoundary = True
         w, h = p.wrap(5*cm, doc.bottomMargin)
         p.drawOn(canvas, self.pdf.margin_left, h)
 
         page_info = '<br />' + str(doc.page_index()[0])
         p = MarkupParagraph(page_info, self.pdf.style.right)
-        p._showBoundary = True
         w, h = p.wrap(1*cm, doc.bottomMargin)
         p.drawOn(canvas, self.pdf.page_width - self.pdf.margin_right - 1*cm, h)
 
@@ -87,7 +85,22 @@ class OrganizationsReport(Report):
             )
         )
 
+    def adjust_style(self):
+        self.pdf.style.heading1.fontName = '{}-Bold'.format(
+            self.pdf.style.fontName
+        )
+
+        self.pdf.style.heading1.fontSize = 15
+        self.pdf.style.heading1.spaceAfter = 1.2 * cm
+        self.pdf.style.heading2.fontSize = 12
+        self.pdf.style.heading2.spaceAfter = 0.6 * cm
+        self.pdf.style.normal.fontSize = 9
+        self.pdf.style.right.fontSize = 9
+        self.pdf.style.normal.rightIndent = 0.2 * cm
+        self.pdf.style.right.rightIndent = 0.2 * cm
+
     def populate(self):
+        self.adjust_style()
 
         report_date = date.today()
 
@@ -97,17 +110,16 @@ class OrganizationsReport(Report):
         }))
 
         self.pdf.h1(self.title)
-        self.pdf.h2(self.translate(_(u'Content')))
         self.pdf.table_of_contents()
         self.pdf.pagebreak()
 
-        table_columns = [1.5*cm, 10*cm, 2*cm]
+        table_columns = [1.2*cm, 13.3*cm, 2*cm]
 
         for organization in self.get_organizations(report_date):
 
             self.reset_references()
 
-            self.pdf.h1(organization.title)
+            self.pdf.h2(organization.title, toc_level=0)
             self.pdf.p(organization.description)
             self.pdf.spacer()
 
@@ -126,8 +138,7 @@ class OrganizationsReport(Report):
                     'date': self.get_date_text(organization.start)
                 })))
 
-            self.pdf.spacer()
-            self.pdf.spacer()
+            self.pdf.pagebreak()
 
     def get_reference(self):
         self.reference_count += 1
@@ -183,12 +194,17 @@ class OrganizationsReport(Report):
         memberships_table = []
         notes_table = []
 
-        for membership in memberships:
+        for ix, membership in enumerate(memberships):
             info = self.get_membership_info(membership)
             notes = self.get_membership_notes(membership)
 
+            if ix == 0:
+                text = u'<b>{}</b>'.format(info.get_text())
+            else:
+                text = info.get_text()
+
             memberships_table.append([
-                notes and notes.reference, info.get_text(), info.party
+                notes and notes.reference, text, info.party
             ])
 
             for ix, note in enumerate(notes and notes.notes or []):

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-19 09:56+0000\n"
+"POT-Creation-Date: 2014-03-19 15:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,10 +45,6 @@ msgstr ""
 msgid "Committees"
 msgstr ""
 
-#: ./reports/organizations.py:45
-msgid "Content"
-msgstr ""
-
 #: ./types/organization.py:66
 msgid "Date after which the organization is invisible."
 msgstr ""
@@ -74,7 +70,7 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ./reports/organizations.py:72
+#: ./reports/organizations.py:137
 msgid "Election on ${date}"
 msgstr ""
 
@@ -151,7 +147,7 @@ msgstr ""
 msgid "Letter Salutation"
 msgstr ""
 
-#: ./settings.py:28
+#: ./settings.py:27
 msgid "Lifetime of Geschäftsverzeichnis cache"
 msgstr ""
 
@@ -202,6 +198,10 @@ msgstr ""
 msgid "Portrait"
 msgstr ""
 
+#: ./reports/organizations.py:108
+msgid "Print date: ${date}"
+msgstr ""
+
 #: ./browser/macros.py:89
 #: ./types/kantonsrat.xml
 msgid "Private"
@@ -228,11 +228,11 @@ msgid "Replacement for"
 msgstr ""
 
 #: ./browser/macros.py:101
-#: ./reports/organizations.py:157
+#: ./reports/organizations.py:222
 msgid "Replacement for ${name}"
 msgstr ""
 
-#: ./reports/organizations.py:144
+#: ./reports/organizations.py:213
 msgid "Replacement for ${name}, elected on ${date}"
 msgstr ""
 
@@ -244,12 +244,20 @@ msgstr ""
 msgid "Retract"
 msgstr ""
 
+#: ./settings.py:38
+msgid "SVG Logo (in XMl) which should be used by the Report."
+msgstr ""
+
+#: ./settings.py:37
+msgid "SVG Logo for Report"
+msgstr ""
+
 #: ./types/kantonsrat.xml
 msgid "Salutation"
 msgstr ""
 
 #: ./profiles/default/controlpanel.xml
-#: ./settings.py:50
+#: ./settings.py:58
 msgid "Seantis Kantonsrat Settings"
 msgstr ""
 
@@ -281,7 +289,7 @@ msgstr ""
 msgid "The membership which this membership replaces"
 msgstr ""
 
-#: ./settings.py:29
+#: ./settings.py:28
 msgid "The number of seconds a request to the Geschäftsverzeichnis should be kept in the local cache. "
 msgstr ""
 
@@ -301,11 +309,11 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: ./settings.py:18
+#: ./settings.py:17
 msgid "URL to the Geschäftsverzeichnis"
 msgstr ""
 
-#: ./settings.py:19
+#: ./settings.py:18
 msgid "Used to show data from the Geschäftsverzeichnis on the member and organisation pages. Leave empty if there's no such connection."
 msgstr ""
 
