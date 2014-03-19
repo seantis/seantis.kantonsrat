@@ -42,6 +42,7 @@ class PDF(PDFDocument):
     def table_of_contents(self):
         self.toc = TableOfContents()
         self.toc.levelStyles[0].leftIndent = 0
+        self.toc.levelStyles[0].rightIndent = 0.5*cm
         self.toc.levelStyles[0].fontName = self.font_name
         self.story.append(self.toc)
 
