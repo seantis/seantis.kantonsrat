@@ -103,7 +103,7 @@ class OrganizationsReport(Report):
 
     def get_reference(self):
         self.reference_count += 1
-        return self.reference_count * '*'
+        return self.reference_count * '*' + ')'
 
     def reset_references(self):
         self.reference_count = 0
@@ -124,8 +124,9 @@ class OrganizationsReport(Report):
 
     def wrap_rows_in_paragraphs(self, table):
         for row in table:
-            for ix, column in enumerate((row or [])):
-                row[ix] = MarkupParagraph(column, self.pdf.style.normal)
+            row[0] = MarkupParagraph(row[0], self.pdf.style.right)
+            row[1] = MarkupParagraph(row[1], self.pdf.style.normal)
+            row[2] = MarkupParagraph(row[2], self.pdf.style.normal)
 
         return table
 
