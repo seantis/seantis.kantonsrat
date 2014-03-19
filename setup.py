@@ -56,7 +56,8 @@ setup(
         'collective.dexteritytextindexer',
         'collective.js.jqueryui',
         'reportlab==2.7',
-        'pdfdocument'
+        'pdfdocument',
+        'svglib'
     ],
     extras_require=dict(
         tests=tests_require

@@ -8,7 +8,6 @@ from plone.app.registry.browser.controlpanel import RegistryEditForm
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.z3cform import layout
 
-from seantis.plonetools.schemafields import Website
 from seantis.kantonsrat import _
 
 
@@ -32,6 +31,15 @@ class ISeantisKantonsratSettings(Interface):
         ),
         required=False,
         default=3600
+    )
+
+    svg_logo = schema.Text(
+        title=_(u"SVG Logo for Report"),
+        description=_(
+            u"SVG Logo (in XMl) which should be used by the Report."
+        ),
+        required=False,
+        default=u''
     )
 
 

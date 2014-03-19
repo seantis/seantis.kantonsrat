@@ -1,7 +1,10 @@
 from collections import namedtuple
 from datetime import datetime, date
+import tempfile
+
 from plone import api
 from seantis.kantonsrat import _
+from seantis.kantonsrat import settings
 
 from pdfdocument.document import MarkupParagraph
 from reportlab.lib.units import cm
@@ -36,6 +39,29 @@ MembershipNotes = namedtuple(
 
 
 class OrganizationsReport(Report):
+
+    def first_page(self, canvas, doc):
+        svg = settings.get('svg_logo')
+
+        if svg:
+            canvas.saveState()
+
+            # self.pdf.draw_svg doesn't do strings, only file paths
+            with tempfile.NamedTemporaryFile() as temp:
+                temp.file.seek(0)
+                temp.file.write(svg)
+                temp.file.flush()
+
+                self.pdf.draw_svg(
+                    canvas,
+                    temp.name,
+                    xpos=2.1*cm,
+                    ypos=28*cm,
+                    xsize=4.6*cm,
+                    ysize=0.96*cm
+                )
+
+            canvas.restoreState()
 
     def later_page(self, canvas, doc):
         canvas.saveState()

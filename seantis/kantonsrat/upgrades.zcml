@@ -86,4 +86,11 @@
         handler=".upgrades.install_jquery_ui"
     />
 
+    <genericsetup:upgradeStep
+        title="Update settings."
+        source="1012" destination="1013"
+        profile="seantis.kantonsrat:default"
+        handler=".upgrades.update_settings"
+    />
+
 </configure>

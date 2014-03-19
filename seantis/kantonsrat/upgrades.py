@@ -106,3 +106,9 @@ def install_jquery_ui(context):
     if not already_installed:
         proxy = registry.forInterface(IJQueryUIPlugins)
         setattr(proxy, 'ui_autocomplete', False)
+
+
+def update_settings(context):
+    run_import_step_from_profile(
+        'plone.app.registry', 'seantis.kantonsrat', 'default'
+    )
