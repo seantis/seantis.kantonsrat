@@ -109,7 +109,7 @@ class Organization(Container):
     def exclude_from_nav(self):
         return not is_organization_visible(self)
 
-    def memberships(self, state='active'):
+    def memberships(self, state='present', keydate=None):
         catalog = api.portal.get_tool('portal_catalog')
         folder_path = '/'.join(self.getPhysicalPath())
 
@@ -119,7 +119,7 @@ class Organization(Container):
             sort_on='getObjPositionInParent',
         )
 
-        return self.filter_memberships_by_state(memberships, state)
+        return self.filter_memberships_by_state(memberships, state, keydate)
 
     def filter_memberships_by_state(self, memberships, state, keydate=None):
         assert state in self.available_states
