@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-13 15:08+0000\n"
+"POT-Creation-Date: 2014-03-19 09:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,6 +42,10 @@ msgstr "Kommission"
 msgid "Committees"
 msgstr "Kommissionen"
 
+#: ./reports/organizations.py:45
+msgid "Content"
+msgstr "Inhalt"
+
 #: ./types/organization.py:66
 msgid "Date after which the organization is invisible."
 msgstr "Nach diesem Datum ist die Organisation unsichtbar."
@@ -66,6 +70,10 @@ msgstr "Bitte ändern Sie diesen Verweis nicht wenn ein Mitglied ein anderes Mit
 #: ./browser/templates/macros.pt:50
 msgid "Edit"
 msgstr "Bearbeiten"
+
+#: ./reports/organizations.py:72
+msgid "Election on ${date}"
+msgstr "Wahl am ${date}"
 
 #: ./types/kantonsrat.xml
 msgid "Electoral District"
@@ -108,7 +116,7 @@ msgstr "Vorname"
 msgid "Function"
 msgstr "Funktion"
 
-#: ./browser/templates/organization.pt:34
+#: ./browser/templates/organization.pt:35
 msgid "Future Memberships"
 msgstr "Zukünftige Mitgliedschaften"
 
@@ -116,7 +124,7 @@ msgstr "Zukünftige Mitgliedschaften"
 msgid "General"
 msgstr "Allgemein"
 
-#: ./browser/templates/organization_listing.pt:23
+#: ./browser/templates/organization_listing.pt:32
 msgid "Inactive:"
 msgstr "Inaktiv:"
 
@@ -144,7 +152,7 @@ msgstr "Brief-Anrede"
 msgid "Lifetime of Geschäftsverzeichnis cache"
 msgstr "Lebensdauer von Geschäftsverzeichnis-Anfragen"
 
-#: ./browser/templates/organization.pt:29
+#: ./browser/templates/organization.pt:30
 msgid "Memberships"
 msgstr "Mitgliedschaften"
 
@@ -156,13 +164,21 @@ msgstr "Handy"
 msgid "Motions"
 msgstr "Geschäfte"
 
+#: ./browser/templates/organization_listing.pt:24
+msgid "Organizations"
+msgstr "Organisationen"
+
+#: ./reports/__init__.py:12
+msgid "Organizations with Members"
+msgstr "Organisationen und Mitglieder"
+
 #: ./types/kantonsrat.py:36
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:23
 msgid "Party"
 msgstr "Partei"
 
-#: ./browser/templates/organization.pt:39
+#: ./browser/templates/organization.pt:40
 msgid "Past Memberships"
 msgstr "Vergangene Mitgliedschaften"
 
@@ -183,7 +199,7 @@ msgstr "Bürgerort"
 msgid "Portrait"
 msgstr "Portrait"
 
-#: ./browser/macros.py:88
+#: ./browser/macros.py:89
 #: ./types/kantonsrat.xml
 msgid "Private"
 msgstr "Privat"
@@ -200,7 +216,7 @@ msgstr "Beruf"
 msgid "Publish"
 msgstr "Veröffentlichen"
 
-#: ./browser/macros.py:89
+#: ./browser/macros.py:90
 msgid "Published"
 msgstr "Veröffentlicht"
 
@@ -208,9 +224,18 @@ msgstr "Veröffentlicht"
 msgid "Replacement for"
 msgstr "Ersatz für"
 
-#: ./browser/macros.py:100
+#: ./browser/macros.py:101
+#: ./reports/organizations.py:157
 msgid "Replacement for ${name}"
 msgstr "Ersatz für ${name}"
+
+#: ./reports/organizations.py:144
+msgid "Replacement for ${name}, elected on ${date}"
+msgstr "Ersatz für ${name}, gewählt am ${date}"
+
+#: ./browser/templates/organization_listing.pt:17
+msgid "Reports"
+msgstr "Berichte"
 
 #: ./browser/templates/macros.pt:60
 msgid "Retract"
@@ -228,6 +253,10 @@ msgstr "Seantis Kantonsrat Einstellungen"
 #: ./types/kantonsrat.xml
 msgid "Secondary Email"
 msgstr "Zweite E-Mail"
+
+#: ./reports/__init__.py:13
+msgid "Shows all organizations and their current members"
+msgstr "Zeigt alle Organisationen und deren Mitglieder"
 
 #: ./types/organization.py:56
 msgid "Start"

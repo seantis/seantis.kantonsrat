@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-13 15:08+0000\n"
+"POT-Creation-Date: 2014-03-19 09:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,6 +45,10 @@ msgstr ""
 msgid "Committees"
 msgstr ""
 
+#: ./reports/organizations.py:45
+msgid "Content"
+msgstr ""
+
 #: ./types/organization.py:66
 msgid "Date after which the organization is invisible."
 msgstr ""
@@ -68,6 +72,10 @@ msgstr ""
 
 #: ./browser/templates/macros.pt:50
 msgid "Edit"
+msgstr ""
+
+#: ./reports/organizations.py:72
+msgid "Election on ${date}"
 msgstr ""
 
 #: ./types/kantonsrat.xml
@@ -111,7 +119,7 @@ msgstr ""
 msgid "Function"
 msgstr ""
 
-#: ./browser/templates/organization.pt:34
+#: ./browser/templates/organization.pt:35
 msgid "Future Memberships"
 msgstr ""
 
@@ -119,7 +127,7 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: ./browser/templates/organization_listing.pt:23
+#: ./browser/templates/organization_listing.pt:32
 msgid "Inactive:"
 msgstr ""
 
@@ -147,7 +155,7 @@ msgstr ""
 msgid "Lifetime of Geschäftsverzeichnis cache"
 msgstr ""
 
-#: ./browser/templates/organization.pt:29
+#: ./browser/templates/organization.pt:30
 msgid "Memberships"
 msgstr ""
 
@@ -159,13 +167,21 @@ msgstr ""
 msgid "Motions"
 msgstr ""
 
+#: ./browser/templates/organization_listing.pt:24
+msgid "Organizations"
+msgstr ""
+
+#: ./reports/__init__.py:12
+msgid "Organizations with Members"
+msgstr ""
+
 #: ./types/kantonsrat.py:36
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:23
 msgid "Party"
 msgstr ""
 
-#: ./browser/templates/organization.pt:39
+#: ./browser/templates/organization.pt:40
 msgid "Past Memberships"
 msgstr ""
 
@@ -186,7 +202,7 @@ msgstr ""
 msgid "Portrait"
 msgstr ""
 
-#: ./browser/macros.py:88
+#: ./browser/macros.py:89
 #: ./types/kantonsrat.xml
 msgid "Private"
 msgstr ""
@@ -203,7 +219,7 @@ msgstr ""
 msgid "Publish"
 msgstr ""
 
-#: ./browser/macros.py:89
+#: ./browser/macros.py:90
 msgid "Published"
 msgstr ""
 
@@ -211,8 +227,17 @@ msgstr ""
 msgid "Replacement for"
 msgstr ""
 
-#: ./browser/macros.py:100
+#: ./browser/macros.py:101
+#: ./reports/organizations.py:157
 msgid "Replacement for ${name}"
+msgstr ""
+
+#: ./reports/organizations.py:144
+msgid "Replacement for ${name}, elected on ${date}"
+msgstr ""
+
+#: ./browser/templates/organization_listing.pt:17
+msgid "Reports"
 msgstr ""
 
 #: ./browser/templates/macros.pt:60
@@ -230,6 +255,10 @@ msgstr ""
 
 #: ./types/kantonsrat.xml
 msgid "Secondary Email"
+msgstr ""
+
+#: ./reports/__init__.py:13
+msgid "Shows all organizations and their current members"
 msgstr ""
 
 #: ./types/organization.py:56
