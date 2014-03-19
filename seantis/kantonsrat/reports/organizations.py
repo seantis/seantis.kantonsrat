@@ -55,8 +55,8 @@ class OrganizationsReport(Report):
                 self.pdf.draw_svg(
                     canvas,
                     temp.name,
-                    xpos=2.1*cm,
-                    ypos=28*cm,
+                    xpos=self.pdf.margin_left,
+                    ypos=self.pdf.page_height - 1.7*cm,
                     xsize=4.6*cm,
                     ysize=0.96*cm
                 )
@@ -68,13 +68,15 @@ class OrganizationsReport(Report):
 
         footer_info = '<br />'.join((self.title, self.print_date))
         p = MarkupParagraph(footer_info, self.pdf.style.normal)
-        w, h = p.wrap(doc.width, doc.bottomMargin)
-        p.drawOn(canvas, doc.leftMargin, h)
+        p._showBoundary = True
+        w, h = p.wrap(5*cm, doc.bottomMargin)
+        p.drawOn(canvas, self.pdf.margin_left, h)
 
         page_info = '<br />' + str(doc.page_index()[0])
-        p = MarkupParagraph(page_info, self.pdf.style.normal)
-        w, h = p.wrap(doc.width, doc.bottomMargin)
-        p.drawOn(canvas, doc.leftMargin + doc.width, h)
+        p = MarkupParagraph(page_info, self.pdf.style.right)
+        p._showBoundary = True
+        w, h = p.wrap(1*cm, doc.bottomMargin)
+        p.drawOn(canvas, self.pdf.page_width - self.pdf.margin_right - 1*cm, h)
 
         canvas.restoreState()
 
