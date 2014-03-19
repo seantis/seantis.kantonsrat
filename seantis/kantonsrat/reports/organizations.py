@@ -37,11 +37,38 @@ MembershipNotes = namedtuple(
 
 class OrganizationsReport(Report):
 
+    def later_page(self, canvas, doc):
+        canvas.saveState()
+
+        footer_info = '<br />'.join((self.title, self.print_date))
+        p = MarkupParagraph(footer_info, self.pdf.style.normal)
+        w, h = p.wrap(doc.width, doc.bottomMargin)
+        p.drawOn(canvas, doc.leftMargin, h)
+
+        page_info = '<br />' + str(doc.page_index()[0])
+        p = MarkupParagraph(page_info, self.pdf.style.normal)
+        w, h = p.wrap(doc.width, doc.bottomMargin)
+        p.drawOn(canvas, doc.leftMargin + doc.width, h)
+
+        canvas.restoreState()
+
+    def get_date_text(self, date):
+        return api.portal.get_localized_time(
+            datetime=datetime.combine(
+                date, datetime.min.time()
+            )
+        )
+
     def populate(self):
 
         report_date = date.today()
 
-        self.pdf.h1(self.context.title)
+        self.title = self.context.title
+        self.print_date = self.translate(_(u'Print date: ${date}', mapping={
+            'date': self.get_date_text(report_date)
+        }))
+
+        self.pdf.h1(self.title)
         self.pdf.h2(self.translate(_(u'Content')))
         self.pdf.table_of_contents()
         self.pdf.pagebreak()
@@ -68,11 +95,7 @@ class OrganizationsReport(Report):
 
             if organization.start:
                 self.pdf.p(self.translate(_(u'Election on ${date}', mapping={
-                    'date': api.portal.get_localized_time(
-                        datetime=datetime.combine(
-                            organization.start, datetime.min.time()
-                        )
-                    )
+                    'date': self.get_date_text(organization.start)
                 })))
 
             self.pdf.spacer()
@@ -146,11 +169,7 @@ class OrganizationsReport(Report):
                             u'Replacement for ${name}, elected on ${date}',
                             mapping={
                                 'name': note.get_text(),
-                                'date': api.portal.get_localized_time(
-                                    datetime=datetime.combine(
-                                        note.elected, datetime.min.time()
-                                    )
-                                )
+                                'date': self.get_date_text(note.elected)
                             }
                         )
 

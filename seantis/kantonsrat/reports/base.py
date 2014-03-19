@@ -41,7 +41,15 @@ class Report(object):
     def __init__(self):
         self.file = BytesIO()
         self.pdf = PDF(self.file)
-        self.pdf.init_report()
+        self.pdf.init_report(
+            page_fn=self.first_page, page_fn_later=self.later_page
+        )
+
+    def first_page(self, canvas, doc):
+        pass
+
+    def later_page(self, canvas, doc):
+        pass
 
     def translate(self, text):
         return tools.translator(self.request, 'seantis.kantonsrat')(text)
