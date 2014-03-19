@@ -66,8 +66,6 @@ class OrganizationsReport(Report):
                     )
                     self.pdf.spacer()
 
-            self.pdf.spacer()
-
             if organization.start:
                 self.pdf.p(self.translate(_(u'Election on ${date}', mapping={
                     'date': api.portal.get_localized_time(
@@ -76,6 +74,9 @@ class OrganizationsReport(Report):
                         )
                     )
                 })))
+
+            self.pdf.spacer()
+            self.pdf.spacer()
 
     def get_reference(self):
         self.reference_count += 1
