@@ -43,6 +43,21 @@
       <required>False</required>
       <title i18n:translate="">Photo</title>
     </field>
+    
+    <field name="start" type="zope.schema.Date">
+      <description i18n:translate="">
+        Date from which on this Kantonsrat is shown in the list. Independent of memberships.
+      </description>
+      <required>False</required>
+      <title i18n:translate="">Start</title>
+    </field>
+    <field name="end" type="zope.schema.Date">
+      <description i18n:translate="">
+        Date after which this Kantonsrat is hidden in the list. Independent of memberships.
+      </description>
+      <required>False</required>
+      <title i18n:translate="">End</title>
+    </field>
 
     <!-- private fields (note permission)-->
     <fieldset name="private" label="Private" i18n:attributes="label">

@@ -5,6 +5,9 @@ Changelog
 0.5 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Adds start/end to Kantonsrat which hides them from the list of the people.
+  [href]
+
 - Adds the ability to define past, present and future memberships in 
   organizations.
   [href]

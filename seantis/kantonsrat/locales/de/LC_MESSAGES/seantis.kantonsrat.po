@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-19 15:10+0000\n"
+"POT-Creation-Date: 2014-03-20 15:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,13 +38,21 @@ msgstr "Geburtstag"
 msgid "Committee"
 msgstr "Kommission"
 
-#: ./types/kantonsrat.py:38
+#: ./types/kantonsrat.py:59
 msgid "Committees"
 msgstr "Kommissionen"
 
 #: ./types/organization.py:66
 msgid "Date after which the organization is invisible."
 msgstr "Nach diesem Datum ist die Organisation unsichtbar."
+
+#: ./types/kantonsrat.xml
+msgid "Date after which this Kantonsrat is hidden in the list. Independent of memberships."
+msgstr "Datum nach dem dieser Kantonsrat in der Liste nicht mehr angezeigt wird. Unabhängig von Mitgliedschaften."
+
+#: ./types/kantonsrat.xml
+msgid "Date from which on this Kantonsrat is shown in the list. Independent of memberships."
+msgstr "Datum ab dem dieser Kantonsrat in der Liste angezeigt wird. Unabhängig von Mitgliedschaften."
 
 #: ./types/organization.py:57
 msgid "Date from which the organization is visible."
@@ -67,7 +75,7 @@ msgstr "Bitte ändern Sie diesen Verweis nicht wenn ein Mitglied ein anderes Mit
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: ./reports/organizations.py:137
+#: ./reports/organizations.py:188
 msgid "Election on ${date}"
 msgstr "Wahl am ${date}"
 
@@ -79,6 +87,7 @@ msgstr "Wahlkreis"
 msgid "Email"
 msgstr "E-Mail"
 
+#: ./types/kantonsrat.xml
 #: ./types/organization.py:65
 msgid "End"
 msgstr "Ende"
@@ -96,7 +105,7 @@ msgstr "Eintritt"
 msgid "Faction"
 msgstr "Fraktion"
 
-#: ./types/kantonsrat.py:37
+#: ./types/kantonsrat.py:58
 msgid "Factions"
 msgstr "Fraktionen"
 
@@ -168,7 +177,7 @@ msgstr "Organisationen"
 msgid "Organizations with Members"
 msgstr "Organisationen und Mitglieder"
 
-#: ./types/kantonsrat.py:36
+#: ./types/kantonsrat.py:57
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:23
 msgid "Party"
@@ -195,7 +204,7 @@ msgstr "Bürgerort"
 msgid "Portrait"
 msgstr "Portrait"
 
-#: ./reports/organizations.py:108
+#: ./reports/organizations.py:118
 msgid "Print date: ${date}"
 msgstr "Druckdatum: ${date}"
 
@@ -225,11 +234,11 @@ msgid "Replacement for"
 msgstr "Ersatz für"
 
 #: ./browser/macros.py:101
-#: ./reports/organizations.py:222
+#: ./reports/organizations.py:294
 msgid "Replacement for ${name}"
 msgstr "Ersatz für ${name}"
 
-#: ./reports/organizations.py:213
+#: ./reports/organizations.py:285
 msgid "Replacement for ${name}, elected on ${date}"
 msgstr "Ersatz für ${name}, gewählt am ${date}"
 
@@ -266,6 +275,7 @@ msgstr "Zweite E-Mail"
 msgid "Shows all organizations and their current members"
 msgstr "Zeigt alle Organisationen und deren Mitglieder"
 
+#: ./types/kantonsrat.xml
 #: ./types/organization.py:56
 msgid "Start"
 msgstr "Start"
@@ -274,9 +284,13 @@ msgstr "Start"
 msgid "Start of membership"
 msgstr "Start der Mitgliedschaft"
 
-#: ./types/kantonsrat.py:29
+#: ./types/kantonsrat.py:40
 msgid "Submitted Motions"
 msgstr "Eingereichte Geschäfte"
+
+#: ./types/kantonsrat.py:34
+msgid "The end cannt be before the start"
+msgstr "Das Ende kann nicht vor dem Start sein"
 
 #: ./types/membership.py:84
 msgid "The membership can't end before it starts"

@@ -3,7 +3,7 @@ log = logging.getLogger('seantis.kantonsrat')
 
 from datetime import date
 from five import grok
-from zope.interface import Interface
+from zope.interface import Interface, invariant, Invalid
 from zope.component import queryUtility
 
 from plone import api
@@ -22,12 +22,33 @@ from seantis.kantonsrat.interfaces import IMotionsProvider
 class IMember(form.Schema):
     form.model("kantonsrat.xml")
 
+    @invariant
+    def has_valid_daterange(Member):
+        if Member.start is None:
+            return
+
+        if Member.end is None:
+            return
+
+        if Member.start > Member.end:
+            raise Invalid(_(u"The end cannt be before the start"))
+
 
 class Member(PersonBase):
 
     custom_titles = {
         'motions': _(u'Submitted Motions')
     }
+
+    def exclude_from_nav(self):
+        return not self.is_active_person
+
+    @property
+    def is_active_person(self):
+        today = date.today()
+        start, end = (self.start or date.min), (self.end or date.max)
+
+        return (start <= today and today <= end)
 
     @property
     def membership_fields(self):
