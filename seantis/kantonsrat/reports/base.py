@@ -1,4 +1,5 @@
 from io import BytesIO
+from uuid import uuid4 as new_uuid
 from pdfdocument.document import (
     PDFDocument,
     ReportingDocTemplate,
@@ -6,14 +7,35 @@ from pdfdocument.document import (
     NextPageTemplate,
     dummy_stationery,
     Frame,
-    cm
+    cm,
+    MarkupParagraph
 )
 from reportlab.platypus.tableofcontents import TableOfContents
-
 from seantis.plonetools import tools
+
+""" seantis.kantonsrat uses pdfdocument which is built on reportlab to
+do it's pdf reporting. Unfortunately, pdfdocument lacks quite a bit in
+functionality so we need to build on it.
+
+Since we have ocqms.reports internally which does more than pdfdocument
+we have to eventually open source that because it is easier to use than
+pdfdocument and more powerful the same time.
+
+Unfortunately it depends too heavily on pyramid for now and it was faster
+to build on pdfdocument than to create a new library, write docs and test,
+just to use it here.
+
+xxx => do me in the future
+
+"""
 
 
 class Template(ReportingDocTemplate):
+    """ Extends the ReportingDocTemplate with Table of Contents printing.
+    Might be nice in the official pdfdocument lib as well, but reportlab's
+    3.0 release broke table of contents and pdfdocument shouldn't rely on 2.7.
+
+    """
 
     def afterFlowable(self, flowable):
 
@@ -21,7 +43,9 @@ class Template(ReportingDocTemplate):
 
         if hasattr(flowable, 'toc_level'):
             text = flowable.getPlainText()
-            self.notify('TOCEntry', (flowable.toc_level, text, self.page))
+            self.notify('TOCEntry', (
+                flowable.toc_level, text, self.page, flowable.bookmark
+            ))
 
 
 class PDF(PDFDocument):
@@ -46,15 +70,27 @@ class PDF(PDFDocument):
         self.toc.levelStyles[0].fontName = self.font_name
         self.story.append(self.toc)
 
-    def h1(self, text, style=None, toc_level=0):
-        super(PDF, self).h1(text, style)
-        if toc_level is not None and hasattr(self, 'toc'):
-            self.story[-1].toc_level = toc_level
+    def add_toc_heading(self, heading, text, style=None, toc_level=0):
+        has_toc = toc_level is not None and hasattr(self, 'toc')
 
-    def h2(self, text, style=None, toc_level=1):
-        super(PDF, self).h2(text, style)
-        if toc_level is not None and hasattr(self, 'toc'):
+        if has_toc:
+            bookmark = new_uuid().hex
+            text = u'{}<a name="{}"/>'.format(text, bookmark)
+
+        self.story.append(MarkupParagraph(text, style))
+
+        if has_toc:
             self.story[-1].toc_level = toc_level
+            self.story[-1].bookmark = bookmark
+
+    def h1(self, text, toc_level=0):
+        self.add_toc_heading('h1', text, self.style.heading1, toc_level)
+
+    def h2(self, text, toc_level=1):
+        self.add_toc_heading('h2', text, self.style.heading2, toc_level)
+
+    def h3(self, text, toc_level=2):
+        self.add_toc_heading('h3', text, self.style.heading3, toc_level)
 
     def init_report(self, page_fn=dummy_stationery, page_fn_later=None):
         frame_kwargs = {
@@ -91,6 +127,10 @@ class PDF(PDFDocument):
 
 
 class Report(object):
+    """ Base Report object to use in new reports. Implement 'populate'
+    to add the elements that need to be printed.
+
+    """
 
     def __init__(self):
         self.file = BytesIO()
