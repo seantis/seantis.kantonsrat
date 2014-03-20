@@ -10,6 +10,7 @@ from pdfdocument.document import (
     cm,
     MarkupParagraph
 )
+from reportlab.platypus.tables import TableStyle
 from reportlab.platypus.tableofcontents import TableOfContents
 from seantis.plonetools import tools
 
@@ -42,7 +43,9 @@ class Template(ReportingDocTemplate):
         ReportingDocTemplate.afterFlowable(self, flowable)
 
         if hasattr(flowable, 'toc_level'):
-            text = flowable.getPlainText()
+            text = '<b>{}</b>'.format(
+                flowable.getPlainText()
+            )
             self.notify('TOCEntry', (
                 flowable.toc_level, text, self.page, flowable.bookmark
             ))
@@ -66,8 +69,14 @@ class PDF(PDFDocument):
     def table_of_contents(self):
         self.toc = TableOfContents()
         self.toc.levelStyles[0].leftIndent = 0
-        self.toc.levelStyles[0].rightIndent = 0.5*cm
+        self.toc.levelStyles[0].rightIndent = 0.25*cm
         self.toc.levelStyles[0].fontName = self.font_name
+        self.toc.tableStyle = TableStyle([
+            ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+            ('RIGHTPADDING', (0, 0), (-1, -1), 0),
+            ('LEFTPADDING', (0, 0), (-1, -1), 0),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 0.2*cm)
+        ])
         self.story.append(self.toc)
 
     def add_toc_heading(self, heading, text, style=None, toc_level=0):
