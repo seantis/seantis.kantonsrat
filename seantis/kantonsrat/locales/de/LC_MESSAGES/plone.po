@@ -7,3 +7,9 @@ msgstr "Organisationen"
 
 msgid "List organizations only"
 msgstr "Nur Organisationen auflisten"
+
+msgid "Kantonsrat Member"
+msgstr "Kantonsrats-Mitglied"
+
+msgid "Kantonsrat Membership"
+msgstr "Kantonsrats-Mitgliedschaft"
