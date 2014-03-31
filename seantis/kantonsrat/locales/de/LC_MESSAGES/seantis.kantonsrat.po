@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-20 15:29+0000\n"
+"POT-Creation-Date: 2014-03-31 09:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,14 @@ msgstr "Erweitert"
 #: ./types/kantonsrat.xml
 msgid "Birthday"
 msgstr "Geburtstag"
+
+#: ./types/kantonsrat.xml
+msgid "Business Fax"
+msgstr "Fax Geschäft"
+
+#: ./types/kantonsrat.xml
+msgid "Business Phone"
+msgstr "Telefon Geschäft"
 
 #: ./types/organization.py:21
 msgid "Committee"
@@ -110,10 +118,6 @@ msgid "Factions"
 msgstr "Fraktionen"
 
 #: ./types/kantonsrat.xml
-msgid "Fax"
-msgstr "Fax"
-
-#: ./types/kantonsrat.xml
 msgid "First Name"
 msgstr "Vorname"
 
@@ -188,10 +192,6 @@ msgid "Past Memberships"
 msgstr "Vergangene Mitgliedschaften"
 
 #: ./types/kantonsrat.xml
-msgid "Phone"
-msgstr "Telefon"
-
-#: ./types/kantonsrat.xml
 msgid "Photo"
 msgstr "Foto"
 
@@ -216,6 +216,14 @@ msgstr "Privat"
 #: ./types/kantonsrat.xml
 msgid "Private Address"
 msgstr "Privat-Adresse"
+
+#: ./types/kantonsrat.xml
+msgid "Private Fax"
+msgstr "Fax Privat"
+
+#: ./types/kantonsrat.xml
+msgid "Private Phone"
+msgstr "Telefon Privat"
 
 #: ./types/kantonsrat.xml
 msgid "Profession"

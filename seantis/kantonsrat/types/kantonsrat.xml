@@ -85,17 +85,25 @@
         <required>False</required>
         <title i18n:translate="">Document Dispatch Address</title>
       </field>
-      <field name="phone" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
-        <required>False</required>
-        <title i18n:translate="">Phone</title>
-      </field>
       <field name="mobile" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
         <required>False</required>
         <title i18n:translate="">Mobile</title>
       </field>
+      <field name="phone" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Private Phone</title>
+      </field>
       <field name="fax" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
         <required>False</required>
-        <title i18n:translate="">Fax</title>
+        <title i18n:translate="">Private Fax</title>
+      </field>
+      <field name="phone" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Business Phone</title>
+      </field>
+      <field name="fax" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+        <required>False</required>
+        <title i18n:translate="">Business Fax</title>
       </field>
       <field name="secondary_email" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
         <required>False</required>
