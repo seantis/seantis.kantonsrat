@@ -24,7 +24,7 @@ msgstr "Adresse"
 
 #: ./types/kantonsrat.xml
 msgid "Address Salutation"
-msgstr "Address-Anrede"
+msgstr "Adress-Anrede"
 
 #: ./browser/membership_form.py:20
 msgid "Advanced"
@@ -32,7 +32,7 @@ msgstr "Erweitert"
 
 #: ./types/kantonsrat.xml
 msgid "Birthday"
-msgstr "Geburtstag"
+msgstr "Geburtsdatum"
 
 #: ./types/kantonsrat.xml
 msgid "Business Fax"

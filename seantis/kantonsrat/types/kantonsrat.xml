@@ -18,6 +18,10 @@
       <description/>
       <title i18n:translate="">Last Name</title>
     </field>
+    <field name="function" type="zope.schema.TextLine">
+        <required>False</required>
+        <title i18n:translate="">Function</title>
+      </field>
     <field name="electoral_district" type="zope.schema.TextLine" indexer:searchable="true">
       <description/>
       <required>False</required>
@@ -61,10 +65,6 @@
 
     <!-- private fields (note permission)-->
     <fieldset name="private" label="Private" i18n:attributes="label">
-      <field name="function" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
-        <required>False</required>
-        <title i18n:translate="">Function</title>
-      </field>
       <field name="salutation" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
         <required>False</required>
         <title i18n:translate="">Salutation</title>
@@ -97,11 +97,11 @@
         <required>False</required>
         <title i18n:translate="">Private Fax</title>
       </field>
-      <field name="phone" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+      <field name="bussiness_phone" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
         <required>False</required>
         <title i18n:translate="">Business Phone</title>
       </field>
-      <field name="fax" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
+      <field name="business_fax" type="zope.schema.TextLine" security:read-permission="cmf.ModifyPortalContent">
         <required>False</required>
         <title i18n:translate="">Business Fax</title>
       </field>
@@ -175,6 +175,7 @@
       <people:item>photo</people:item>
     </people:details>
     <people:details position="right">
+      <people:item>function</people:item>
       <people:item>email</people:item>
       <people:item>website</people:item>
       <people:item>address</people:item>
