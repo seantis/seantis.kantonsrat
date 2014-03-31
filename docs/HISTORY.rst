@@ -2,7 +2,7 @@
 Changelog
 ---------
 
-0.5 (unreleased)
+0.5 (2014-03-31)
 ~~~~~~~~~~~~~~~~
 
 - Adds start/end to Kantonsrat which hides them from the list of the people.
