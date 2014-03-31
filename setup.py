@@ -5,7 +5,7 @@ name = 'seantis.kantonsrat'
 description = (
     "Specialized type and custom organisations for the Kantonsrat of Zug. "
 )
-version = '0.6'
+version = '0.7'
 
 tests_require = [
     'plone.app.testing',
