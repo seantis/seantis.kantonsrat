@@ -2,7 +2,7 @@
 Changelog
 ---------
 
-0.6 (unreleased)
+0.6 (2014-03-31)
 ~~~~~~~~~~~~~~~~
 
 - Fixes critical error caused by a typo in the trigger-state view.
