@@ -33,4 +33,4 @@ class TriggerState(BaseView):
         })
 
         for member in members:
-            membership.getObject().reindexObject()
+            member.getObject().reindexObject()

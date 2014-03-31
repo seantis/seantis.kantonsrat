@@ -5,7 +5,8 @@ Changelog
 0.6 (unreleased)
 ~~~~~~~~~~~~~~~~
 
-Nothing yet.
+- Fixes critical error caused by a typo in the trigger-state view.
+  [href]
 
 0.5 (2014-03-31)
 ~~~~~~~~~~~~~~~~
