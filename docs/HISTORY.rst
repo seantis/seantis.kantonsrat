@@ -5,7 +5,9 @@ Changelog
 0.7 (unreleased)
 ~~~~~~~~~~~~~~~~
 
-Nothing yet.
+- Fixes unicode decode error when editing memberships in organizations with
+  titles outside the ASCII range. Closes #8.
+  [href]
 
 0.6 (2014-03-31)
 ~~~~~~~~~~~~~~~~

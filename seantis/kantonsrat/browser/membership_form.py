@@ -92,10 +92,9 @@ class LimitedMembershipEditForm(MembershipBaseForm):
 
     @property
     def label(self):
-        return u'{organization} - {person}'.format(
-            organization=self.context.aq_inner.aq_parent.Title(),
-            person=self.context.person.to_object.title,
-        )
+        organization = self.context.aq_inner.aq_parent.Title().decode('utf-8')
+        person = self.context.person.to_object.title
+        return u' - '.join((organization, person))
 
     @property
     def success_url(self):
