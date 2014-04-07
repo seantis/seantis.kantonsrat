@@ -213,7 +213,7 @@ class OrganizationsReport(Report):
 
         """
         self.reference_count += 1
-        return self.reference_count * '*' + ')'
+        return u'{})'.format(self.reference_count)
 
     def reset_references(self):
         self.reference_count = 0

@@ -2,10 +2,14 @@
 Changelog
 ---------
 
-0.7 (2014-04-07)
+0.7 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Print numbers instead of stars for references in the report. Fixes #9.
+  [href]
+
 - Make email private. Fixes #10.
+  [href]
 
 - Remove reports from all organizations except the ones with the 'kommissionen'
   id. Fixes #11.
