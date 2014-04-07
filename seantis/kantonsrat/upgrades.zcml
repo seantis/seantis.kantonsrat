@@ -93,4 +93,11 @@
         handler=".upgrades.update_settings"
     />
 
+    <genericsetup:upgradeStep
+        title="Make email private."
+        source="1013" destination="1014"
+        profile="seantis.kantonsrat:default"
+        handler=".upgrades.make_email_private"
+    />
+
 </configure>

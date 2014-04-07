@@ -112,3 +112,15 @@ def update_settings(context):
     run_import_step_from_profile(
         'plone.app.registry', 'seantis.kantonsrat', 'default'
     )
+
+
+def make_email_private(context):
+    upgrade_type_info(context)
+
+    catalog = api.portal.get_tool('portal_catalog')
+    memberships = [m.getObject() for m in catalog.unrestrictedSearchResults(
+        portal_type='seantis.kantonsrat.membership'
+    )]
+
+    for membership in memberships:
+        membership.reindexObject()

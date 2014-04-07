@@ -2,8 +2,14 @@
 Changelog
 ---------
 
-0.7 (unreleased)
+0.7 (2014-04-07)
 ~~~~~~~~~~~~~~~~
+
+- Make email private. Fixes #10.
+
+- Remove reports from all organizations except the ones with the 'kommissionen'
+  id. Fixes #11.
+  [href]
 
 - Fixes unicode decode error when editing memberships in organizations with
   titles outside the ASCII range. Closes #8.
