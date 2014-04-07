@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-31 09:29+0000\n"
+"POT-Creation-Date: 2014-04-07 08:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,6 +41,14 @@ msgstr "Fax Geschäft"
 #: ./types/kantonsrat.xml
 msgid "Business Phone"
 msgstr "Telefon Geschäft"
+
+#: ./reports/__init__.py:12
+msgid "Commissions with Members"
+msgstr "Kommissionen und Mitglieder"
+
+#: ./browser/templates/organization_listing.pt:17
+msgid "Commissions-Report"
+msgstr "Kommissionsliste"
 
 #: ./types/organization.py:21
 msgid "Committee"
@@ -177,10 +185,6 @@ msgstr "Geschäfte"
 msgid "Organizations"
 msgstr "Organisationen"
 
-#: ./reports/__init__.py:12
-msgid "Organizations with Members"
-msgstr "Organisationen und Mitglieder"
-
 #: ./types/kantonsrat.py:57
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:23
@@ -250,10 +254,6 @@ msgstr "Ersatz für ${name}"
 msgid "Replacement for ${name}, elected on ${date}"
 msgstr "Ersatz für ${name}, gewählt am ${date}"
 
-#: ./browser/templates/organization_listing.pt:17
-msgid "Reports"
-msgstr "Berichte"
-
 #: ./browser/templates/macros.pt:60
 msgid "Retract"
 msgstr "Zurückziehen"
@@ -280,8 +280,8 @@ msgid "Secondary Email"
 msgstr "Zweite E-Mail"
 
 #: ./reports/__init__.py:13
-msgid "Shows all organizations and their current members"
-msgstr "Zeigt alle Organisationen und deren Mitglieder"
+msgid "Shows all commissions and their current members"
+msgstr "Zeigt alle Kommissionen und deren Mitglieder"
 
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:56

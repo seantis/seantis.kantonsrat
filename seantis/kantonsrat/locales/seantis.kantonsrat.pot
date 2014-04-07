@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-31 09:29+0000\n"
+"POT-Creation-Date: 2014-04-07 08:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,6 +43,14 @@ msgstr ""
 
 #: ./types/kantonsrat.xml
 msgid "Business Phone"
+msgstr ""
+
+#: ./reports/__init__.py:12
+msgid "Commissions with Members"
+msgstr ""
+
+#: ./browser/templates/organization_listing.pt:17
+msgid "Commissions-Report"
 msgstr ""
 
 #: ./types/organization.py:21
@@ -180,10 +188,6 @@ msgstr ""
 msgid "Organizations"
 msgstr ""
 
-#: ./reports/__init__.py:12
-msgid "Organizations with Members"
-msgstr ""
-
 #: ./types/kantonsrat.py:57
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:23
@@ -253,10 +257,6 @@ msgstr ""
 msgid "Replacement for ${name}, elected on ${date}"
 msgstr ""
 
-#: ./browser/templates/organization_listing.pt:17
-msgid "Reports"
-msgstr ""
-
 #: ./browser/templates/macros.pt:60
 msgid "Retract"
 msgstr ""
@@ -283,7 +283,7 @@ msgid "Secondary Email"
 msgstr ""
 
 #: ./reports/__init__.py:13
-msgid "Shows all organizations and their current members"
+msgid "Shows all commissions and their current members"
 msgstr ""
 
 #: ./types/kantonsrat.xml

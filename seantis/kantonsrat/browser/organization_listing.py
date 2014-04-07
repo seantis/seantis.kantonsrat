@@ -56,6 +56,11 @@ class Listing(BaseView):
 
         return self.is_active(organization)
 
+    def show_reports(self):
+        # yep, this is supposed to be hardcoded:
+        # https://github.com/seantis/seantis.kantonsrat/issues/11
+        return self.context.id == 'kommissionen'
+
     def is_active(self, organization):
         return is_organization_visible(organization)
 

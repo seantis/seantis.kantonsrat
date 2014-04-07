@@ -13,7 +13,7 @@ from seantis.kantonsrat.browser.base import BaseView
 class Report(BaseView):
 
     grok.context(Interface)
-    grok.require('cmf.ModifyPortalContent')
+    grok.require('zope2.View')
     grok.name('kantonsrat-report')
 
     def render(self):
