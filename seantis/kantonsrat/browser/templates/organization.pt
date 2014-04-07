@@ -6,6 +6,10 @@
 
     <metal:block metal:use-macro="context/main_template/macros/master">
         <metal:block fill-slot="content-core">
+            <tal:block condition="context/start | context/end" define="macro python: context.unrestrictedTraverse('@@seantis-kantonsrat-macros')">
+                <i class="kantonsrat-organization-date" tal:content="python: macro.get_human_timespan(context.start, context.end)" />
+            </tal:block>
+
             <tal:block condition="context/description">
                 <h2 i18n:translate="">Description</h2>
                 <div class="kantonsrat-description" tal:content="context/description" />

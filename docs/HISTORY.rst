@@ -5,6 +5,9 @@ Changelog
 0.7 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Show dates on organization view. Fixes #5.
+  [href]
+
 - Print numbers instead of stars for references in the report. Fixes #9.
   [href]
 
