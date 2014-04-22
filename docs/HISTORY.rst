@@ -2,7 +2,7 @@
 Changelog
 ---------
 
-0.7 (unreleased)
+0.7 (2014-04-22)
 ~~~~~~~~~~~~~~~~
 
 - Fixes exception being trigger if a private person is used in a published 
