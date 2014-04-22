@@ -94,6 +94,10 @@ class View(BaseView):
             membership = brain.getObject()
             person_brain = self.get_brain_from_relation(membership.person)
 
+            # if the person is not published, None might be yielded
+            if person_brain is None:
+                continue
+
             replacement_for_brain = self.get_brain_from_relation(
                 membership.replacement_for
             )

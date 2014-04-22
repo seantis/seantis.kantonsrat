@@ -5,6 +5,10 @@ Changelog
 0.7 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Fixes exception being trigger if a private person is used in a published 
+  membership. The membership is hidden now in this case. Fixes #17.
+  [href]
+
 - Show dates on organization view. Fixes #5.
   [href]
 
