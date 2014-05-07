@@ -5,7 +5,9 @@ Changelog
 0.8 (unreleased)
 ~~~~~~~~~~~~~~~~
 
-Nothing yet.
+- The json export now contains all members and organizations, independent of
+  their workflow state. Fixes #25.
+  [href]
 
 0.7 (2014-04-22)
 ~~~~~~~~~~~~~~~~

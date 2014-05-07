@@ -26,7 +26,10 @@ class JsonListView(BaseView):
     }
 
     def records(self):
-        for brain in self.context.people(include_inactive=True):
+        people = self.context.people(
+            include_inactive=True, unrestricted_search=True
+        )
+        for brain in people:
             yield 'person', brain
 
         for org_type in ('committee', 'party', 'faction'):

@@ -51,7 +51,7 @@ setup(
         'plone.api',
         'five.grok',
         'plone.app.dexterity [grok, relations]',
-        'seantis.people>=0.17',
+        'seantis.people>=0.18',
         'seantis.plonetools>=0.11',
         'collective.dexteritytextindexer',
         'collective.js.jqueryui',
