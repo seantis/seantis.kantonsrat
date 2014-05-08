@@ -2,7 +2,7 @@
 Changelog
 ---------
 
-0.8 (unreleased)
+0.8 (2014-05-08)
 ~~~~~~~~~~~~~~~~
 
 - The json export now contains all members and organizations, independent of
