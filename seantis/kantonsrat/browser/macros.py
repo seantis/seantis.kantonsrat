@@ -27,6 +27,9 @@ class View(BaseView):
         if not relation:
             return None
 
+        if relation.isBroken():
+            return None
+
         catalog = api.portal.get_tool('portal_catalog')
         results = catalog(path={'query': relation.to_path})
 

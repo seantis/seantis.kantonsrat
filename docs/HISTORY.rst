@@ -5,7 +5,8 @@ Changelog
 0.9 (unreleased)
 ~~~~~~~~~~~~~~~~
 
-Nothing yet.
+- Fix display of organizations if a membership relationship is broken.
+  [href]
 
 0.8 (2014-05-08)
 ~~~~~~~~~~~~~~~~
