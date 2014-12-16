@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-04-07 08:42+0000\n"
+"POT-Creation-Date: 2014-12-16 15:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,13 +42,14 @@ msgstr "Fax Geschäft"
 msgid "Business Phone"
 msgstr "Telefon Geschäft"
 
-#: ./reports/__init__.py:12
-msgid "Commissions with Members"
-msgstr "Kommissionen und Mitglieder"
-
+#: ./browser/templates/organization.pt:14
 #: ./browser/templates/organization_listing.pt:17
 msgid "Commissions-Report"
 msgstr "Kommissionsliste"
+
+#: ./reports/__init__.py:12
+msgid "Commissions-Report as PDF"
+msgstr "Kommisionsliste als PDF"
 
 #: ./types/organization.py:21
 msgid "Committee"
@@ -57,6 +58,10 @@ msgstr "Kommission"
 #: ./types/kantonsrat.py:59
 msgid "Committees"
 msgstr "Kommissionen"
+
+#: ./reports/__init__.py:13
+msgid "Contains the members grouped by comission"
+msgstr "Enthält die Mitglieder geordnet nach Kommission"
 
 #: ./types/organization.py:66
 msgid "Date after which the organization is invisible."
@@ -74,7 +79,7 @@ msgstr "Datum ab dem dieser Kantonsrat in der Liste angezeigt wird. Unabhängig 
 msgid "Date from which the organization is visible."
 msgstr "Vor diesem Datum ist die Organisation unsichtbar."
 
-#: ./browser/templates/organization.pt:10
+#: ./browser/templates/organization.pt:24
 #: ./types/organization.py:44
 msgid "Description"
 msgstr "Beschreibung"
@@ -91,7 +96,7 @@ msgstr "Bitte ändern Sie diesen Verweis nicht wenn ein Mitglied ein anderes Mit
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: ./reports/organizations.py:188
+#: ./reports/organizations.py:197
 msgid "Election on ${date}"
 msgstr "Wahl am ${date}"
 
@@ -133,7 +138,7 @@ msgstr "Vorname"
 msgid "Function"
 msgstr "Funktion"
 
-#: ./browser/templates/organization.pt:35
+#: ./browser/templates/organization.pt:49
 msgid "Future Memberships"
 msgstr "Zukünftige Mitgliedschaften"
 
@@ -169,7 +174,7 @@ msgstr "Brief-Anrede"
 msgid "Lifetime of Geschäftsverzeichnis cache"
 msgstr "Lebensdauer von Geschäftsverzeichnis-Anfragen"
 
-#: ./browser/templates/organization.pt:30
+#: ./browser/templates/organization.pt:44
 msgid "Memberships"
 msgstr "Mitgliedschaften"
 
@@ -177,7 +182,7 @@ msgstr "Mitgliedschaften"
 msgid "Mobile"
 msgstr "Handy"
 
-#: ./browser/templates/organization.pt:20
+#: ./browser/templates/organization.pt:34
 msgid "Motions"
 msgstr "Geschäfte"
 
@@ -191,7 +196,7 @@ msgstr "Organisationen"
 msgid "Party"
 msgstr "Partei"
 
-#: ./browser/templates/organization.pt:40
+#: ./browser/templates/organization.pt:54
 msgid "Past Memberships"
 msgstr "Vergangene Mitgliedschaften"
 
@@ -203,16 +208,16 @@ msgstr "Foto"
 msgid "Place of Citizenship"
 msgstr "Bürgerort"
 
-#: ./browser/templates/organization.pt:15
+#: ./browser/templates/organization.pt:29
 #: ./types/organization.py:50
 msgid "Portrait"
 msgstr "Portrait"
 
-#: ./reports/organizations.py:118
+#: ./reports/organizations.py:126
 msgid "Print date: ${date}"
 msgstr "Druckdatum: ${date}"
 
-#: ./browser/macros.py:89
+#: ./browser/macros.py:92
 #: ./types/kantonsrat.xml
 msgid "Private"
 msgstr "Privat"
@@ -237,7 +242,7 @@ msgstr "Beruf"
 msgid "Publish"
 msgstr "Veröffentlichen"
 
-#: ./browser/macros.py:90
+#: ./browser/macros.py:93
 msgid "Published"
 msgstr "Veröffentlicht"
 
@@ -245,12 +250,12 @@ msgstr "Veröffentlicht"
 msgid "Replacement for"
 msgstr "Ersatz für"
 
-#: ./browser/macros.py:101
-#: ./reports/organizations.py:294
+#: ./browser/macros.py:108
+#: ./reports/organizations.py:303
 msgid "Replacement for ${name}"
 msgstr "Ersatz für ${name}"
 
-#: ./reports/organizations.py:285
+#: ./reports/organizations.py:294
 msgid "Replacement for ${name}, elected on ${date}"
 msgstr "Ersatz für ${name}, gewählt am ${date}"
 
@@ -278,10 +283,6 @@ msgstr "Seantis Kantonsrat Einstellungen"
 #: ./types/kantonsrat.xml
 msgid "Secondary Email"
 msgstr "Zweite E-Mail"
-
-#: ./reports/__init__.py:13
-msgid "Shows all commissions and their current members"
-msgstr "Zeigt alle Kommissionen und deren Mitglieder"
 
 #: ./types/kantonsrat.xml
 #: ./types/organization.py:56
@@ -340,23 +341,23 @@ msgstr "Wird benutzt um die Geschäfte im Geschäftsverzeichnis bei den Kantonsr
 msgid "Website"
 msgstr "Webseite"
 
-#: ./browser/macros.py:58
+#: ./browser/macros.py:61
 msgid "from ${start}"
 msgstr "ab ${start}"
 
-#: ./browser/macros.py:46
+#: ./browser/macros.py:49
 msgid "from ${start} until ${end}"
 msgstr "ab ${start} bis ${end}"
 
-#: ./browser/macros.py:62
+#: ./browser/macros.py:65
 msgid "since ${start}"
 msgstr "seit ${start}"
 
-#: ./browser/macros.py:51
+#: ./browser/macros.py:54
 msgid "since ${start} until ${end}"
 msgstr "seit ${start} bis ${end}"
 
-#: ./browser/macros.py:67
+#: ./browser/macros.py:70
 msgid "until ${end}"
 msgstr "bis ${end}"
 

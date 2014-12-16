@@ -52,6 +52,14 @@ class OrganizationsReport(Report):
 
     """
 
+    @property
+    def without_table_of_content(self):
+        return 'without-table-of-content' in self.request
+
+    @property
+    def with_this_organization(self):
+        return self.request.get('with-this-organization')
+
     def adjust_style(self):
         """ Changes the existing style of the report as defined by
         the pdfdocument module.
@@ -148,9 +156,10 @@ class OrganizationsReport(Report):
         self.adjust_style()
 
         # First page contains the title and table of contents
-        self.pdf.h1(self.title)
-        self.pdf.table_of_contents()
-        self.pdf.pagebreak()
+        if not self.without_table_of_content:
+            self.pdf.h1(self.title)
+            self.pdf.table_of_contents()
+            self.pdf.pagebreak()
 
         # Every other page contains the organisation and its members.
         # After each organization a page break is inserted.
@@ -309,15 +318,19 @@ class OrganizationsReport(Report):
 
     def get_organizations(self, report_date):
         catalog = api.portal.get_tool('portal_catalog')
-        brains = catalog(
+
+        query = dict(
             path={'query': '/'.join(self.context.getPhysicalPath())},
             portal_type='seantis.kantonsrat.organization',
             sort_on='sortable_title'
         )
 
+        if self.with_this_organization:
+            query['UID'] = self.with_this_organization
+
         organizations = []
 
-        for brain in brains:
+        for brain in catalog(**query):
             if report_date < (brain.start or date.min):
                 continue
 

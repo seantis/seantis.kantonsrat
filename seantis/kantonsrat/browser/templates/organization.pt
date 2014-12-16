@@ -10,6 +10,16 @@
                 <i class="kantonsrat-organization-date" tal:content="python: macro.get_human_timespan(context.start, context.end)" />
             </tal:block>
 
+            <div class="kantonsrat-reports" tal:condition="view/show_report">
+                <h2 i18n:translate="">Commissions-Report</h2>
+                <dl>
+                  <tal:block repeat="report view/reports">
+                    <dt><img src="./pdf_icon.gif" /> <a tal:attributes="href report/url" tal:content="report/title" /></dt>
+                    <dd tal:content="report/description" />
+                  </tal:block>
+                </dl>
+            </div>    
+
             <tal:block condition="context/description">
                 <h2 i18n:translate="">Description</h2>
                 <div class="kantonsrat-description" tal:content="context/description" />

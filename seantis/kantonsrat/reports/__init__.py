@@ -9,9 +9,9 @@ from .organizations import OrganizationsReport
 def get_available_reports():
     return OrderedDict(
         organizations_with_members={
-            'title': _(u'Commissions with Members'),
+            'title': _(u'Commissions-Report as PDF'),
             'description': _(
-                u'Shows all commissions and their current members'
+                u'Contains the members grouped by comission'
             ),
             'class': OrganizationsReport
         }

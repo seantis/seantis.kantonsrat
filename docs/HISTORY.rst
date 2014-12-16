@@ -5,6 +5,9 @@ Changelog
 0.9 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Adds the ability to print the comissions report for single commissions.
+  [href]
+
 - Adds a PDF icon to the commission report link.
   [href]
 
