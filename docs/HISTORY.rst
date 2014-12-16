@@ -5,6 +5,9 @@ Changelog
 0.9 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Fix removal of memberships if a replacment_for relationship is broken.
+  [href]
+
 - Fix display of organizations if a membership relationship is broken.
   [href]
 

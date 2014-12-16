@@ -18,7 +18,7 @@ class Membership(PeopleMembership):
 
     @property
     def replacement_for_uuid(self):
-        if self.replacement_for:
+        if self.replacement_for and not self.replacement_for.isBroken():
             try:
                 if isinstance(self.replacement_for, Membership):
                     return IUUID(self.replacement_for)
