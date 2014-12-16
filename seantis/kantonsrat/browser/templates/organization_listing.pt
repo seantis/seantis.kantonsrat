@@ -17,7 +17,7 @@
             <h2 i18n:translate="">Commissions-Report</h2>
             <dl>
               <tal:block repeat="report view/reports">
-                <dt><a tal:attributes="href report/url" tal:content="report/title" /></dt>
+                <dt><img src="./pdf_icon.gif" /> <a tal:attributes="href report/url" tal:content="report/title" /></dt>
                 <dd tal:content="report/description" />
               </tal:block>
             </dl>

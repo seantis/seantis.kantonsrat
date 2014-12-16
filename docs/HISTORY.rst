@@ -5,6 +5,9 @@ Changelog
 0.9 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Adds a PDF icon to the commission report link.
+  [href]
+
 - Fix removal of memberships if a replacment_for relationship is broken.
   [href]
 
