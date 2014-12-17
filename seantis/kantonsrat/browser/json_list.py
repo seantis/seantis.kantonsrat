@@ -33,12 +33,22 @@ class JsonListView(BaseView):
             yield 'person', brain
 
         for org_type in ('committee', 'party', 'faction'):
-            for brain in self.organizations_by_type(org_type):
+            brains = self.organizations_by_type(
+                org_type, unrestricted_search=True
+            )
+
+            for brain in brains:
                 yield org_type, brain
 
-    def organizations_by_type(self, org_type):
+    def organizations_by_type(self, org_type, unrestricted_search=False):
         catalog = api.portal.get_tool('portal_catalog')
-        return catalog(organization_type=org_type)
+
+        if unrestricted_search:
+            search = catalog.unrestrictedSearchResults
+        else:
+            search = catalog
+
+        return search(organization_type=org_type)
 
     def render(self):
         fields = self.available_fields.items()

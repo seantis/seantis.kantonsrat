@@ -5,6 +5,10 @@ Changelog
 0.9 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- The JSON export now contains links to ALL organizations (even if they are
+  private). See #30.
+  [href]
+
 - Adds the ability to print the comissions report for single commissions.
   [href]
 
