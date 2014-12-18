@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-17 12:36+0000\n"
+"POT-Creation-Date: 2014-12-18 09:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,6 +151,14 @@ msgstr ""
 
 #: ./browser/templates/organization_listing.pt:32
 msgid "Inactive:"
+msgstr ""
+
+#: ./exports/addresses.py:89
+msgid "Kantonsrat Address Labels"
+msgstr ""
+
+#: ./exports/addresses.py:109
+msgid "Kantonsrat Addresses"
 msgstr ""
 
 #: ./profiles/default/types/seantis.kantonsrat.member.xml

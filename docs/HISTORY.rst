@@ -5,6 +5,9 @@ Changelog
 0.9 (unreleased)
 ~~~~~~~~~~~~~~~~
 
+- Adds two Kantonsrat address variants for all addresses and for adress labels.
+  [href]
+
 - The JSON export now contains links to ALL organizations (even if they are
   private). See #30.
   [href]
