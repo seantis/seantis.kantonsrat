@@ -2,7 +2,7 @@
 Changelog
 ---------
 
-0.9 (unreleased)
+0.9 (2014-12-22)
 ~~~~~~~~~~~~~~~~
 
 - Adds two Kantonsrat address variants for all addresses and for adress labels.
