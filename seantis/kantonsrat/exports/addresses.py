@@ -26,11 +26,11 @@ class KantonsratAddressVariants(object):
 
         # make sure all required fields were selected
         for field in self.adjusted_fields:
-            if not field in fields:
+            if field not in fields:
                 return None
 
         header_map = dict(zip(fields, dataset.headers))
-        column_map = dict(zip(fields, xrange(0, len(fields))))
+        column_map = dict(zip(fields, range(0, len(fields))))
 
         # get the number of columns for cells that are expanded into
         # multiple columns if they have multiple lines
@@ -132,12 +132,10 @@ class KantonsratAddressesVariant(grok.Adapter, KantonsratAddressVariants):
         'party_memberships',
         'faction_memberships',
         'electoral_district',
-        'committee_memberships',
         'private_address',
         'entry_date',
         'start',
-        'end',
-        'memberships'
+        'end'
     )
 
     multiline_fields = (

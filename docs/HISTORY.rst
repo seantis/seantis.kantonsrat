@@ -5,7 +5,8 @@ Changelog
 0.10 (unreleased)
 ~~~~~~~~~~~~~~~~~
 
-Nothing yet.
+- Remove memberships and commission_memberships from the addresses variant.
+  [href]
 
 0.9 (2014-12-22)
 ~~~~~~~~~~~~~~~~
