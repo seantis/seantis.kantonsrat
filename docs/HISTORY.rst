@@ -2,7 +2,7 @@
 Changelog
 ---------
 
-0.10 (unreleased)
+0.10 (2014-01-19)
 ~~~~~~~~~~~~~~~~~
 
 - Sort adress variants by lastname, firstname. #38.
