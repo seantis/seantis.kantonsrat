@@ -5,7 +5,8 @@ Changelog
 0.10 (unreleased)
 ~~~~~~~~~~~~~~~~~
 
-Nothing yet.
+- Sort adress variants by lastname, firstname. #38.
+  [href]
 
 0.9 (2014-12-22)
 ~~~~~~~~~~~~~~~~
