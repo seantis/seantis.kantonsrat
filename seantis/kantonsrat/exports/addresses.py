@@ -136,12 +136,10 @@ class KantonsratAddressesVariant(grok.Adapter, KantonsratAddressVariants):
         'party_memberships',
         'faction_memberships',
         'electoral_district',
-        'committee_memberships',
         'private_address',
         'entry_date',
         'start',
-        'end',
-        'memberships'
+        'end'
     )
 
     multiline_fields = (

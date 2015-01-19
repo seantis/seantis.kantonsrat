@@ -8,6 +8,9 @@ Changelog
 - Sort adress variants by lastname, firstname. #38.
   [href]
 
+- Remove memberships and commission_memberships from the addresses variant.
+  [href]
+
 0.9 (2014-12-22)
 ~~~~~~~~~~~~~~~~
 
