@@ -235,6 +235,9 @@ class OrganizationsReport(Report):
     def get_membership_info(self, membership):
         """ Returns a MembershipInfo instance for the given membership. """
         person = membership.person.to_object
+        if not person:
+            return MembershipInfo('', '', '', '')
+
         name = ' '.join((person.lastname, person.firstname))
         address_parts = [
             p.strip() for p in person.address.split('\n') if p.strip()
@@ -338,5 +341,36 @@ class OrganizationsReport(Report):
                 continue
 
             organizations.append(brain.getObject())
+
+        return sorted(organizations, key=lambda o: o.title)
+
+
+class InactiveOrganizationsReport(OrganizationsReport):
+    """ Report to show the memberships of inactive organizations found in the
+    current context. Pretty much geared towards the CD of the Canton of Zug
+    at this point. Parameters would have to be added to make this report
+    look different in new deployments.
+
+    """
+
+    def get_organizations(self, report_date):
+        catalog = api.portal.get_tool('portal_catalog')
+
+        query = dict(
+            path={'query': '/'.join(self.context.getPhysicalPath())},
+            portal_type='seantis.kantonsrat.organization',
+            sort_on='sortable_title'
+        )
+
+        if self.with_this_organization:
+            query['UID'] = self.with_this_organization
+
+        organizations = []
+
+        for brain in catalog(**query):
+
+            if report_date < (brain.start or date.min) or \
+               report_date > (brain.end or date.max):
+                organizations.append(brain.getObject())
 
         return sorted(organizations, key=lambda o: o.title)

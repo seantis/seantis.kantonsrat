@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-18 09:00+0000\n"
+"POT-Creation-Date: 2015-09-28 08:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,6 +46,10 @@ msgstr "Telefon Geschäft"
 #: ./browser/templates/organization_listing.pt:17
 msgid "Commissions-Report"
 msgstr "Kommissionsliste"
+
+#: ./reports/__init__.py:19
+msgid "Commissions-Report (inactive) as PDF"
+msgstr "Kommissionsliste als PDF, inaktive Kommissionen"
 
 #: ./reports/__init__.py:12
 msgid "Commissions-Report as PDF"
@@ -150,11 +154,11 @@ msgstr "Allgemein"
 msgid "Inactive:"
 msgstr "Inaktiv:"
 
-#: ./exports/addresses.py:89
+#: ./exports/addresses.py:93
 msgid "Kantonsrat Address Labels"
 msgstr "Kantonsrat Adressetiketten"
 
-#: ./exports/addresses.py:109
+#: ./exports/addresses.py:113
 msgid "Kantonsrat Addresses"
 msgstr "Kantonsrat Adressen"
 
@@ -368,3 +372,4 @@ msgstr "seit ${start} bis ${end}"
 #: ./browser/macros.py:70
 msgid "until ${end}"
 msgstr "bis ${end}"
+

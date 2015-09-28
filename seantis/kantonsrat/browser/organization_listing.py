@@ -69,7 +69,8 @@ class Listing(BaseView):
         baseurl = self.context.absolute_url()
 
         reports = []
-        for id, report in get_available_reports().items():
+
+        for id, report in get_available_reports(self.is_manager()).items():
             reports.append(
                 Report(
                     '{}/kantonsrat-report?id={}'.format(baseurl, id),

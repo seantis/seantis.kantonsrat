@@ -4,6 +4,7 @@ from five import grok
 from plone.folder.interfaces import IExplicitOrdering
 from plone.uuid.interfaces import IUUID
 from zope.component import queryUtility
+from zope.security import checkPermission
 
 from seantis.kantonsrat.browser.base import BaseView
 from seantis.kantonsrat.interfaces import IMotionsProvider
@@ -40,12 +41,15 @@ class OrganizationView(BaseView):
         else:
             return []
 
+    def is_manager(self):
+        return checkPermission('cmf.ModifyPortalContent', self.context)
+
     def reports(self):
         Report = namedtuple("Report", ['url', 'title', 'description'])
         baseurl = self.context.absolute_url()
         reports = []
 
-        for id, report in get_available_reports().items():
+        for id, report in get_available_reports(self.is_manager()).items():
             reports.append(
                 Report(
                     (

@@ -8,6 +8,9 @@ Changelog
 - Fix typo.
   [msom]
 
+- Add report for inactive commissions.
+  [msom]
+
 
 0.10 (2014-01-19)
 ~~~~~~~~~~~~~~~~~

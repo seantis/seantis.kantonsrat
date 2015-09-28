@@ -4,6 +4,7 @@ import codecs
 from five import grok
 
 from zope.interface import Interface
+from zope.security import checkPermission
 from zExceptions import NotFound
 
 from seantis.kantonsrat.reports import get_available_reports
@@ -16,9 +17,13 @@ class Report(BaseView):
     grok.require('zope2.View')
     grok.name('kantonsrat-report')
 
-    def render(self):
+    def is_manager(self):
+        return checkPermission('cmf.ModifyPortalContent', self.context)
 
-        report = get_available_reports().get(self.request.get('id'))
+    def render(self):
+        is_manager = self.is_manager()
+
+        report = get_available_reports(is_manager).get(self.request.get('id'))
 
         if not report:
             raise NotFound()
