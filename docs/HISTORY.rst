@@ -2,6 +2,13 @@
 Changelog
 ---------
 
+0.11 (unreleased)
+~~~~~~~~~~~~~~~~~
+
+- Fix typo.
+  [msom]
+
+
 0.10 (2014-01-19)
 ~~~~~~~~~~~~~~~~~
 
@@ -43,7 +50,7 @@ Changelog
 0.7 (2014-04-22)
 ~~~~~~~~~~~~~~~~
 
-- Fixes exception being trigger if a private person is used in a published 
+- Fixes exception being trigger if a private person is used in a published
   membership. The membership is hidden now in this case. Fixes #17.
   [href]
 
@@ -76,7 +83,7 @@ Changelog
 - Adds start/end to Kantonsrat which hides them from the list of the people.
   [href]
 
-- Adds the ability to define past, present and future memberships in 
+- Adds the ability to define past, present and future memberships in
   organizations.
   [href]
 
@@ -88,7 +95,7 @@ Changelog
   [href]
 
 - Adds the ability to activate/deactivate organisations using a start/end date.
-  Inactive organisations are not shown in the list and in the navigation. 
+  Inactive organisations are not shown in the list and in the navigation.
   They are still available through the url.
 
   This needs a cronjob run every night calling
