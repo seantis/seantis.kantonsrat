@@ -1,7 +1,7 @@
 Seantis Kantonsrat
 ==================
 
-Specialized type and custom organisations for the Kantonsrat of Zug. If you 
+Specialized type and custom organisations for the Kantonsrat of Zug. If you
 have never heard of a Kantonsrat, this is in no way meant for you.
 
 Requirements
@@ -27,9 +27,10 @@ Coverage
 
 Latests PyPI Release
 --------------------
-.. image:: https://pypip.in/v/seantis.kantonsrat/badge.png
+.. image:: https://img.shields.io/pypi/v/seantis.kantonsrat.svg
   :target: https://crate.io/packages/seantis.kantonsrat
   :alt: Latest PyPI Release
+
 
 License
 -------
