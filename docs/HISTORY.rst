@@ -11,6 +11,9 @@ Changelog
 - Introduce semantic versioning.
   [msom]
 
+- Update test infrastructure.
+  [msom]
+
 0.11 (2015-09-28)
 ~~~~~~~~~~~~~~~~~
 
