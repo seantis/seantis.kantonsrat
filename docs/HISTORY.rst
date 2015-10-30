@@ -2,6 +2,12 @@
 Changelog
 ---------
 
+1.0.0 (unreleased)
+~~~~~~~~~~~~~~~~~~
+
+- Introduce semantic versioning.
+  [msom]
+
 0.11 (2015-09-28)
 ~~~~~~~~~~~~~~~~~
 
