@@ -5,6 +5,9 @@ Changelog
 1.0.0 (unreleased)
 ~~~~~~~~~~~~~~~~~~
 
+- Fix translation to avoid content-disposition issues.
+  [msom]
+
 - Introduce semantic versioning.
   [msom]
 

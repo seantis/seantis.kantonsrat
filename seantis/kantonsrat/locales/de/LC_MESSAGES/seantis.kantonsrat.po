@@ -49,7 +49,7 @@ msgstr "Kommissionsliste"
 
 #: ./reports/__init__.py:19
 msgid "Commissions-Report (inactive) as PDF"
-msgstr "Kommissionsliste als PDF, inaktive Kommissionen"
+msgstr "Kommissionsliste als PDF (inaktive Kommissionen)"
 
 #: ./reports/__init__.py:12
 msgid "Commissions-Report as PDF"
@@ -372,4 +372,3 @@ msgstr "seit ${start} bis ${end}"
 #: ./browser/macros.py:70
 msgid "until ${end}"
 msgstr "bis ${end}"
-
