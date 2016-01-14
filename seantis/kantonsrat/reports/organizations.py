@@ -239,9 +239,11 @@ class OrganizationsReport(Report):
             return MembershipInfo('', '', '', '')
 
         name = ' '.join((person.lastname, person.firstname))
-        address_parts = [
-            p.strip() for p in person.address.split('\n') if p.strip()
-        ]
+        address_parts = []
+        if person.address:
+            address_parts = [
+                p.strip() for p in person.address.split('\n') if p.strip()
+            ]
         party = self.get_person_party(person)
 
         return MembershipInfo(name, membership.role, address_parts, party)

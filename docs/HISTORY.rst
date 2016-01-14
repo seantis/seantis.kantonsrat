@@ -5,7 +5,8 @@ Changelog
 1.0.1 (unreleased)
 ~~~~~~~~~~~~~~~~~~
 
-Nothing yet.
+- Fix an error when the address of a member is empty.
+  [msom]
 
 1.0.0 (2015-10-30)
 ~~~~~~~~~~~~~~~~~~
