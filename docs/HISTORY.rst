@@ -2,7 +2,7 @@
 Changelog
 ---------
 
-1.0.1 (unreleased)
+1.0.1 (2016-01-14)
 ~~~~~~~~~~~~~~~~~~
 
 - Fix an error when the address of a member is empty.
