@@ -6,14 +6,13 @@ install:
     - cp buildout/* .
     - mkdir -p buildout-cache/eggs
     - mkdir -p buildout-cache/downloads
-    - python bootstrap.py -c travis.cfg
+    - python bootstrap.py -c travis.cfg -v 2.5.0
     - bin/buildout -N -t 3 -c travis.cfg
 
 script: bin/coverage run bin/test -s seantis.kantonsrat
 
 after_success:
     - pip install coveralls
-    - python -m coverage.pickle2json
     - coveralls
 
 sudo: false
