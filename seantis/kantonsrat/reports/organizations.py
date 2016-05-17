@@ -99,10 +99,10 @@ class OrganizationsReport(Report):
         canvas.saveState()
 
         dimensions = {
-            'xpos': 1.7*cm,
-            'ypos': self.pdf.page_height - 1.7*cm,
-            'xsize': 4.6*cm,
-            'ysize': 0.96*cm
+            'xpos': 1.7 * cm,
+            'ypos': self.pdf.page_height - 1.7 * cm,
+            'xsize': 4.6 * cm,
+            'ysize': 0.96 * cm
         }
 
         # self.pdf.draw_svg doesn't do strings, only file paths
@@ -129,14 +129,16 @@ class OrganizationsReport(Report):
 
         footer_info = '<br />'.join((self.title, print_date))
         p = MarkupParagraph(footer_info, self.pdf.style.normal)
-        w, h = p.wrap(5*cm, doc.bottomMargin)
+        w, h = p.wrap(5 * cm, doc.bottomMargin)
         p.drawOn(canvas, self.pdf.margin_left, h)
 
         # page number
         page_info = '<br />' + str(doc.page_index()[0])
         p = MarkupParagraph(page_info, self.pdf.style.right)
-        w, h = p.wrap(1*cm, doc.bottomMargin)
-        p.drawOn(canvas, self.pdf.page_width - self.pdf.margin_right - 1*cm, h)
+        w, h = p.wrap(1 * cm, doc.bottomMargin)
+        p.drawOn(
+            canvas, self.pdf.page_width - self.pdf.margin_right - 1 * cm, h
+        )
 
         canvas.restoreState()
 
@@ -172,7 +174,7 @@ class OrganizationsReport(Report):
         # 1: reference between table 1 and 2 (optional)
         # 2: member info or note
         # 3: party info (optional)
-        table_columns = [1.2*cm, 13.3*cm, 2*cm]
+        table_columns = [1.2 * cm, 13.3 * cm, 2 * cm]
 
         for organization in self.get_organizations(self.report_date):
 

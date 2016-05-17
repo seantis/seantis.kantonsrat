@@ -61,21 +61,21 @@ class PDF(PDFDocument):
         self.font_name = kwargs.get('font_name', 'Helvetica')
         self.font_size = kwargs.get('font_size', 10)
 
-        self.margin_left = 3.5*cm
-        self.margin_top = 5.2*cm
-        self.margin_bottom = 4*cm
-        self.margin_right = 1.5*cm
+        self.margin_left = 3.5 * cm
+        self.margin_top = 5.2 * cm
+        self.margin_bottom = 4 * cm
+        self.margin_right = 1.5 * cm
 
     def table_of_contents(self):
         self.toc = TableOfContents()
         self.toc.levelStyles[0].leftIndent = 0
-        self.toc.levelStyles[0].rightIndent = 0.25*cm
+        self.toc.levelStyles[0].rightIndent = 0.25 * cm
         self.toc.levelStyles[0].fontName = self.font_name
         self.toc.tableStyle = TableStyle([
             ('VALIGN', (0, 0), (-1, -1), 'TOP'),
             ('RIGHTPADDING', (0, 0), (-1, -1), 0),
             ('LEFTPADDING', (0, 0), (-1, -1), 0),
-            ('BOTTOMPADDING', (0, 0), (-1, -1), 0.2*cm)
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 0.2 * cm)
         ])
         self.story.append(self.toc)
 
