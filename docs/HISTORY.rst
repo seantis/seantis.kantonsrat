@@ -5,7 +5,8 @@ Changelog
 1.0.2 (unreleased)
 ~~~~~~~~~~~~~~~~~~
 
-Nothing yet.
+- Show faction instead of party in the PDF.
+  [msom]
 
 1.0.1 (2016-01-14)
 ~~~~~~~~~~~~~~~~~~

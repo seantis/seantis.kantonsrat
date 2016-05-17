@@ -13,13 +13,13 @@ from seantis.kantonsrat.reports.base import Report
 class MembershipInfo(object):
     """ Holds and renders the infos related to a membership. """
 
-    __slots__ = ('name', 'role', 'address_parts', 'party', 'elected')
+    __slots__ = ('name', 'role', 'address_parts', 'faction', 'elected')
 
-    def __init__(self, name, role, address_parts, party):
+    def __init__(self, name, role, address_parts, faction):
         self.name = name
         self.role = role
         self.address_parts = address_parts
-        self.party = party
+        self.faction = faction
 
     def get_text(self):
         parts = list()
@@ -173,7 +173,7 @@ class OrganizationsReport(Report):
 
         # 1: reference between table 1 and 2 (optional)
         # 2: member info or note
-        # 3: party info (optional)
+        # 3: faction info (optional)
         table_columns = [1.2 * cm, 13.3 * cm, 2 * cm]
 
         for organization in self.get_organizations(self.report_date):
@@ -229,10 +229,10 @@ class OrganizationsReport(Report):
     def reset_references(self):
         self.reference_count = 0
 
-    def get_person_party(self, person):
-        """ Returns the party of the given person. """
-        parties = person.parties
-        return parties and parties[0] or ''
+    def get_person_faction(self, person):
+        """ Returns the faction of the given person. """
+        factions = person.factions
+        return factions and factions[0] or ''
 
     def get_membership_info(self, membership):
         """ Returns a MembershipInfo instance for the given membership. """
@@ -246,9 +246,9 @@ class OrganizationsReport(Report):
             address_parts = [
                 p.strip() for p in person.address.split('\n') if p.strip()
             ]
-        party = self.get_person_party(person)
+        faction = self.get_person_faction(person)
 
-        return MembershipInfo(name, membership.role, address_parts, party)
+        return MembershipInfo(name, membership.role, address_parts, faction)
 
     def get_membership_notes(self, membership):
         """ Returns a MembershipNote instance for the given membership. """
@@ -292,7 +292,7 @@ class OrganizationsReport(Report):
                 text = info.get_text()
 
             memberships_table.append([
-                notes and notes.reference, text, info.party
+                notes and notes.reference, text, info.faction
             ])
 
             for ix, note in enumerate(notes and notes.notes or []):
@@ -312,14 +312,19 @@ class OrganizationsReport(Report):
                         })
 
                     text = self.translate(text)
-                    party = note.party
+                    faction = note.faction
                 else:
                     text = note
-                    party = ''
+                    faction = ''
 
                 notes_table.append([
-                    ix == 0 and notes.reference or '', text, party
+                    ix == 0 and notes.reference or '', text, faction
                 ])
+
+        if memberships_table:
+            memberships_table.insert(0, [
+                None, None, u'<b>{}</b>'.format(self.translate(_(u'Faction')))
+            ])
 
         return memberships_table, notes_table
 
