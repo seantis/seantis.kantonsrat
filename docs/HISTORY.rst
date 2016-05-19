@@ -2,10 +2,10 @@
 Changelog
 ---------
 
-1.0.2 (unreleased)
+1.0.2 (2016-05-19)
 ~~~~~~~~~~~~~~~~~~
 
-- Show faction instead of party in the PDF.
+- Show the faction of a member instead of its party in the PDF.
   [msom]
 
 1.0.1 (2016-01-14)
