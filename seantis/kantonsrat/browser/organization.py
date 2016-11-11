@@ -24,7 +24,7 @@ class OrganizationView(BaseView):
         return self.context.memberships('present')
 
     def past_members(self):
-        return self.context.memberships('past')
+        return self.context.memberships('past') if self.is_manager() else None
 
     def future_members(self):
         return self.context.memberships('future')

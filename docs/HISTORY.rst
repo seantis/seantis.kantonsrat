@@ -5,7 +5,8 @@ Changelog
 1.0.3 (unreleased)
 ~~~~~~~~~~~~~~~~~~
 
-Nothing yet.
+- Hide past memberships if not logged in as manager.
+  [msom]
 
 1.0.2 (2016-05-19)
 ~~~~~~~~~~~~~~~~~~
