@@ -2,7 +2,7 @@
 Changelog
 ---------
 
-1.0.3 (unreleased)
+1.0.3 (2016-11-11)
 ~~~~~~~~~~~~~~~~~~
 
 - Hide past memberships if not logged in as manager.
