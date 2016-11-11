@@ -14,7 +14,7 @@ Requirements
 Build Status
 ------------
 
-.. image:: https://travis-ci.org/seantis/seantis.kantonsrat.png
+.. image:: https://travis-ci.org/seantis/seantis.kantonsrat.png?branch=master
   :target: https://travis-ci.org/seantis/seantis.kantonsrat
   :alt: Build Status
 
