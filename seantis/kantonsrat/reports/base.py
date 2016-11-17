@@ -43,7 +43,7 @@ class Template(ReportingDocTemplate):
         ReportingDocTemplate.afterFlowable(self, flowable)
 
         if hasattr(flowable, 'toc_level'):
-            text = '<b>{}</b>'.format(
+            text = u'<b>{}</b>'.format(
                 flowable.getPlainText()
             )
             self.notify('TOCEntry', (

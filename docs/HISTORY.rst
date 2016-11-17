@@ -5,7 +5,8 @@ Changelog
 1.0.4 (unreleased)
 ~~~~~~~~~~~~~~~~~~
 
-Nothing yet.
+- Support reportlab > 3.3.0.
+  [msom]
 
 1.0.3 (2016-11-11)
 ~~~~~~~~~~~~~~~~~~

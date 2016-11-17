@@ -55,7 +55,7 @@ setup(
         'seantis.plonetools>=0.11',
         'collective.dexteritytextindexer',
         'collective.js.jqueryui',
-        'reportlab==2.7',
+        'reportlab',
         'pdfdocument',
         'svglib'
     ],
