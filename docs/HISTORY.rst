@@ -2,7 +2,7 @@
 Changelog
 ---------
 
-1.0.4 (unreleased)
+1.0.4 (2016-11-17)
 ~~~~~~~~~~~~~~~~~~
 
 - Support reportlab > 3.3.0.
