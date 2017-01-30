@@ -1,5 +1,4 @@
 import logging
-log = logging.getLogger('seantis.kantonsrat')
 
 import json
 import urllib2
@@ -14,6 +13,9 @@ from plone.memoize import ram
 
 from seantis.kantonsrat import settings
 from seantis.kantonsrat.interfaces import IMotion, IMotionsProvider
+
+
+log = logging.getLogger('seantis.kantonsrat')
 
 
 class Motion(object):

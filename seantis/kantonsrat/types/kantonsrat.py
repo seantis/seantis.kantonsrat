@@ -1,5 +1,4 @@
 import logging
-log = logging.getLogger('seantis.kantonsrat')
 
 from datetime import date
 from five import grok
@@ -17,6 +16,9 @@ from seantis.people.utils import LinkList
 
 from seantis.kantonsrat import _
 from seantis.kantonsrat.interfaces import IMotionsProvider
+
+
+log = logging.getLogger('seantis.kantonsrat')
 
 
 class IMember(form.Schema):
