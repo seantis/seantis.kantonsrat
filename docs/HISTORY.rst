@@ -5,7 +5,8 @@ Changelog
 1.0.5 (unreleased)
 ~~~~~~~~~~~~~~~~~~
 
-Nothing yet.
+- Use lates svglib.
+  [msom]
 
 1.0.4 (2016-11-17)
 ~~~~~~~~~~~~~~~~~~

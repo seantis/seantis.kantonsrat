@@ -57,7 +57,7 @@ setup(
         'collective.js.jqueryui',
         'reportlab',
         'pdfdocument',
-        'svglib'
+        'svglib>=0.8'
     ],
     extras_require=dict(
         tests=tests_require
