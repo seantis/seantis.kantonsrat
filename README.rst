@@ -28,7 +28,7 @@ Coverage
 Latests PyPI Release
 --------------------
 .. image:: https://img.shields.io/pypi/v/seantis.kantonsrat.svg
-  :target: https://crate.io/packages/seantis.kantonsrat
+  :target: https://pypi.python.org/pypi/seantis.kantonsrat
   :alt: Latest PyPI Release
 
 
